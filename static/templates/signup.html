@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block jumbotron %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>World Cup Central</h1>
+        <p>The definitive Source for all things world cup</p>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block content %}
+<div class="btn-group btn-group-justified">
+  <div class="btn-group">
+    <a href={% url "countries" %}><button type="button" class="btn btn-default"><font size="5" color="black">Countries</font></button></a>
+  </div>
+  <div class="btn-group">
+    <a href={% url "players" %}><button type="button" class="btn btn-default"><font size="5" color="black">Players</font></button></a>   
+  </div>
+  <div class="btn-group">
+    <a href={% url "matches" %}><button type="button" class="btn btn-default"><font size="5" color="black">Matches</font></button></a>
+  </div>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,30 @@
+
+.jumbotron{
+    background-color: #2B941D
+}
+
+.navbar-inverse {
+background-color: #53041A;
+border-color: #E40909;
+}
+
+.navbar-inverse .navbar-brand {
+color: #15A554;
+}
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -500px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer, .push {
+	height: 500px; /* .push must be the same height as .footer */
+        margin: auto
+}
