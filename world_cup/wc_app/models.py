@@ -16,7 +16,7 @@ class Player(models.Model):
     full_name = models.CharField(max_length=200)
     clubname = models.CharField(max_length=200)
     position = models.CharField(max_length=64)
-    birth_date = models.DateTimeField()
+    birth_date = models.DateField()
 
     def __str__ (self):
         return self.full_name
