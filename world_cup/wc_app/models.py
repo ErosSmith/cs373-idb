@@ -22,9 +22,14 @@ class Player(models.Model):
         return self.full_name
 
 class Match(models.Model):
+    match_num = models.IntegerField(default=0)
+    # country_AB = models.CharField(max_length=200)
     country_A = models.ForeignKey(Country, related_name='country_A')
     country_B = models.ForeignKey(Country, related_name='country_B')
+    winner = models.CharField(max_length=200)
     score = models.CharField(max_length=64)
+    location = models.CharField(max_length=200)
+    match_date = models.DateField()
 
     def __str__ (self):
-        return country_A + " " + country_B + " " + score
+        return self.country_A.country_name + " " + self.country_B.country_name + " " + self.score
