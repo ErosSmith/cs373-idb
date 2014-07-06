@@ -9,7 +9,6 @@ class Country(models.Model):
     def __str__ (self):
         return self.country_name
 
-
 class Player(models.Model):
     country = models.ForeignKey(Country)
     sur_name = models.CharField(max_length=200)
