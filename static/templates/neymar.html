@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class= 'col-sm-12' style= 'text-align: center'>
+    <h1>
+        This is Neymar
+        <br>
+        Status: Injured Out of the Tournament :( 
+        <br>
+        Forward for: <a href={% url "brazil" %}>Brazil</a>
+        <br>
+        Next Match:
+        <a href={% url "bra_ger" %}>Brazil vs Germany</a>
+    </h1>
+</div>
+{% endblock %}
+
+{% block jumbotron %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Neymar Jr.</h1>
+        <p>
+            'NEYMAR': ['DA SILVA SANTOS JUNIOR', 'Brazil', 'FC Barcelona', 'Forward', '1992-02-05']
+        </p>
+      </div>
+    </div>
+
+{% endblock %}

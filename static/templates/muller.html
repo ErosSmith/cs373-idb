@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class= 'col-sm-12' style= 'text-align: center'>
+    <h1>
+        This is Mueller
+        <br>
+        Forward for: <a href={% url "germany" %}>Germany</a>
+        <br>
+        Next Match:
+        <a href={% url "bra_ger" %}>Brazil vs Germany</a>
+
+        <br>
+        Matches Played:
+        <a href={% url "ger_usa" %}>Germany vs USA</a>
+
+    </h1>
+</div>
+{% endblock %}
+
+{% block jumbotron %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Thomas Müller</h1>
+        <p>
+            'Thomas MUELLER': ['MÜLLER', 'Germany', 'FC Bayern Muenchen', 'Forward', '1989-09-13']
+        </p>
+      </div>
+    </div>
+
+{% endblock %}

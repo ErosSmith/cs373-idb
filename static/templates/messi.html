@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class= 'col-sm-12' style= 'text-align: center'>
+    <h1>
+        This is Messi
+        <br>
+        Forward for: <a href={% url "argentina" %}>Argentina</a>
+        <br>
+        Next Match:
+        <a href={% url "arg_ned" %}>Argentina vs Netherland</a>
+    </h1>
+</div>
+{% endblock %}
+
+{% block jumbotron %}
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Lionel Messi</h1>
+        <p>
+            'Lionel MESSI': ['MESSI CUCCITTINI', 'Argentina', 'FC Barcelona', 'Forward', '1987-06-24'],
+        </p>
+      </div>
+    </div>
+
+{% endblock %}
