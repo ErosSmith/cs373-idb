@@ -3,11 +3,21 @@
 {% block content %}
 <div class= 'col-sm-12' style= 'text-align: center'>
     <h1>
-        <li><a href={% url "brazil" %}>Brazil</a></li>
-        <br><br>
-        <li><a href={% url "argentina" %}>Argentina</a></li>
-        <br><br>
-        <li><a href={% url "germany" %}>Germany</a></li>
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href={% url "brazil" %}>Brazil</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <a href={% url "argentina" %}>Argentina</a>
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-justified">
+                <li><a href={% url "germany" %}>Germany</a></li>
+            </ul>
+        </ul>
     </h1>
 </div>
 {% endblock %}
@@ -23,3 +33,10 @@
     </div>
 
 {% endblock %}
+
+
+
+
+
+
+
