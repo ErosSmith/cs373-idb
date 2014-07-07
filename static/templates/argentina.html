@@ -1,51 +1,164 @@
 {% extends 'base.html' %}
-
-
 {% block jumbotron %}
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>Argentina: ARG</h1>
-        <p>argentina is OP team </p>
-      </div>
+        <div class="container">
+            <h1>Argentina: ARG</h1>
+            <p>argentina is OP team </p>
+        </div>
     </div>
-
 {% endblock %}
-
-
 {% block content %}
-<div class= 'col-sm-12' style= 'text-align: center'>
-    <h4>
-    <li><a href={% url "messi" %}>10 Lionel MESSIForwardArgentina</a></li>
-<br><br>
+    <div class= 'col-sm-12' style= 'text-align: center'>
+        <h4>
+        <br><br>
+        <table class="table table-striped">
+            <tr>
+                <td>10</td>
+                <td><a href={% url "messi" %}>Lionel MESSI</a></td>
+                <td>Forward</td>
+            </tr>
 
-<table class="table table-striped">
-<li>1  Sergio ROMEROGoalkeeperArgentina</li>
-<li>2  Ezequiel GARAYDefenderArgentina</li>
-<li>3  Hugo CAMPAGNARODefenderArgentina</li>
-<li>4  Pablo ZABALETADefenderArgentina</li>
-<li>5  Fernando GAGOMidfielderArgentina</li>
-<li>6  Lucas BIGLIAMidfielderArgentina</li>
-<li>7  Angel DI MARIAMidfielderArgentina</li>
-<li>8  Enzo PEREZMidfielderArgentina</li>
-<li>9  Gonzalo HIGUAINForwardArgentina</li>
-<li>11  Maxi RODRIGUEZMidfielderArgentina</li>
-<li>12  Agustin ORIONGoalkeeperArgentina</li>
-<li>13  Augusto FERNANDEZMidfielderArgentina</li>
-<li>14  Javier MASCHERANOMidfielderArgentina</li>
-<li>15  Martin DEMICHELISDefenderArgentina</li>
-<li>16  Marcos ROJODefenderArgentina</li>
-<li>17  Federico FERNANDEZDefenderArgentina</li>
-<li>18  Rodrigo PALACIOForwardArgentina</li>
-<li>19  Ricardo ALVAREZMidfielderArgentina</li>
-<li>20  Sergio AGUEROForwardArgentina</li>
-<li>21  Mariano ANDUJARGoalkeeperArgentina</li>
-<li>22  Ezequiel LAVEZZIForwardArgentina</li>
-<li>23  Jose Maria BASANTADefenderArgentina</li>
-<li>SABELLA AlejandroCoach (ARG)</li>
 
-</table>
-    </h4>
-</div>
+            <tr>
+                <td>1</td>
+                <td>Sergio ROMERO</td>
+                <td>Goalkeeper</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Ezequiel GARAY</td>
+                <td>Defender</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Hugo CAMPAGNARO</td>
+                <td>Defender
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Pablo ZABALETA</td>
+                <td>Defender
+                </td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Fernando GAGO</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Lucas BIGLIA</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Angel DI MARIA</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Enzo PEREZ</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Gonzalo HIGUAIN</td>
+                <td>Forward
+                </td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Maxi RODRIGUEZ</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Agustin ORION</td>
+                <td>Goalkeeper
+                </td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Augusto FERNANDEZ</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Javier MASCHERANO</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Martin DEMICHELIS</td>
+                <td>Defender
+                </td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Marcos ROJO</td>
+                <td>Defender
+                </td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Federico FERNANDEZ</td>
+                <td>Defender
+                </td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Rodrigo PALACIO</td>
+                <td>Forward
+                </td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Ricardo ALVAREZ</td>
+                <td>Midfielder
+                </td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>Sergio AGUERO</td>
+                <td>Forward
+                </td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>Mariano ANDUJAR</td>
+                <td>Goalkeeper
+                </td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>Ezequiel LAVEZZI</td>
+                <td>Forward
+                </td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>Jose Maria BASANTA</td>
+                <td>Defender
+                </td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>SABELLA Alejandro</td>
+                <td>Coach</td>
+            </tr>
+            <!-- <tr>
+                <td></td>
+            </tr> -->
+        </table>
+        </h4>
+    </div>
 {% endblock %}
