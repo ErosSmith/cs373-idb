@@ -1,0 +1,68 @@
+FORMAT: 1A
+HOST: http://www.google.com
+
+# WWC
+Notes API is a *short texts saving* service similar to its physical paper presence on your table.
+
+# Group Countries
+Notes related resources of the **WCC API**
+
+## Countries Collection [/countries]
+
+
+### List all Countries [GET]
++ Response 200 (application/json)
+
+        ["Country", "Country2"]
+
+## Countries [/countries/{id}]
+A single Country object with all its details
+
++ Parameters
+    + id (required, string, `1`) ... String `id` of the Country to perform action with. Has example value.
+
+### Retrieve a Country [GET]
++ Response 200 (application/json)
+
+        ["country_code", ["player1","player2",...], rank ]
+
+## Players Collection [/players]
+
+
+### List all Players [GET]
++ Response 200 (application/json)
+
+        ["Player1", "Player2"]
+
+## Players [/players/{id}]
+A single Player object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... String `id` of the Country to perform action with. Has example value.
+
+### Retrieve a Player [GET]
++ Response 200 (application/json)
+
+        ["Player-fullname", "Player-surname","Club-name","Position", "Birthdate","Country"]
+
+## Matches Collection [/matches]
+
+
+### List all Matches [GET]
++ Response 200 (application/json)
+
+        ["Match1", "Match2"]
+
+## Matches [/matches/{id}]
+A single Match object with all its details
+
++ Parameters
+    + id (required, number, `1`) ... String `id` of the Country to perform action with. Has example value.
+
+### Retrieve a Match [GET]
++ Response 200 (application/json)
+
+        ["match-number","CountryA","CountryB","score","winner","location","match-date"]
+
+
+
