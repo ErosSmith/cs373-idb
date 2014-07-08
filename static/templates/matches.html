@@ -1,13 +1,114 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style type="text/css">
+    img.no-resize{
+        min-height: 10px;
+        min-width: 10px;
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    table > tbody > tr > td {
+        border: none!important;
+    }
+
+    tr {
+        background-color: transparent!important;
+    }
+
+    tr:hover {
+        background-color:#ddd!important;
+    }
+
+</style>
+
 <div class= 'col-sm-12' style= 'text-align: center'>
     <h1>
-        This is the matches page
 
-        <li><a href={% url "bra_ger" %}>Brazil vs Germany</a></li>
+<!--         <li><a href={% url "bra_ger" %}>Brazil vs Germany</a></li>
         <li><a href={% url "ger_usa" %}>Germany vs USA</a></li>
-        <li><a href={% url "arg_ned" %}>Argentina vs Netharlands</a></li>
+        <li><a href={% url "arg_ned" %}>Argentina vs Netharlands</a></li> -->
+
+ <ul class="nav nav-tabs nav-justified" role="tablist">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <div class ="table-responsive">
+                     <table class="table">
+                    <tr>
+                        <td>
+                            <a href="brazil"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/brazil.png" alt="Responsive image" class="no-resize"/></a>
+                            
+                        </td>
+                        <td>
+                            <a href={% url "brazil" %}>Brazil</a>
+                        </td>
+                        <td><a href={% url "bra_ger" %}>VS</a></td>
+
+                        <td>
+                            <a href={% url "germany" %}>Germany</a>
+                        </td>
+
+                        <td>
+                            <a href="germany"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/germany.png" alt="Responsive image" class="no-resize"/></a>
+                            
+                        </td>
+
+                    </tr> 
+
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <tr class="set-bg">
+                        <td>
+                            <a href="germany"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/germany.png" alt="Responsive image" class="no-resize"/></a>
+                        </td>
+                        <td>
+                            <a href={% url "germany" %}>Germany</a>
+                        </td>
+                        <td><a href={% url "ger_usa" %}>VS</a></td>
+                         <td>
+                            USA
+                        </td>
+
+                        <td>
+                            <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/usa.png" alt="Responsive image" class="no-resize"/>
+                        </td>
+                       
+
+                    </tr> 
+                   
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <tr>
+                        <td>
+                            <a href="argentina"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/argentina.png" alt="Responsive image" class="no-resize"/></a>
+                        </td>
+                        <td>
+                            <a href={% url "argentina" %}>Argentina</a>
+                        </td>
+
+                        <td><a href={% url "arg_ned" %}>VS</a></td>
+
+                            <td>
+                            Netharlands
+                            </td>
+                        
+                           <td>
+                            <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/netherlands.png" alt="Responsive image" class="no-resize"/>
+                        </td>
+
+                    </tr> 
+                    </table>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+
+
 
     </h1>
 </div>
@@ -19,7 +120,6 @@
     <div class="jumbotron">
       <div class="container">
         <h1>Matches</h1>
-        <p>Current and Past Matches</p>
       </div>
     </div>
 

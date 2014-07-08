@@ -2,19 +2,33 @@
 
 {% block content %}
 <div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-        This is Mueller
-        <br>
-        Forward for: <a href={% url "germany" %}>Germany</a>
-        <br>
-        Next Match:
-        <a href={% url "bra_ger" %}>Brazil vs Germany</a>
+    <h2>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <ul class="nav nav-pills nav-justified">
+                <li>
+                    <div class="container">
+                    <center>
+                        <table class="table-responsive">
+                            <tr>
+                                <td>Country:</td> <td>Germany</td>
+                            </tr>
+                        
+               <tr> 
+                    <td>Club:</td> <td>FC Bayern Muenchen</td>
+               </tr>
+             <tr>   
+                <td>Position:</td> <td>Forward</td>
+            </tr>
+            <tr> 
+                <td>Birthdate: 1989-09-13</td>
+            </tr>
+                </table>
+            </div>
+             </ul>
+        </ul>
+       
 
-        <br>
-        Matches Played:
-        <a href={% url "ger_usa" %}>Germany vs USA</a>
-
-    </h1>
+    </h2>
 </div>
 {% endblock %}
 
@@ -23,10 +37,12 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Thomas Müller</h1>
-        <p>
-            'Thomas MUELLER': ['MÜLLER', 'Germany', 'FC Bayern Muenchen', 'Forward', '1989-09-13']
-        </p>
+
+        <center>
+        <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Thomas_Muller.png" name="aboutme" class="img-circle">
+        <h2>Thomas Müller</h2>
+        </center>
+
       </div>
     </div>
 

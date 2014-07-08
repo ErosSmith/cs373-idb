@@ -2,14 +2,33 @@
 
 {% block content %}
 <div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-        This is Messi
-        <br>
-        Forward for: <a href={% url "argentina" %}>Argentina</a>
-        <br>
-        Next Match:
-        <a href={% url "arg_ned" %}>Argentina vs Netherland</a>
-    </h1>
+    <h2>
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+                <ul class="nav nav-pills nav-justified">
+                <li>
+                    <div class="container">
+                    <center>
+                        <table class="table-responsive">
+                            <tr>
+                                <td>Country:</td> <td>Argentina</td>
+                            </tr>
+                        
+               <tr> 
+                    <td>Club:</td> <td>FC Barcelona</td>
+               </tr>
+             <tr>   
+                <td>Position:</td> <td>Forward</td>
+            </tr>
+            <tr> 
+                <td>Birthdate: 1987-06-24</td>
+            </tr>
+                </table>
+            </div>
+             </ul>
+        </ul>
+       
+                        
+    </h2> 
 </div>
 {% endblock %}
 
@@ -18,10 +37,17 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Lionel Messi</h1>
+<!--         <h1>Lionel Messi</h1>
         <p>
             'Lionel MESSI': ['MESSI CUCCITTINI', 'Argentina', 'FC Barcelona', 'Forward', '1987-06-24'],
-        </p>
+        </p> -->
+        <div class="container">
+
+        <center>
+        <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Lionel _Messi.png" name="aboutme" class="img-circle">
+        <h2>Lionel Messi</h2>
+        </center>
+
       </div>
     </div>
 

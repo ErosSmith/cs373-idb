@@ -1,13 +1,81 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-        This is the players page
-
-        <li><a href={% url "neymar" %}>Neymar jr</a></li>
+<!--         <li><a href={% url "neymar" %}>Neymar Jr.</a></li>
         <li><a href={% url "messi" %}>Lionel Messi</a></li>
         <li><a href={% url "muller" %}>Thomas Muller</a></li>
+ -->
+
+{% block content %}
+
+<style type="text/css">
+    img.no-resize{
+        min-height: 10px;
+        min-width: 10px;
+        max-width: 100px;
+        max-height: 100px;
+    }
+
+    table > tbody > tr > td {
+        border: none!important;
+    }
+
+    tr {
+        background-color: transparent!important;
+    }
+
+    tr:hover {
+        background-color:#ddd!important;
+    }
+
+</style>
+
+<div class= 'col-sm-12' style= 'text-align: center'>
+    <h1>
+         <ul class="nav nav-tabs nav-justified" role="tablist">
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <div class ="table-responsive">
+                     <table class="table">
+                    <tr>
+                        <td>
+                            <a href="messi"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Lionel _Messi.png" alt="Lionel Messi" class="no-resize"/></a>
+                            
+                        </td>
+                        <td>
+                            <a href={% url "messi" %}>Lionel Messi</a>
+                        </td>
+                    </tr> 
+
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <tr class="set-bg">
+                        <td>
+                            <a href="neymar"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Neymar_Jr.png" alt="Neymar Jr." class="no-resize"/></a>
+                        </td>
+                        <td>
+                            <a href={% url "neymar" %}>Neymar Jr.</a>
+                        </td>
+                    </tr> 
+                   
+                </li>
+            </ul>
+            <ul class="nav nav-pills nav-justified">
+                <li>
+                    <tr>
+                        <td>
+                            <a href="muller"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Thomas_Muller.png" alt="Thomas Muller" class="no-resize"/></a>
+                        </td>
+                        <td>
+                            <a href={% url "muller" %}>Thomas Muller</a>
+                        </td>
+                    </tr> 
+                    </table>
+                    </div>
+                </li>
+            </ul>
+        </ul>
 
     </h1>
 </div>
