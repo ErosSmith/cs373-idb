@@ -2,18 +2,29 @@
 
 {% block content %}
 <div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-        Tue, Jul 8, 3:00 PM on ESPN • Semi-finals
-        <br><br>
-        Estádio Mineirão, Belo Horizonte
-        <br><br>
-        <a href={% url "brazil" %}>Brazil</a> 0 - 7 <a href={% url "germany" %}>Germany</a>
-        <br>
-    </h1>
-
-        <div style="background-image:url(http://i.imgur.com/LzCsxjq.jpg);width:1000px;height:555px;color:black;font-size:18px;margin:auto;">
+     <div class="well well-sm">
+        <h1>
+            Tue, Jul 8, 3:00 PM on ESPN • Semi-finals
+            <br><br>
+            Estádio Mineirão, Belo Horizonte
+            <br><br>
+            <a href={% url "brazil" %}>Brazil</a> 0 - 7 <a href={% url "germany" %}>Germany</a>
+            <br>
+        </h1>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//player.vimeo.com/video/100265169" allowfullscreen="">
+            </iframe>
+        </div>
     </div>
 </div>
+
+<!-- there is an alignment issue with the wells. the small well overlaps the large
+well. the large well extends to top of page for some reason -->
+
+<!-- <div class="well well-lg"> -->
+    <img class="img-responsive" alt="Responsive image" style ="margin:auto;" src="http://i.imgur.com/LzCsxjq.jpg">
+<!-- </div> -->
+
 {% endblock %}
 
 {% block jumbotron %}

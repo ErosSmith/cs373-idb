@@ -2,18 +2,29 @@
 
 {% block content %}
 <div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-        Wed, Jul 9, 3:00 PM on ESPN • Semi-finals
-        <br><br>
-        Arena Corinthians, São Paulo
-        <br><br>
-        Netherlands vs <a href={% url "argentina" %}>Argentina</a>
+    <div class="well well-sm">
+        <h1>
+            Wed, Jul 9, 3:00 PM on ESPN • Semi-finals
+            <br><br>
+            Arena Corinthians, São Paulo
+            <br><br>
+            Netherlands vs <a href={% url "argentina" %}>Argentina</a>
+        </h1>
 
-    </h1>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="//www.youtube.com/embed/jIDtPQeD4Gw" allowfullscreen=""></iframe>
+        </div>
 
-    <div style="background-image:url(http://i.imgur.com/KfdrLhW.jpg);width:1000px;height:555px;color:black;font-size:18px;margin:auto;">
     </div>
 </div>
+
+<!-- there is an alignment issue with the wells. the small well overlaps the large
+well. the large well extends to top of page for some reason -->
+
+<!-- <div class="well well-lg"> -->
+    <img class="img-responsive" alt="Responsive image" style ="margin:auto;" src="http://i.imgur.com/KfdrLhW.jpg">
+<!-- </div> -->
+
 {% endblock %}
 
 {% block jumbotron %}
