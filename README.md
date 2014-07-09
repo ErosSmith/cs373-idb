@@ -24,12 +24,12 @@ Files : Path
 2. create db scheme from mysql thru terminal [ref](http://stackoverflow.com/questions/22340875/creating-a-localhost-mysql-database-to-use-with-django)
 3. grant user access to the db
 4. configure the db settings on settings.py (world_cup)
-5. to create the designed model from model.py
+5. to create the designed model from model.py <br>
 > python3 manage.py syncdb
-6. to load required data with python scripts
+6. to load required data with python scripts <br>
 > python3 manage.py shell < country_insert.py
   data: the "country_insert.py", "player_insert_script.py", "match_insert_script.py"
-7. enjoy =) localhost:8000/admin
+7. enjoy =) localhost:8000/admin <br>
 > python3 manage.py runserver"
 
 
