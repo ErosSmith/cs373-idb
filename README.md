@@ -1,9 +1,13 @@
 # Sofware Engineering
-## Summer 2014 CS373 World Cup
+## CS373-Summer 2014
+## Project: World Cup'14
 
-our group: Aseal Yousuf, Eros Smith, Jeremiah Hendrix Martinez, Jungmo Ku, Kim Yu Ng, Prithvi Shahi
+Our group: Aseal Yousuf, Eros Smith, Jeremiah Hendrix Martinez, Jungmo Ku, Kim Yu Ng, Prithvi Shahi
 
 Project Site (PythonAnywhere)
+Site:
+1. [main](http://erossmith.pythonanywhere.com/)
+2. [mirror](http://kimyu92.pythonanywhere.com/)
 
 ## Sturcture
 Files : Path
@@ -20,10 +24,13 @@ Files : Path
 2. create db scheme from mysql thru terminal [ref](http://stackoverflow.com/questions/22340875/creating-a-localhost-mysql-database-to-use-with-django)
 3. grant user access to the db
 4. configure the db settings on settings.py (world_cup)
-5. "python3 manage.py syncdb" to create the designed model from model.py
-6. "python3 manage.py shell < country_insert.py"
-  6.5.the "country_insert.py", "player_insert_script.py", "match_insert_script.py"
-7. "python3 manage.py runserver"
+5. to create the designed model from model.py <br>
+> python3 manage.py syncdb
+6. to load required data with python scripts <br>
+> python3 manage.py shell < country_insert.py
+  data: the "country_insert.py", "player_insert_script.py", "match_insert_script.py"
+7. enjoy =) localhost:8000/admin <br>
+> python3 manage.py runserver"
 
 
 ## Dependencies
