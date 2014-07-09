@@ -1,0 +1,30 @@
+<blockquote class="twitter-tweet" lang="en"><p>Heard Messi made the game winning pass! That&#39;s my type of play/er. Win, loss, draw u make the right play to help your team be successful</p>&mdash; LeBron James (@KingJames) <a href="https://twitter.com/KingJames/statuses/484054427243118592">July 1, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>O Brasil inteiro tá contigo irmão! Te amamos Neymar.&#10;The whole of Brazil is with you brother! We love you Neymar. <a href="http://t.co/9r1RrBI2fx">pic.twitter.com/9r1RrBI2fx</a></p>&mdash; David Luiz (@DavidLuiz_4) <a href="https://twitter.com/DavidLuiz_4/statuses/485415156898594817">July 5, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet" data-cards="hidden" lang="en"><p>Alles ist drin. Wir müssen nur daran glauben &amp; Vollgas geben! Wird hoffentlich ein tolles Halbfinale gegen Brasilien. <a href="http://t.co/RPSpzMfYiS">pic.twitter.com/RPSpzMfYiS</a></p>&mdash; Thomas Müller (@esmuellert_) <a href="https://twitter.com/esmuellert_/statuses/486105584983617536">July 7, 2014</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+Twitter timeline
+================
+
+<a class="twitter-timeline" href="https://twitter.com/neymarjr" data-widget-id="486707020578295808">Tweets by @neymarjr</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<a class="twitter-timeline" href="https://twitter.com/LeoMessi1987" data-widget-id="486707020578295808">Tweets by @LeoMessi1987</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<a class="twitter-timeline" href="https://twitter.com/esmuellert_" data-widget-id="486707527430590464">Tweets by @esmuellert_</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+
+
+
