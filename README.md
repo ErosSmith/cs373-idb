@@ -34,7 +34,7 @@ Files : Path
 <code> python3 manage.py runserver" </code>
 
 ## Test model
-> preq: setup the model mentioned above
+> preq: setup the model mentioned above <br>
 > location: test_Model.py
 <code>python3 manage.py test</code>
 
