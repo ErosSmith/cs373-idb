@@ -27,7 +27,7 @@ Files : Path
 5. to create the designed model from model.py <br>
 <code> python3 manage.py syncdb </code>
 6. to load required data with python scripts <br>
-<code> python3 manage.py shell < country_insert.py </code>
+<code> python3 manage.py shell < country_insert.py </code><br>
   data: the "country_insert.py", "player_insert_script.py", "match_insert_script.py"
 7. enjoy =) localhost:8000/admin <br>
 <code> python3 manage.py runserver" </code>
