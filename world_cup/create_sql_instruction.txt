@@ -1,6 +1,6 @@
-CREATE USER 'kimyu92'@'localhost' IDENTIFIED BY '123456';
+CREATE USER 'eros'@'localhost' IDENTIFIED BY '123456';
 CREATE DATABASE testing_db2;
-GRANT ALL ON testing_db2.* TO 'kimyu92'@'localhost';
+GRANT ALL ON testing_db2.* TO 'eros'@'localhost';
 
 
-CREATE USER 'kimyu92'@'localhost' IDENTIFIED BY '123456';CREATE DATABASE testing_db3;GRANT ALL ON testing_db3.* TO 'kimyu92'@'localhost';
+CREATE USER 'eros'@'localhost' IDENTIFIED BY '123456';CREATE DATABASE testing_db3;GRANT ALL ON testing_db3.* TO 'eros'@'localhost';

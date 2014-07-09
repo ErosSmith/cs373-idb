@@ -1,3 +1,10 @@
+import os
+import sys
+import json
+from django.test.utils import setup_test_environment
+from django.core.urlresolvers import reverse
+
+
 from django.test import TestCase
 from wc_app.models import *
 
@@ -13,10 +20,10 @@ class ModelTestCase(TestCase):
     def test_country_model1(self):
         #Dictionary Key: Country Name
         #Dictionary Value: [Country_code, country_rank]
-        country_test_dict1 = {'Brazil': ['BRA', 5]}
+        country_test_dict1 = {"Brazil": ["BRA", 5]}
 
-        Country.objects.create(country_name="Brazil", country_code=country_test_dict1[0], rank = country_test_dict1[1])
-        """Animals that can speak are correctly identified"""
+        Country.objects.create(country_name="Brazil", country_code=country_test_dict1["Brazil"][0], rank = country_test_dict1["Brazil"][1])
+ 
         Country_Brazil = Country.objects.get(country_name="Brazil")
         self.assertEqual(Country_Brazil.country_name, "Brazil")
         self.assertEqual(Country_Brazil.country_code, "BRA")
@@ -26,7 +33,7 @@ class ModelTestCase(TestCase):
     def test_country_model2(self):
         #Dictionary Key: Country Name
         #Dictionary Value: [Country_code, country_rank]
-        country_test_dict2 = {'Brazil': ['BRA', 5], ['Italy': 'ITA',7]}
+        country_test_dict2 = {'Brazil': ['BRA', 5], 'Italy': ['ITA',7]}
 
         Country.objects.create(country_name="Brazil", country_code=country_test_dict2["Brazil"][0], rank = country_test_dict2["Brazil"][1])
         Country.objects.create(country_name="Italy", country_code=country_test_dict2["Italy"][0], rank = country_test_dict2["Italy"][1])
@@ -48,7 +55,7 @@ class ModelTestCase(TestCase):
         ########################################
         #Kim change the file location to your computer thanks
         #########################################
-         s = open("/u/aseal134/Software _Eng/Projects/cs373-idb/world_cup/wc_app/testing_country_date.json")
+         s = open("wc_app/testing_country_date.json")
          country_test_dic = json.load(s)
          s.close()
 
@@ -56,10 +63,10 @@ class ModelTestCase(TestCase):
             Country.objects.create(country_name=country, country_code=country_test_dic[country][0], rank = country_test_dic[country][1])
 
          for current_country in country_test_dic.keys():
-            temp_country = Country.objects.get(country_name=current_country)
-            self.assertEqual(temp_country.country_name, current_country)
-            self.assertEqual(temp_country.country_code, country_test_dic[country][0])
-            self.assertEqual(temp_country.rank, country_test_dic[country][1])
+            temp = Country.objects.get(country_name=current_country)
+            self.assertEqual(temp.country_name, current_country)
+            self.assertEqual(temp.country_code, country_test_dic[current_country][0])
+            self.assertEqual(temp.rank, country_test_dic[current_country][1])
 
     # -------------
     # Player_model
@@ -72,31 +79,36 @@ class ModelTestCase(TestCase):
     # clubname = models.CharField(max_length=200)
     # position = models.CharField(max_length=64)
     # birth_date = models.DateField()
+
     def test_player_model1(self):
         #Dictionary Key: Player full name
         #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
-        player_test_dict1 = {'Andrea Barzagli': ['Barzagli', 'Italy', 'Juventus FC', 'Defender', '1981-05-08']}
+        player_test_dict1 = {"Andrea Barzagli": ["Barzagli", "Italy", "Juventus FC", "Defender", "1981-05-08"]}
 
-        c1 = Country.objects.get(country_name = player_test_dict1[2])
+        Country.objects.create(country_name = player_test_dict1["Andrea Barzagli"][1])
+        c1 = Country.objects.create(country_name = player_test_dict1["Andrea Barzagli"][1])
 
-        Player.objects.create(country=c1, sur_name= player_test_dict1[0],full_name = "Andrea Barzagli" ,clubname = player_test_dict1[2], position = player_test_dict1[3], birth_date =player_test_dict1[4])
+        Player.objects.create(country=c1, sur_name= player_test_dict1["Andrea Barzagli"][0],full_name = "Andrea Barzagli" ,clubname = player_test_dict1["Andrea Barzagli"][2], position = player_test_dict1["Andrea Barzagli"][3], birth_date =player_test_dict1["Andrea Barzagli"][4])
         
         player_get = Player.objects.get(full_name = "Andrea Barzagli")
-        self.assertEqual(player_get.country, player_test_dict1[2])
-        self.assertEqual(player_get.sur_name, player_test_dict1[0])
+        self.assertEqual(player_get.country.__str__(), player_test_dict1["Andrea Barzagli"][1])
+        self.assertEqual(player_get.sur_name, player_test_dict1["Andrea Barzagli"][0])
         self.assertEqual(player_get.full_name, "Andrea Barzagli")
-        self.assertEqual(player_get.clubname, player_test_dict1[2])
-        self.assertEqual(player_get.position, player_test_dict1[3])
-        self.assertEqual(player_get.birth_date, player_test_dict1[4])
+        self.assertEqual(player_get.clubname, player_test_dict1["Andrea Barzagli"][2])
+        self.assertEqual(player_get.position, player_test_dict1["Andrea Barzagli"][3])
+        self.assertEqual(player_get.birth_date.__str__(), player_test_dict1["Andrea Barzagli"][4])
 
 
-        def test_player_model2(self):
+    def test_player_model2(self):
         #Dictionary Key: Player full name
         #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
-        player_test_dict1 = {'Andrea Barzagli': ['Barzagli', 'Italy', 'Juventus FC', 'Defender', '1981-05-08'],'Yoshito Okubo': ['Okubo', 'Japan', 'Kawasaki Frontale', 'Forward', '1982-06-09']}
+        player_test_dict1 = {"Andrea Barzagli": ["Barzagli", "Italy", "Juventus FC", "Defender", "1981-05-08"],"Yoshito Okubo": ["Okubo", "Japan", "Kawasaki Frontale", "Forward", "1982-06-09"]}
 
-        c1 = Country.objects.get(country_name = player_test_dict1["Andrea Barzagli"][2])
-        c2 = Country.objects.get(country_name = player_test_dict1["Yoshito Okubo"][2])
+        Country.objects.create(country_name = player_test_dict1["Andrea Barzagli"][1])
+        Country.objects.create(country_name = player_test_dict1["Yoshito Okubo"][1])
+
+        c1 = Country.objects.get(country_name = player_test_dict1["Andrea Barzagli"][1])
+        c2 = Country.objects.get(country_name = player_test_dict1["Yoshito Okubo"][1])
 
         player1_name= "Andrea Barzagli"
         player2_name= "Yoshito Okubo"
@@ -105,43 +117,50 @@ class ModelTestCase(TestCase):
         Player.objects.create(country=c2, sur_name= player_test_dict1[player2_name][0],full_name = "Yoshito Okubo" ,clubname = player_test_dict1[player2_name][2], position = player_test_dict1[player2_name][3], birth_date =player_test_dict1[player2_name][4])
         
 
-        player_get = Player.objects.get(full_name = [player1_name])
-        self.assertEqual(player_get.country, player_test_dict1[player1_name][2])
+        player_get = Player.objects.get(full_name = player1_name)
+        self.assertEqual(player_get.country.__str__(), player_test_dict1[player1_name][1])
         self.assertEqual(player_get.sur_name, player_test_dict1[player1_name][0])
         self.assertEqual(player_get.full_name, player1_name)
         self.assertEqual(player_get.clubname, player_test_dict1[player1_name][2])
         self.assertEqual(player_get.position, player_test_dict1[player1_name][3])
-        self.assertEqual(player_get.birth_date, player_test_dict1[player1_name][4])
+        self.assertEqual(player_get.birth_date.__str__(), player_test_dict1[player1_name][4])
 
         
         player_get = Player.objects.get(full_name = player2_name)
-        self.assertEqual(player_get.country, player_test_dict1[player2_name][2])
+        self.assertEqual(player_get.country.__str__(), player_test_dict1[player2_name][1])
         self.assertEqual(player_get.sur_name, player_test_dict1[player2_name][0])
         self.assertEqual(player_get.full_name, player2_name)
         self.assertEqual(player_get.clubname, player_test_dict1[player2_name][2])
         self.assertEqual(player_get.position, player_test_dict1[player2_name][3])
-        self.assertEqual(player_get.birth_date, player_test_dict1[player2_name][4])
+        self.assertEqual(player_get.birth_date.__str__(), player_test_dict1[player2_name][4])
 
-        def test_player_model3(self):
-            #Dictionary Key: Player full name
-            #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
+    def test_player_model3(self):
+        #Dictionary Key: Player full name
+        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
 
-            s = open("/u/aseal134/Software _Eng/Projects/cs373-idb/world_cup/wc_app/testing_player_data.json")
-            player_test_diction = json.load(s)
-            s.close()
+        s = open("wc_app/testing_player_data.json")
+        player_test_diction = json.load(s)
+        s.close()
 
-            for player_name in player_test_diction.keys(): 
-                c1 = Country.objects.get(country_name = player_test_diction[player_name][2])
-                Player.objects.create(country=c1, sur_name= player_test_diction[player_name][0],full_name = player_name ,clubname = player_test_diction[player_name][2], position = player_test_diction[player_name][3], birth_date =player_test_diction[player_name][4])
+        s = open("wc_app/testing_country_date.json")
+        country_test_dic = json.load(s)
+        s.close()
 
-            for player_name in player_test_diction.keys():
-                player_get = Player.objects.get(full_name = player_name)
-                self.assertEqual(player_get.country, player_test_diction[player_name][2])
-                self.assertEqual(player_get.sur_name, player_test_diction[player_name][0])
-                self.assertEqual(player_get.full_name, player_name)
-                self.assertEqual(player_get.clubname, player_test_diction[player_name][2])
-                self.assertEqual(player_get.position, player_test_diction[player_name][3])
-                self.assertEqual(player_get.birth_date, player_test_diction[player_name][4])
+        for country_name in country_test_dic.keys():
+            Country.objects.create(country_name = country_name)
+        
+        for player_name in player_test_diction.keys(): 
+            c1 = Country.objects.get(country_name = player_test_diction[player_name][1])
+            Player.objects.create(country=c1, sur_name= player_test_diction[player_name][0],full_name = player_name ,clubname = player_test_diction[player_name][2], position = player_test_diction[player_name][3], birth_date =player_test_diction[player_name][4])
+
+        for player_name in player_test_diction.keys():
+            player_get = Player.objects.get(full_name = player_name)
+            self.assertEqual(player_get.country.__str__(), player_test_diction[player_name][1])
+            self.assertEqual(player_get.sur_name, player_test_diction[player_name][0])
+            self.assertEqual(player_get.full_name, player_name)
+            self.assertEqual(player_get.clubname, player_test_diction[player_name][2])
+            self.assertEqual(player_get.position, player_test_diction[player_name][3])
+            self.assertEqual(player_get.birth_date.__str__(), player_test_diction[player_name][4])
 
 
     # -------------
@@ -162,23 +181,32 @@ class ModelTestCase(TestCase):
         #Dictionary Value: [Match_Number, HomeTeam, HomeTeamScore,AwayTeam, AwayTeamScore, Winner, Location, date]
         match_test_dict1 = {'Argentina-Belgium': [60, 'Argentina', 1, 'Belgium', 0, 'Argentina', 'Estadio Nacional', '2014-07-05']}
 
-        score_cat = str(match_test_dict1[2]) + "-" + str(match_test_dict1[4])
-        Match.objects.create(match_num = match_test_dict1[0], country_A = Country.objects.get(country_name = match_test_dict1[1]), country_B = Country.objects.get(country_name = match_test_dict1[3]), winner = match_test_dict1[5], score = score_cat, location = match_test_dict1[6], match_date = match_test_dict1[7])
+        score_cat = str(match_test_dict1["Argentina-Belgium"][2]) + "-" + str(match_test_dict1["Argentina-Belgium"][4])
+                
+        Country.objects.create(country_name = "Argentina")
+        Country.objects.create(country_name = "Belgium")
         
+        Match.objects.create(match_num = match_test_dict1["Argentina-Belgium"][0], country_A = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][3]), winner = match_test_dict1["Argentina-Belgium"][5], score = score_cat, location = match_test_dict1["Argentina-Belgium"][6], match_date = match_test_dict1["Argentina-Belgium"][7])
 
-        match_get = Match.objects.get(match_num = match_test_dict1[0])
-        self.assertEqual(match_get.match_num, match_test_dict1[0])
-        self.assertEqual(match_get.country_A, match_test_dict1[1])
-        self.assertEqual(match_get.country_B, match_test_dict1[3])
-        self.assertEqual(match_get.winner, match_test_dict1[5])
+        #need to create country objects and add __str__ methods assert equals
+        match_get = Match.objects.get(match_num = match_test_dict1["Argentina-Belgium"][0])
+        self.assertEqual(match_get.match_num, match_test_dict1["Argentina-Belgium"][0])
+        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Argentina-Belgium"][1])
+        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Argentina-Belgium"][3])
+        self.assertEqual(match_get.winner, match_test_dict1["Argentina-Belgium"][5])
         self.assertEqual(match_get.score, score_cat)
-        self.assertEqual(match_get.location, match_test_dict1[6])
-        self.assertEqual(match_get.match_date, match_test_dict1[7])
+        self.assertEqual(match_get.location, match_test_dict1["Argentina-Belgium"][6])
+        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Argentina-Belgium"][7])
 
     def test_match_model2(self):
         #Dictionary Key: HomeTeam vs AwayTeam
         #Dictionary Value: [Match_Number, HomeTeam, HomeTeamScore,AwayTeam, AwayTeamScore, Winner, Location, date]
         match_test_dict1 ={'Argentina-Belgium': [60, 'Argentina', 1, 'Belgium', 0, 'Argentina', 'Estadio Nacional', '2014-07-05'], 'Russia-Korea Republic': [16, 'Russia', 1, 'Korea Republic', 1, 'Draw', 'Arena Pantanal', '2014-06-17']}
+
+        Country.objects.create(country_name = "Argentina")
+        Country.objects.create(country_name = "Belgium")
+        Country.objects.create(country_name = "Russia")
+        Country.objects.create(country_name = "Korea Republic")
 
         score_cat = str(match_test_dict1["Argentina-Belgium"][2]) + "-" + str(match_test_dict1["Argentina-Belgium"][4])
         Match.objects.create(match_num = match_test_dict1["Argentina-Belgium"][0], country_A = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][3]), winner = match_test_dict1["Argentina-Belgium"][5], score = score_cat, location = match_test_dict1["Argentina-Belgium"][6], match_date = match_test_dict1["Argentina-Belgium"][7])
@@ -188,28 +216,36 @@ class ModelTestCase(TestCase):
 
         match_get = Match.objects.get(match_num = match_test_dict1["Argentina-Belgium"][0])
         self.assertEqual(match_get.match_num, match_test_dict1["Argentina-Belgium"][0])
-        self.assertEqual(match_get.country_A, match_test_dict1["Argentina-Belgium"][1])
-        self.assertEqual(match_get.country_B, match_test_dict1["Argentina-Belgium"][3])
+        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Argentina-Belgium"][1])
+        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Argentina-Belgium"][3])
         self.assertEqual(match_get.winner, match_test_dict1["Argentina-Belgium"][5])
         self.assertEqual(match_get.score, score_cat)
         self.assertEqual(match_get.location, match_test_dict1["Argentina-Belgium"][6])
-        self.assertEqual(match_get.match_date, match_test_dict1["Argentina-Belgium"][7])
+        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Argentina-Belgium"][7])
 
         match_get = Match.objects.get(match_num = match_test_dict1["Russia-Korea Republic"][0])
         self.assertEqual(match_get.match_num, match_test_dict1["Russia-Korea Republic"][0])
-        self.assertEqual(match_get.country_A, match_test_dict1["Russia-Korea Republic"][1])
-        self.assertEqual(match_get.country_B, match_test_dict1["Russia-Korea Republic"][3])
+        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Russia-Korea Republic"][1])
+        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Russia-Korea Republic"][3])
         self.assertEqual(match_get.winner, match_test_dict1["Russia-Korea Republic"][5])
         self.assertEqual(match_get.score, score_cat2)
         self.assertEqual(match_get.location, match_test_dict1["Russia-Korea Republic"][6])
-        self.assertEqual(match_get.match_date, match_test_dict1["Russia-Korea Republic"][7])
+        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Russia-Korea Republic"][7])
 
     def test_match_model3(self):
         #Dictionary Key: HomeTeam vs AwayTeam
         #Dictionary Value: [Match_Number, HomeTeam, HomeTeamScore,AwayTeam, AwayTeamScore, Winner, Location, date]
-        s = open("/u/aseal134/Software _Eng/Projects/cs373-idb/world_cup/wc_app/testing_match_data.json")
+        s = open("wc_app/testing_match_data.json")
         match_test_diction = json.load(s)
         s.close()
+
+        s = open("wc_app/testing_country_date.json")
+        country_test_dic = json.load(s)
+        s.close()
+
+        for country_name in country_test_dic.keys():
+            Country.objects.create(country_name = country_name)
+        
 
         for match_vs in match_test_diction:
             score_cat = str(match_test_diction[match_vs][2]) + "-" + str(match_test_diction[match_vs][4])
@@ -218,9 +254,16 @@ class ModelTestCase(TestCase):
         for match_vs in match_test_diction:    
             match_get = Match.objects.get(match_num = match_test_diction[match_vs][0])
             self.assertEqual(match_get.match_num, match_test_diction[match_vs][0])
-            self.assertEqual(match_get.country_A, match_test_diction[match_vs][1])
-            self.assertEqual(match_get.country_B, match_test_diction[match_vs][3])
+            self.assertEqual(match_get.country_A.country_name, match_test_diction[match_vs][1])
+            self.assertEqual(match_get.country_B.country_name, match_test_diction[match_vs][3])
             self.assertEqual(match_get.winner, match_test_diction[match_vs][5])
             self.assertEqual(match_get.score, str(match_test_diction[match_vs][2]) + "-" + str(match_test_diction[match_vs][4]))
             self.assertEqual(match_get.location, match_test_diction[match_vs][6])
-            self.assertEqual(match_get.match_date, match_test_diction[match_vs][7])
+            self.assertEqual(match_get.match_date.__str__(), match_test_diction[match_vs][7])
+
+
+
+
+
+setup_test_environment()
+#main()
