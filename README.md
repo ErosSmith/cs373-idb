@@ -35,7 +35,7 @@ Files : Path
 
 ## Test model
 > preq: setup the model mentioned above <br>
-> location: test_Model.py
+> location: test_Model.py <br>
 <code>python3 manage.py test</code>
 
 
