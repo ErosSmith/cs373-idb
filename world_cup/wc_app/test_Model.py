@@ -246,7 +246,6 @@ class ModelTestCase(TestCase):
         for country_name in country_test_dic.keys():
             Country.objects.create(country_name = country_name)
         
-
         for match_vs in match_test_diction:
             score_cat = str(match_test_diction[match_vs][2]) + "-" + str(match_test_diction[match_vs][4])
             Match.objects.create(match_num = match_test_diction[match_vs][0], country_A = Country.objects.get(country_name = match_test_diction[match_vs][1]), country_B = Country.objects.get(country_name = match_test_diction[match_vs][3]), winner = match_test_diction[match_vs][5], score = score_cat, location = match_test_diction[match_vs][6], match_date = match_test_diction[match_vs][7])
