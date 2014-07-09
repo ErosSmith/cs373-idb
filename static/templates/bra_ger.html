@@ -1,40 +1,38 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class= 'col-sm-12' style= 'text-align: center'>
-     <div class="well well-sm">
-        <h1>
+    <div class= 'col-sm-12' style= 'text-align: center'>
+        <div class="well well-sm">
+            <h1>
             Tue, Jul 8, 3:00 PM on ESPN • Semi-finals
             <br><br>
             Estádio Mineirão, Belo Horizonte
             <br><br>
-            <a href={% url "brazil" %}>Brazil</a> 0 - 7 <a href={% url "germany" %}>Germany</a>
+            <a href={% url "brazil" %}>Brazil</a> 1 - 7 <a href={% url "germany" %}>Germany</a>
             <br>
-        </h1>
-        <div class="embed-responsive embed-responsive-16by9">
-            <iframe class="embed-responsive-item" src="//player.vimeo.com/video/100265169" allowfullscreen="">
-            </iframe>
+            </h1>
+            <div class="embed-responsive embed-responsive-16by9">
+                <script src="http://player.espn.com/player.js?pcode=1kNG061cgaoolOncv54OAO1ceO-I&width=576&height=324&externalId=espn:11192511"></script>
+            </div>
         </div>
     </div>
-</div>
-
-<!-- there is an alignment issue with the wells. the small well overlaps the large
-well. the large well extends to top of page for some reason -->
-
-<!-- <div class="well well-lg"> -->
+    <br>
+    <!-- there is an alignment issue with the wells. the small well overlaps the large
+    well. the large well extends to top of page for some reason -->
+    <!-- <div class="well well-lg"> -->
+    <center>
+    <iframe width="600" height="450" frameborder="0" style="border:0"
+    
+    src="https://www.google.com/maps/embed/v1/place?q=Est%C3%A1dio%20Mineir%C3%A3o%2C%20Belo%20Horizonte%2C%20Minas%20Gerais%2C%20Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"></iframe>
     <img class="img-responsive" alt="Responsive image" style ="margin:auto;" src="http://i.imgur.com/LzCsxjq.jpg">
-<!-- </div> -->
-
+    </center>
+    <!-- </div> -->
 {% endblock %}
-
 {% block jumbotron %}
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>Brazil vs Germany!!!</h1>
-        <p>Host country loses.</p>
-      </div>
+        <div class="container">
+            <h1>Brazil vs Germany!!!</h1>
+            <p>Host country loses.</p>
+        </div>
     </div>
-
 {% endblock %}

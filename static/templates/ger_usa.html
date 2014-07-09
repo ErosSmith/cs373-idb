@@ -1,26 +1,33 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-        Full-time • Group G
-        <br><br>
-
-        Arena Pernambuco, Recife
-        <br><br>
-        United States 0 - 1  <a href={% url "germany" %}>Germany</a>
-    </h1>
-</div>
+    <div class= 'col-sm-12' style= 'text-align: center'>
+        <div class="well well-sm">
+            <h1>
+            Full-time • Group G
+            <br><br>
+            Arena Pernambuco, Recife
+            <br><br>
+            United States 0 - 1  <a href={% url "germany" %}>Germany</a>
+            </h1>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <script src="http://player.espn.com/player.js?pcode=1kNG061cgaoolOncv54OAO1ceO-I&width=576&height=324&externalId=espn:11140036"></script>
+                </div>
+                <br>
+        </div>
+        <div class = 'container'>
+            <center>
+            <iframe width="600" height="450" frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=Arena%20Pernambuco%2C%20Recife%20&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"></iframe>
+            </center>
+        </div>
+    </div>
 {% endblock %}
-
 {% block jumbotron %}
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>United States vs Germany!!</h1>
-        <p>blah blah ~~</p>
-      </div>
+        <div class="container">
+            <h1>United States vs Germany!!</h1>
+            <p>blah blah ~~</p>
+        </div>
     </div>
-
 {% endblock %}

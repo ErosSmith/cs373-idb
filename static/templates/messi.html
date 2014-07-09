@@ -1,69 +1,62 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class= 'col-sm-12' style= 'text-align: center'>
-    <h2>
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-                <ul class="nav nav-pills nav-justified">
+    <div class= 'col-sm-12' style= 'text-align: center'>
+        <h2>
+        <ul class="nav nav-tabs nav-justified" role="tablist">
+            <ul class="nav nav-pills nav-justified">
                 <li>
                     <div class="container">
-                    <center>
+                        <center>
                         <table class="table-responsive">
                             <tr>
                                 <td>Country:</td> <td>Argentina</td>
                             </tr>
-                        
-               <tr> 
-                    <td>Club:</td> <td>FC Barcelona</td>
-               </tr>
-             <tr>   
-                <td>Position:</td> <td>Forward</td>
-            </tr>
-            <tr> 
-                <td>Birthdate: 1987-06-24</td>
-            </tr>
-                </table>
-            </div>
-             </ul>
-        </ul>
-       
-                        
-    </h2> 
-</div>
-
-<div class="container">
-    <center>
-        <a class="twitter-timeline" href="https://twitter.com/LeoMessi1987" data-widget-id="486875096263307264">Tweets by @LeoMessi1987</a>
-        <script>
-            !function(d,s,id){
-                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-                if(!d.getElementById(id)){
-                    js=d.createElement(s);
-                    js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);
-                }
-            }(document,"script","twitter-wjs");
-        </script>
-    </center>
-</div>
-{% endblock %}
-
-{% block jumbotron %}
-
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-<!--         <h1>Lionel Messi</h1>
-        <p>
-            'Lionel MESSI': ['MESSI CUCCITTINI', 'Argentina', 'FC Barcelona', 'Forward', '1987-06-24'],
-        </p> -->
+                            
+                            <tr>
+                                <td>Club:</td> <td>FC Barcelona</td>
+                            </tr>
+                            <tr>
+                                <td>Position:</td> <td>Forward</td>
+                            </tr>
+                            <tr>
+                                <td>Birthdate:</td> <td> 1987-06-24</td>
+                            </tr>
+                        </table>
+                    </div>
+                </ul>
+            </ul>
+            
+            
+            </h2>
+        </div>
         <div class="container">
-
-        <center>
-        <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Lionel _Messi.png" name="aboutme" class="img-circle">
-        <h2>Lionel Messi</h2>
-        </center>
-
-      </div>
-    </div>
-
-{% endblock %}
+            <center>
+            <a class="twitter-timeline" href="https://twitter.com/LeoMessi1987" data-widget-id="486875096263307264">Tweets by @LeoMessi1987</a>
+            <script>
+            !function(d,s,id){
+            var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+            if(!d.getElementById(id)){
+            js=d.createElement(s);
+            js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);
+            }
+            }(document,"script","twitter-wjs");
+            </script>
+            </center>
+        </div>
+    {% endblock %}
+    {% block jumbotron %}
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <!--         <h1>Lionel Messi</h1>
+                <p>
+                'Lionel MESSI': ['MESSI CUCCITTINI', 'Argentina', 'FC Barcelona', 'Forward', '1987-06-24'],
+                </p> -->
+                
+                <center>
+                <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/Lionel _Messi.png" name="aboutme" class="img-circle">
+                <h2>Lionel Messi</h2>
+                </center>
+            </div>
+        </div>
+    {% endblock %}

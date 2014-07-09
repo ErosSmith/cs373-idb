@@ -1,126 +1,91 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<style type="text/css">
+    <style type="text/css">
     img.no-resize{
-        min-height: 10px;
-        min-width: 10px;
-        max-width: 100px;
-        max-height: 100px;
+    min-height: 10px;
+    min-width: 10px;
+    max-width: 100px;
+    max-height: 100px;
     }
-
     table > tbody > tr > td {
-        border: none!important;
+    border: none!important;
     }
-
     tr {
-        background-color: transparent!important;
+    background-color: transparent!important;
     }
-
     tr:hover {
-        background-color:#ddd!important;
+    background-color:#ddd!important;
     }
-
-</style>
-
-<div class= 'col-sm-12' style= 'text-align: center'>
-    <h1>
-
-<!--         <li><a href={% url "bra_ger" %}>Brazil vs Germany</a></li>
+    </style>
+    <div class= 'col-sm-12' style= 'text-align: center'>
+        <h1>
+        <!--         <li><a href={% url "bra_ger" %}>Brazil vs Germany</a></li>
         <li><a href={% url "ger_usa" %}>Germany vs USA</a></li>
         <li><a href={% url "arg_ned" %}>Argentina vs Netharlands</a></li> -->
-
- <ul class="nav nav-tabs nav-justified" role="tablist">
+        <ul class="nav nav-tabs nav-justified" role="tablist">
             <ul class="nav nav-pills nav-justified">
                 <li>
                     <div class ="table-responsive">
-                     <table class="table">
-                    <tr>
-                        <td>
-                            <a href="brazil"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/brazil.png" alt="Responsive image" class="no-resize"/></a>
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/brazil.png" alt="Responsive image" class="no-resize"/>
+                                    
+                                </td>
+                                <td>
+                                    <a href={% url "bra_ger" %}>Brazil VS Germany</a></td>
+                                </td>
+                                <td>
+                                    <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/germany.png" alt="Responsive image" class="no-resize"/>
+                                    
+                                </td>
+                            </tr>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <tr class="set-bg">
+                                <td>
+                                    <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/germany.png" alt="Responsive image" class="no-resize"/>
+                                </td>
+                                <td><a href={% url "ger_usa" %}>Germany VS USA</a></td>
+                                <td>
+                                    <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/usa.png" alt="Responsive image" class="no-resize"/>
+                                </td>
+                                
+                            </tr>
                             
-                        </td>
-                        <td>
-                            <a href={% url "brazil" %}>Brazil</a>
-                        </td>
-                        <td><a href={% url "bra_ger" %}>VS</a></td>
-
-                        <td>
-                            <a href={% url "germany" %}>Germany</a>
-                        </td>
-
-                        <td>
-                            <a href="germany"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/germany.png" alt="Responsive image" class="no-resize"/></a>
-                            
-                        </td>
-
-                    </tr> 
-
-                </li>
-            </ul>
-            <ul class="nav nav-pills nav-justified">
-                <li>
-                    <tr class="set-bg">
-                        <td>
-                            <a href="germany"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/germany.png" alt="Responsive image" class="no-resize"/></a>
-                        </td>
-                        <td>
-                            <a href={% url "germany" %}>Germany</a>
-                        </td>
-                        <td><a href={% url "ger_usa" %}>VS</a></td>
-                         <td>
-                            USA
-                        </td>
-
-                        <td>
-                            <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/usa.png" alt="Responsive image" class="no-resize"/>
-                        </td>
-                       
-
-                    </tr> 
-                   
-                </li>
-            </ul>
-            <ul class="nav nav-pills nav-justified">
-                <li>
-                    <tr>
-                        <td>
-                            <a href="argentina"><img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/argentina.png" alt="Responsive image" class="no-resize"/></a>
-                        </td>
-                        <td>
-                            <a href={% url "argentina" %}>Argentina</a>
-                        </td>
-
-                        <td><a href={% url "arg_ned" %}>VS</a></td>
-
-                            <td>
-                            Netharlands
-                            </td>
-                        
-                           <td>
-                            <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/netherlands.png" alt="Responsive image" class="no-resize"/>
-                        </td>
-
-                    </tr> 
-                    </table>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-pills nav-justified">
+                        <li>
+                            <tr>
+                                <td>
+                                    <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/argentina.png" alt="Responsive image" class="no-resize"/>
+                                </td>
+                                <td><a href={% url "arg_ned" %}>Argentina VS Netherlands</a></td>
+                                
+                                <td>
+                                    <img src= "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/netherlands.png" alt="Responsive image" class="no-resize"/>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 </li>
             </ul>
         </ul>
-
-
-
-    </h1>
-</div>
+        <!-- <iframe width="600" height="450" frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/search?q=stadiums%20in%20Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"></iframe> -->
+        <a class="twitter-timeline" href="https://twitter.com/FIFAWorldCup" data-widget-id="486941905997930496">Tweets by @FIFAWorldCup</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </h1>
+    </div>
 {% endblock %}
-
 {% block jumbotron %}
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
-      <div class="container">
-        <h1>Matches</h1>
-      </div>
+        <div class="container">
+            <h1>Matches</h1>
+        </div>
     </div>
-
 {% endblock %}
