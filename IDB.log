@@ -1,3 +1,34 @@
+commit 8a1e9efa2d7f6dfc617237f4199144eedb7980c9
+Author: pshahi92 <pshahi92@users.noreply.github.com>
+Date:   Thu Jul 10 21:50:03 2014 -0500
+
+    Update README.md
+
+commit 1fb4eb8465aa9eb430ced84408722d948d344e9a
+Merge: e1a850b 3e98d20
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Thu Jul 10 21:48:39 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit e1a850b3d06e55786c4330c8230e3d24e494520a
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Thu Jul 10 21:48:24 2014 -0500
+
+    git log
+
+commit 3e98d20e5f68e6a9abe5f2544b84f386cb14c49a
+Author: pshahi92 <pshahi92@users.noreply.github.com>
+Date:   Thu Jul 10 21:46:51 2014 -0500
+
+    Update README.md
+
+commit 588c1d393ac35abbcfecc6893e010dd3a73555cd
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Thu Jul 10 21:46:07 2014 -0500
+
+    adding tests.out
+
 commit 0d698ae9c6e23f3a91d00447ed1cb59fd47e939b
 Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
 Date:   Thu Jul 10 21:40:35 2014 -0500
