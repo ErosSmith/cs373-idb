@@ -1,0 +1,360 @@
+commit 0d698ae9c6e23f3a91d00447ed1cb59fd47e939b
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Thu Jul 10 21:40:35 2014 -0500
+
+    added tests.py
+
+commit 45270b71cef6b0b37186216f69b86d3c9cb34186
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 21:39:46 2014 -0500
+
+    added everyone's github ID
+
+commit 2691139bb511429b7f48a89bc898e63b25de18a8
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Thu Jul 10 21:37:52 2014 -0500
+
+    closes #12 closes #16 closes
+
+commit fa59b6a0eb2c7c16ab124840064094e2e192be2f
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Thu Jul 10 21:15:00 2014 -0500
+
+    generate pydoc for django models close #9 close#10 fix #20
+
+commit 83fa1ae8d8e6d5f5ac03e90c2b8339f37faeffc1
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Thu Jul 10 20:59:43 2014 -0500
+
+    added comments :)
+
+commit 384bf4eb6c0cf80c7bfe95183abdfe38a1f43507
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 20:55:44 2014 -0500
+
+    ..
+
+commit b24d84de4728cd3323d42e1dd731461391324d56
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 19:33:38 2014 -0500
+
+    uploaded some css to google drive and changed path to refer the css in google drive
+
+commit 3513836d955d3a311ac595f4606923e8cc2ead13
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 18:48:47 2014 -0500
+
+    profile pictures are added again
+
+commit ad130daef9c54db02b418f08d965dd4959576e21
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 18:37:14 2014 -0500
+
+    profile pictures are added in aboutus page
+
+commit 36f667ca9f8b6b977d77af75640a3be17956293b
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 18:18:36 2014 -0500
+
+    make map responsive and locate maps at bottom
+
+commit 1cca087da55296f6c457fa2f15295b45327fdc50
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 18:11:25 2014 -0500
+
+    testing map
+
+commit f4735442c0a7ec5a84c0547c2eff354dcac5d2bd
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 18:02:50 2014 -0500
+
+    added style to see whether the map responsive works or not
+
+commit 93924bf71d8baa0946e4a0ad9de8f2aac5f5d3ad
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 17:37:34 2014 -0500
+
+    tried fix the css file on pythonanywhere
+
+commit 63f38bba3d420f55a27478639000fa2664dd7d3b
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 17:21:44 2014 -0500
+
+    updated splash page with new bootstrap theme. close #8
+
+commit 5a0cbd892692360e90920d907c0a6e972eff0924
+Author: Jungmo Ku <suhojm@cs.utexas.edu>
+Date:   Thu Jul 10 17:20:15 2014 -0500
+
+    splash page updated
+
+commit 8ee95447b0d0fa21c575ff96d3407a752db5f60c
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Wed Jul 9 16:09:10 2014 -0500
+
+    fixed the navbar
+
+commit 19fbd01ce43ef4bdd2b9d96986636d0a6a6a7011
+Author: kimyu92 <kimyu_92@hotmail.com>
+Date:   Wed Jul 9 15:46:30 2014 -0500
+
+    add model view generated from mysql workbench resolve #44
+
+commit 01f0fa27ee42a3a8414401593d3bae380b9924fa
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:26:16 2014 -0500
+
+    Update README.md
+
+commit 79cd01d8f888fd388c94673199bec2104e2ea6e2
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:25:49 2014 -0500
+
+    Update README.md
+
+commit cb54e10ad60b642ab98ea2b382c8feb6148a200d
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:24:39 2014 -0500
+
+    Update README.md
+
+commit a1f0b5169c9f563db8e71787d8f22365fd7c30f9
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:17:00 2014 -0500
+
+    Update README.md
+
+commit 8c22cf1b3de47172db9fa8930fd983a227f979ae
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:16:11 2014 -0500
+
+    Update README.md
+
+commit 9aa6d695b20cddf40cdb4c996565b850615dac89
+Merge: 1e4d7d6 896d3c2
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Wed Jul 9 14:14:56 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit 1e4d7d604c552cb044693a794045a5e5d876ef33
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Wed Jul 9 14:14:24 2014 -0500
+
+    added tweets, maps, made more changes
+
+commit 896d3c27a89fadde568ade30945ebfe88b065b8a
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:13:16 2014 -0500
+
+    Update README.md
+
+commit 906a45dd191db3b10817a838f5298390197da4d9
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:12:28 2014 -0500
+
+    Update README.md
+
+commit 8ad9f9c7b6daaba2fa63c0d89ab7297ada9b8547
+Author: kimyu92 <kimyu92@cs.utexas.edu>
+Date:   Wed Jul 9 14:00:48 2014 -0500
+
+    Update README.md
+
+commit 8e79d8f77c434d667a807a9cbba0daaa05fc331b
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Wed Jul 9 09:12:40 2014 -0500
+
+    fixed #40 messi twitter embed
+
+commit 555b2216e62576bed3fba047d0010a28a5f1ad6d
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Wed Jul 9 09:02:04 2014 -0500
+
+    added youtube embeds
+
+commit a8b3c73547a0c21ee845c3c77abc88239c53bf26
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Tue Jul 8 23:41:18 2014 -0500
+
+    added potential bg image to matches
+
+commit dcff586948d196fe751af5f5f9865d7ac1b2a33d
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Tue Jul 8 23:09:21 2014 -0500
+
+    add twitter social feeds resolve #39
+
+commit 898c33afcf02fa1e7c2ea9f84e317a47206e4f3a
+Author: Eros Smith <eros@utexas.edu>
+Date:   Tue Jul 8 21:23:50 2014 -0500
+
+    units test verified fixes #33
+
+commit ad5c8f200fe81132cc663e9a2bef36e31ec4f8d8
+Author: Eros Smith <eros@utexas.edu>
+Date:   Tue Jul 8 21:21:16 2014 -0500
+
+    units test verified fixes #11 fixes #25 close #18
+
+commit deaeb3420f6da9d94ef48db2733417f266c39bb3
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Tue Jul 8 01:00:31 2014 -0500
+
+    Made style changes to player profile and matche static pages fixes #37 and fixes #38
+
+commit 7c36093dc697084f9f2fadf6e48880acee3649ff
+Author: Eros Smith <eros@utexas.edu>
+Date:   Mon Jul 7 23:40:12 2014 -0500
+
+    Transferring blueprint from apiary.io
+
+commit c0122794f9d8c02adf4ba815abbec261d1516ad0
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Mon Jul 7 20:57:52 2014 -0500
+
+    Imporved countries static page
+
+commit eb5691b504001707769b502b13e796f2ebd66cd3
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Mon Jul 7 19:25:03 2014 -0500
+
+    Embeded SoundCloud track in about us static page fixes #36
+
+commit 19183751b4bf701156aa48b3b6685472aa519103
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Mon Jul 7 18:38:42 2014 -0500
+
+    Updated the about us static page
+
+commit 7dbab2dad3ed02c1121d5400e7e1b3f970560c6b
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Mon Jul 7 18:03:14 2014 -0500
+
+    stylized country static pages with custom css
+
+commit 9c17690d2f395c5ab52327b986ab59ddeed5e899
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Mon Jul 7 17:26:53 2014 -0500
+
+    finished styling country pages
+
+commit d3681bfe3d05f4fde9b4f6d6c6e9a82271fb9352
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Mon Jul 7 16:21:57 2014 -0500
+
+    updated base.html reformatting
+
+commit cd962cbdd1fd98c999ee5b5cac3645d4c73c7d45
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Mon Jul 7 15:45:59 2014 -0500
+
+    Added more styling to the static Germany web page
+
+commit fc82759596854d796b668a680bf86947f3496a35
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Mon Jul 7 14:32:10 2014 -0500
+
+    The styling for the brazil static web page was changed from a list to a table fixes #34
+
+commit 2ae08336158bc46b20ecc44bedda71aa6ed7b26f
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Sun Jul 6 20:48:27 2014 -0500
+
+    made code prettier
+
+commit c285df143d917f053f964f5dd1c308a1fc817f41
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Sun Jul 6 19:56:39 2014 -0500
+
+    added nested url, close #31
+
+commit 05138d511eb9e770c9f00d307c5a8336a1e9b897
+Author: Prithvi Shahi <pshahi92@cs.utexas.edu>
+Date:   Sun Jul 6 18:54:55 2014 -0500
+
+    created 3 sets of static html pages. close #28 close #29
+
+commit e19639e5e4a02a0e5946a6874e73edcf26bd6cac
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Sun Jul 6 11:58:31 2014 -0500
+
+    added about us link to navbar
+
+commit c360096e793e19d191db55b453767d01839c2255
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Sun Jul 6 11:49:51 2014 -0500
+
+    starting static pages
+
+commit 475a40bf55681ed2b2736eb8ee0bec075d1afc39
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Sat Jul 5 09:37:58 2014 -0700
+
+    Finished making unit tests fixes #11
+
+commit 741bfd7cafc3cf60dba7181ab307fc09c97116be
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Sat Jul 5 23:57:24 2014 -0500
+
+    in progess of making units tests
+
+commit d6117644d8ec3312df2ff9e58b1aed7fecb29473
+Author: kimyu92 <kimyu_92@hotmail.com>
+Date:   Sat Jul 5 18:47:37 2014 -0500
+
+    Match model intergrity problem and data inconsistency resolve #25 resolve #26
+
+commit 42f38bfd51672a70d6cf2bf4cc5469fa72c74a9a
+Author: kimyu92 <kimyu_92@hotmail.com>
+Date:   Sat Jul 5 14:08:00 2014 -0500
+
+    collected all data and update db for players fix #5
+
+commit 078ea2c12579b5fffabbff60d89370dabb439118
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sat Jul 5 02:13:15 2014 -0500
+
+    more updates
+
+commit cb36dd5be95c89f1c6b6a644f78cae5fbe7dfc7c
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sat Jul 5 02:11:42 2014 -0500
+
+    weird stuff...not showing up
+
+commit 03df2be0f35003858500b6485f7937cb72da0521
+Author: ErosSmith <eros@utexas.edu>
+Date:   Sat Jul 5 07:02:04 2014 +0000
+
+    this is the pythonanywhere version
+
+commit d2304989ff183c0a9e51166639fb6ba025cda221
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Sat Jul 5 01:35:14 2014 -0500
+
+    Formated collected data for Country. So that it can be hooked up to the model
+
+commit 3ca5e07a347dea37d0d572228ed5373d94ab64ec
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Sat Jul 5 01:26:23 2014 -0500
+
+    Added models for the datebase fixes #4
+
+commit 5757a4a889a1edb63d7bdae5ac41170d17e4d581
+Author: Eros Smith <eros@utexas.edu>
+Date:   Thu Jul 3 21:08:14 2014 -0500
+
+    added tutorial project
+
+commit 5731a666cb7208ad0cc4c0b223ae6e21e70fb2c9
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Mon Jun 30 21:40:01 2014 -0500
+
+    Update README.md
+
+commit d7960ae23456bdb1fb77cd515ecfd701d4b171ee
+Author: aseal134 <aseal134@cs.utexas.edu>
+Date:   Mon Jun 30 17:54:18 2014 -0500
+
+    first commit
