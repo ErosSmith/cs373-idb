@@ -2,7 +2,15 @@
 ## CS373-Summer 2014
 ## Project: World Cup'14
 
-Our group: Aseal Yousuf, Eros Smith, Jeremiah Hendrix Martinez, Jungmo Ku, Kim Yu Ng, Prithvi Shahi
+Our group: CSID
+Aseal Yousuf aseal134
+Eros Smith eros
+Jeremiah Hendrix Martinez jeremiah 
+Jungmo Ku suhojm
+Kim Yu Ng kn6254 
+Prithvi Shahi pshahi92
+
+
 
 Project Site (PythonAnywhere)
 Site:
@@ -13,10 +21,10 @@ Site:
 Files : Path
 > 1. *.py        /src/mv_landing
 > 2. apiary.apib /
-> 3. models.html /world_cup/wc_app
-> 4. Report.pdf  /world_cup/
-> 5. tests.out
-> 6. tests.py
+> 3. models.html /
+> 4. Report.pdf  /
+> 5. tests.out /
+> 6. tests.py /world_cup/wc_app/
 
 
 ## Usage for model:
