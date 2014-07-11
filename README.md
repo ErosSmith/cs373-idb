@@ -2,14 +2,13 @@
 ## CS373-Summer 2014
 ## Project: World Cup'14
 
-Our group: CSID
-Aseal Yousuf aseal134
-Eros Smith eros
-Jeremiah Hendrix Martinez jeremiah 
-Jungmo Ku suhojm
-Kim Yu Ng kimyu92 
-Prithvi Shahi pshahi92
-
+Our group: CSID <br>
+Aseal Yousuf aseal134 <br>
+Eros Smith eros <br>
+Jeremiah Hendrix Martinez jeremiah <br>
+Jungmo Ku suhojm <br>
+Kim Yu Ng kimyu92 <br>
+Prithvi Shahi pshahi92 <br>
 
 
 Project Site (PythonAnywhere)
