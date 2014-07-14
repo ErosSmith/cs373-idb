@@ -10,7 +10,11 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir) 
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,6 +32,16 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = ( 
+    'django.contrib.messages.context_processors.messages', 
+    'django.contrib.auth.context_processors.auth', 
+    'django.core.context_processors.csrf', 
+)
 
 INSTALLED_APPS = (
     'django.contrib.admin',
