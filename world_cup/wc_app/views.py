@@ -25,9 +25,11 @@ def country(request, id):
     country = Country.objects.get(pk=id)
     print(country.country_name)
     country_dict = {
-    	'title': country.country_name,
-        'items': country,
+    	'country': country.country_name,
+        'rank': country.rank,
     }
+
+    # print(country_dict['title'])
 
     return render_to_response('country.html', country_dict, context)
     # except:
