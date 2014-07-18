@@ -12,22 +12,13 @@
 		<div class="container">
 			<div class ="table-responsive">
         		<table class="table">
+				{% for match in matches %}
 					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ country }}</td>
-						<td class="text-center list-td" style="border-top:none">{{ rank }}</a></td>
+						<td class="text-center list-td" style="border-top:none"><a href="/matches/{{ match.match_num }}">{{ match.country_A.country_name}} vs {{match.country_B.country_name }}</a></td>
 					</tr>
-				</table>
 
-				<table class = "table">
-					{% for play in players %}
-						<tr>
-						<td>	
-							<a href="/player/{{ play.id }}">{{ play.full_name }}</a>
-						</td>
-						</tr>
-					{% endfor %}
+				{% endfor %}
 				</table>
-
 			</div>
 		</div>
 
