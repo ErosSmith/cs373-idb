@@ -1,11 +1,9 @@
 from django.db import models
 
 
-
     # -------------
     # Country_model
     # -------------
-
 
 class Country(models.Model):
     """
@@ -16,6 +14,9 @@ class Country(models.Model):
     country_name = models.CharField(max_length=200)
     country_code = models.CharField(max_length=20)
     rank = models.IntegerField(default=0)
+    flag = models.CharField(max_length=500)
+    symbol_flag = models.CharField(max_length=500)
+    map_url = models.CharField(max_length=500)
 
     def __str__ (self):
         return self.country_name
@@ -37,7 +38,10 @@ class Player(models.Model):
     full_name = models.CharField(max_length=200)
     clubname = models.CharField(max_length=200)
     position = models.CharField(max_length=64)
+    shirt_number = models.IntegerField(default=0)
     birth_date = models.DateField()
+    player_image = models.CharField(max_length=500)
+
 
     def __str__ (self):
         return self.full_name
@@ -61,6 +65,10 @@ class Match(models.Model):
     score = models.CharField(max_length=64)
     location = models.CharField(max_length=200)
     match_date = models.DateField()
+    merge_flag = models.CharField(max_length=500)
+    versus_flag = models.CharField(max_length=500)
+    map_location = models.CharField(max_length=500)
+    highlight_url = models.CharField(max_length=500)
 
     def __str__ (self):
         return self.country_A.country_name + " " + self.country_B.country_name + " " + self.score
