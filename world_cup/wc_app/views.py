@@ -81,3 +81,7 @@ def match(request,num):
 
 
     return render_to_response('match.html',match_dic,context)
+
+def test(request):
+    context = RequestContext(request)
+    return render_to_response('test.html',context)

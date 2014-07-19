@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^countries/$', views.countries, name='countries'),
     url(r'^matches/$', views.matches, name='matches'),
     url(r'^matches/(\d+)/$', views.match, name='match'),
+    url(r'^test/$', views.test, name='test'),
 )
