@@ -3,24 +3,34 @@
 	<head>
     	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
     	<script src="/static/js/bootstrap.min.js"></script>-->
-    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+    	<link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/calender.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">  
     	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 	</head>
-	<body>
-		<div class="container">
-			<div class ="table-responsive">
-        		<table class="table">
-				{% for match in matches %}
-					<tr>
-						<td class="text-center list-td" style="border-top:none"><a href="/matches/{{ match.match_num }}">{{ match.country_A.country_name}} vs {{match.country_B.country_name }}</a></td>
-					</tr>
 
-				{% endfor %}
-				</table>
-			</div>
+<div class="container">
+	<div class="row">
+		<div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]">
+				<ul class="event-list">
+					{% for v in "iterdd" %}
+					<li>
+						<img alt="Independence Day" src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/brazilvmexico.jpg" />
+
+						<div class="info">
+							<h2 class="title">BRAZIL VS MEXICO</h2>
+							<p class="desc">United States Holiday</p>
+						</div>
+						<div class="social">
+							<ul>
+								<li class="facebook" style="width:33%;"><a href="#facebook"><span class="fa fa-facebook"></span></a></li>
+								<li class="twitter" style="width:34%;"><a href="#twitter"><span class="fa fa-twitter"></span></a></li>
+								<li class="google-plus" style="width:33%;"><a href="#google-plus"><span class="fa fa-google-plus"></span></a></li>
+							</ul>
+						</div>
+					</li>
+					{% endfor %}
+			</ul>
 		</div>
-
-	</body>
-</html>
+	</div>
+</div>
