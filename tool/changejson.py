@@ -67,10 +67,21 @@ def load_player_info(dic):
 		else:
 			position = "Forward"
 
+		teamNameURL =""
+			
+		if(outer_item["teamname"] == "Bosnia and Herzegovina"):
+			teamNameURL = "BosniaandHerzegovina"
+		elif(outer_item["teamname"] == "Ivory Coast"):
+			teamNameURL = "IvoryCoast"
+		else:
+			teamNameURL = outer_item["teamname"]
 
+		player_image = "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/" + teamNameURL +"/" + outer_item["webname"].replace(" ","_")	
 		full_name = change_to_lower_case(outer_item["webname"])
-		surname = change_to_lower_case(outer_item["surname"]) 	
-		player_dic[full_name] = [surname, outer_item["teamname"], outer_item["clubname"], position, outer_item["birthdate"][0:10]]
+		surname = change_to_lower_case(outer_item["surname"])
+
+
+		player_dic[full_name] = [surname,outer_item["teamname"], outer_item["clubname"], position, outer_item["birthdate"][0:10],outer_item["bibnum"],player_image]
 		count+=1
 
 	#print("dic size: "+ str(count) +str(len(player_dic.keys())))
@@ -153,9 +164,29 @@ def run_prog():
 
 	print("{", end=" ")
 	for player in player_dic:
-		print('"' + player + '" :' + str(player_dic[player]) + ',', end=" ")
+		print('"' + str(player) + '" :', end = " ") 
+		count = 0
+		print("[", end=" ")
+
+		for items in player_dic[player]:
+
+			if(isinstance( items, int )):
+				print(items, end =", ")
+			elif(count == 6):
+				print('"' + str(items) + '"', end = " ")
+			else:
+				print('"' + str(items) + '",', end = " ")
+			count+=1
+
+		print("]", end=" ")
+
+		print(',', end=" ")
+
+	#print(',', end=" ")
 
 	print("}", end=" ")
+
+	print(len(player_dic.keys()))
 
 run_prog()
 
