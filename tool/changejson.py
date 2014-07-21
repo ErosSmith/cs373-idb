@@ -8,6 +8,11 @@ def load_json():
 	dic = json.load(s)
 	return dic
 
+def load_hightlights():
+	s = open("highlights.json")
+	dic = json.load(s)
+	return dic
+
 def load_matche_date():
 	s = open("all_matches_data.json")
 	match_data_dic = json.load(s)
@@ -112,8 +117,12 @@ def load_player_info(dic):
 def load_match_info(match_data_dic):
 	match_dic = {}
 	count = 0
+	highlights_dic = load_hightlights()
+
 	for outer_item in match_data_dic:
 
+		map_url = "https://www.google.com/maps/embed/v1/place?q=" + outer_item["location"] + "+Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"
+		merge_flag = "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_symbol/" 
 		#add to dic if it finds 
 		if(outer_item["status"] == "completed"):
 			if(outer_item["home_team"]["code"] in country_codes):
@@ -124,11 +133,10 @@ def load_match_info(match_data_dic):
 				outer_item["away_team"]["goals"], 
 				outer_item["winner"], 
 				outer_item["location"], 
-				outer_item["datetime"][0:10]]
-			else:
-				assert(1 == 0)
-	
-	print(match_dic)
+				outer_item["datetime"][0:10], 
+				merge_flag + outer_item["home_team"]["code"].lower() +"_" + outer_item["away_team"]["code"].lower() ,
+				map_url, highlights_dic[str(outer_item["match_number"])]]
+
 	return match_dic
 
 # def make_dic_for_model(country_dic):
@@ -156,23 +164,23 @@ def change_to_lower_case(name):
 
 #pre process 1st two steps
 def run_prog():
-	dic = load_json()
+	#dic = load_json()
 	#country_dic = load_country_rank_code(dic)
-	player_dic = load_player_info(dic)
-	#match_data_dic = load_matche_date()
-	#load_match_info(match_data_dic)
+	#player_dic = load_player_info(dic)
+	match_data_dic = load_matche_date()
+	collected_match_data = load_match_info(match_data_dic)
 
 	print("{", end=" ")
-	for player in player_dic:
+	for player in collected_match_data:
 		print('"' + str(player) + '" :', end = " ") 
 		count = 0
 		print("[", end=" ")
 
-		for items in player_dic[player]:
+		for items in collected_match_data[player]:
 
 			if(isinstance( items, int )):
 				print(items, end =", ")
-			elif(count == 6):
+			elif(count == 10):
 				print('"' + str(items) + '"', end = " ")
 			else:
 				print('"' + str(items) + '",', end = " ")
@@ -185,8 +193,6 @@ def run_prog():
 	#print(',', end=" ")
 
 	print("}", end=" ")
-
-	print(len(player_dic.keys()))
 
 run_prog()
 
