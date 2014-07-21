@@ -81,7 +81,7 @@ def load_player_info(dic):
 		else:
 			teamNameURL = outer_item["teamname"]
 
-		player_image = "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/" + teamNameURL +"/" + outer_item["webname"].replace(" ","_")	
+		player_image = "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/" + teamNameURL +"/" + outer_item["webname"].replace(" ","_")	+ ".png"
 		full_name = change_to_lower_case(outer_item["webname"])
 		surname = change_to_lower_case(outer_item["surname"])
 
@@ -134,7 +134,7 @@ def load_match_info(match_data_dic):
 				outer_item["winner"], 
 				outer_item["location"], 
 				outer_item["datetime"][0:10], 
-				merge_flag + outer_item["home_team"]["code"].lower() +"_" + outer_item["away_team"]["code"].lower() ,
+				merge_flag + outer_item["home_team"]["code"].lower() +"_" + outer_item["away_team"]["code"].lower()+".jpg" ,
 				map_url, highlights_dic[str(outer_item["match_number"])]]
 
 	return match_dic
@@ -164,23 +164,23 @@ def change_to_lower_case(name):
 
 #pre process 1st two steps
 def run_prog():
-	#dic = load_json()
+	dic = load_json()
 	#country_dic = load_country_rank_code(dic)
-	#player_dic = load_player_info(dic)
-	match_data_dic = load_matche_date()
-	collected_match_data = load_match_info(match_data_dic)
+	player_dic = load_player_info(dic)
+	#match_data_dic = load_matche_date()
+	#collected_match_data = load_match_info(match_data_dic)
 
 	print("{", end=" ")
-	for player in collected_match_data:
+	for player in player_dic:
 		print('"' + str(player) + '" :', end = " ") 
 		count = 0
 		print("[", end=" ")
 
-		for items in collected_match_data[player]:
+		for items in player_dic[player]:
 
 			if(isinstance( items, int )):
 				print(items, end =", ")
-			elif(count == 10):
+			elif(count == 6):
 				print('"' + str(items) + '"', end = " ")
 			else:
 				print('"' + str(items) + '",', end = " ")

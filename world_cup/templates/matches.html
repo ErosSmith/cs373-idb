@@ -92,11 +92,13 @@
 					{% for match in matches %}
 					
           <li>
-						<img alt="Independence Day" src="{{match.merge_flag}}.jpg" />
+						<img alt="Independence Day" src="{{match.merge_flag}}" />
 
 						<div class="info">
-							<h2 class="title">{{match.country_A}} VS {{match.country_B}}</h2>
-							<p class="desc">hahaha</p>
+							<h3 class="title">{{match.country_A}} VS {{match.country_B}}</h3>
+							<p class="desc">Score: {{match.score}}</p>
+							<p class="desc">Winner: {{match.winner}}</p>
+							<p class="desc">Location: {{match.location}}</p>
 						</div>
 						<div class="social">
 							<ul>

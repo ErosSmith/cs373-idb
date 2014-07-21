@@ -1,5 +1,6 @@
     @import url("http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,400italic");
     @import url("//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+    
     body {
 		padding: 60px 0px;
 		/*background-color: rgb(220, 220, 220);*/
@@ -10,6 +11,7 @@
 		font-family: 'Lato', sans-serif;
 		margin: 0px;
 		padding: 0px;
+		max-width: 500px!important
 	}
 	.event-list > li {
 		background-color: rgb(255, 255, 255);

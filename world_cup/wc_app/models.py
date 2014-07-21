@@ -66,7 +66,6 @@ class Match(models.Model):
     location = models.CharField(max_length=200)
     match_date = models.DateField()
     merge_flag = models.CharField(max_length=500)
-    versus_flag = models.CharField(max_length=500)
     map_location = models.CharField(max_length=500)
     highlight_url = models.CharField(max_length=500)
 

@@ -77,6 +77,9 @@ def match(request,num):
         "location"   : match.location,
         "match_date" : match.match_date,
         "match_num"  : match.match_num,
+        "merge_flag" : match.merge_flag,
+        "map_location" : match.map_location,
+        "highlight_url" : match.highlight_url
     }
 
 
