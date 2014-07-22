@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     #this one is a for a specfic country
     url(r'^countries/(\d+)/$', views.country, name='country'), 
     url(r'^players/$', views.players, name='players'),
-    url(r'^player/(\d+)/$', views.player, name='player'),
+    url(r'^players/(\d+)/$', views.player, name='player'),
     url(r'^matches/$', views.matches, name='matches'),
     url(r'^matches/(\d+)/$', views.match, name='match'),
     url(r'^test/$', views.test, name='test'),
