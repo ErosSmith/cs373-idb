@@ -1,6 +1,15 @@
-CREATE USER 'eros'@'localhost' IDENTIFIED BY '123456';
-CREATE DATABASE testing_db2;
-GRANT ALL ON testing_db2.* TO 'eros'@'localhost';
+open terminal
+execute: mysql -u root -p
+enter password
 
+enter this commands and hit enter:
 
 CREATE USER 'kimyu92'@'localhost' IDENTIFIED BY '123456';CREATE DATABASE testing_db5;GRANT ALL ON testing_db5.* TO 'kimyu92'@'localhost';
+
+python3 manage.py syncdb
+
+run scripts to load data
+
+python3 manage.py shell < country_insert_script.py 
+python3 manage.py shell < player_insert_script.py 
+python3 manage.py shell < match_insert_script.py 
