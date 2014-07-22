@@ -38,12 +38,14 @@ def country(request, id):
     f = players.filter(position=pos_list[3]).order_by('shirt_number')
 
     ordered_players = list(chain(g,d,m,f))
-    
+
     # print(type(players))
     country_dict = {
     	'country': country.country_name,
         'rank': country.rank,
-        "players" : ordered_players
+        "players" : ordered_players,
+        "mapurl" : country.map_url,
+        'flagurl' : country.flag,
     }
 
     # print(country_dict['title'])
