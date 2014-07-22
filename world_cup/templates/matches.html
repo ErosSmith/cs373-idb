@@ -22,6 +22,7 @@
 
     <!-- calender stuff -->
     <link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/calender.css">
+    <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination.js"></script>
 	    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
     <style type="text/css"></style>
     <style type="text/css"></style>
@@ -85,17 +86,18 @@
 <body>
 <div class="container">
     	<!-- <center> -->
-	  <div class="row">
+	  <div >
       <center>
 		<!-- <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]"> -->
-				<ul class="event-list">
+		<div id="myTable" >
+				<ul class="event-list" id="andrew_was_here">
 					{% for match in matches %}
 					
-          <li>
+          <li id="match_{{match.match_num}}">
 						<img alt="Independence Day" src="{{match.merge_flag}}" />
 
 						<div class="info">
-							<h3 class="title">{{match.country_A}} VS {{match.country_B}}</h3>
+							<h4 class="title">{{match.country_A}} VS {{match.country_B}}</h4>
 							<p class="desc">Score: {{match.score}}</p>
 							<p class="desc">Winner: {{match.winner}}</p>
 							<p class="desc">Location: {{match.location}}</p>
@@ -110,6 +112,7 @@
 					</li>
 					{% endfor %}
 			</ul>
+		</div>
     </center> 
 		<!-- </div> -->
 	</div>
