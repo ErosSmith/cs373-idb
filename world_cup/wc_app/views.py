@@ -40,6 +40,17 @@ def country(request, id):
     # except:
     #     print("Error 404")
 
+
+def players(request):
+    context = RequestContext(request)
+    players = Player.objects.all().order_by('country', 'shirt_number')
+    players_dict = {
+        'title' : 'Players',
+        'items': players,
+    }
+    return render_to_response ('players.html', players_dict, context)
+
+
 def player(request,id):
     context = RequestContext(request)
 

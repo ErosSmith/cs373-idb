@@ -12,9 +12,14 @@ urlpatterns = patterns('',
 
     url(r'^$', views.home, name='home'),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^countries/(\d+)/$', views.country, name='country'),
-    url(r'^player/(\d+)/$', views.player, name='player'),
+
+
+    #this is the parent countries url
     url(r'^countries/$', views.countries, name='countries'),
+    #this one is a for a specfic country
+    url(r'^countries/(\d+)/$', views.country, name='country'), 
+    url(r'^players/$', views.players, name='players'),
+    url(r'^player/(\d+)/$', views.player, name='player'),
     url(r'^matches/$', views.matches, name='matches'),
     url(r'^matches/(\d+)/$', views.match, name='match'),
     url(r'^test/$', views.test, name='test'),
