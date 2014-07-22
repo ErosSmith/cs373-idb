@@ -5,6 +5,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from wc_app.models import *
 # Create your views here.
 from django.http import HttpResponse
+from itertools import chain
 
 def home(request):
     context = RequestContext(request)
@@ -13,7 +14,7 @@ def home(request):
 def countries(request):
 	context = RequestContext(request)
 
-	countries = Country.objects.all()
+	countries = Country.objects.all().order_by('country_name')
 	context_dict = {
 		'title': 'Countries',
 		'items': countries,
@@ -26,12 +27,23 @@ def country(request, id):
 
     # try:
     country = Country.objects.get(pk=id)
-    player = Player.objects.all().filter(country = country)
-    print(country.country_name)
+
+    #make the list so that it sort based on specific position they played
+    pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
+    # player = Player.objects.all().filter(country = country).order_by('position')
+    players = Player.objects.all().filter(country = country)
+    g = players.filter(position=pos_list[0]).order_by('shirt_number')
+    d = players.filter(position=pos_list[1]).order_by('shirt_number')
+    m = players.filter(position=pos_list[2]).order_by('shirt_number')
+    f = players.filter(position=pos_list[3]).order_by('shirt_number')
+
+    ordered_players = list(chain(g,d,m,f))
+    
+    # print(type(players))
     country_dict = {
     	'country': country.country_name,
         'rank': country.rank,
-        "players" : player
+        "players" : ordered_players
     }
 
     # print(country_dict['title'])
@@ -43,7 +55,7 @@ def country(request, id):
 
 def players(request):
     context = RequestContext(request)
-    players = Player.objects.all().order_by('country', 'shirt_number')
+    players = Player.objects.all().order_by('country__country_name', 'shirt_number')
     players_dict = {
         'title' : 'Players',
         'items': players,

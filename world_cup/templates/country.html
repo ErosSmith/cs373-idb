@@ -20,16 +20,32 @@
 
    <iframe width="80%" height="450" frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?q=Arena da Baixada+Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"></iframe>
-				<table class = "table">
-					{% for play in players %}
-						<tr>
-						<td>	
-							<a href="/player/{{ play.id }}">{{ play.full_name }}</a>
-						</td>
-						</tr>
-					{% endfor %}
-				</table>
-
+				<div class ="table-responsive">
+        			<table class="table table-hover">
+        				<thead>
+        					<tr>
+        						<th class="text-center list-td col-xs-6 col-md-4">Player Shirt-Number</th>
+	        					<th class="text-center list-td col-xs-6 col-md-4">Name</th>
+	        					<th class="text-center list-td col-xs-6 col-md-4">Country</th>
+	        				</tr>
+	        			<thead>
+	        			<tbody>
+						{% for play in players %}
+							<tr>
+								<td class="text-center col-xs-6 col-md-4">	
+									<a href="/player/{{ play.id }}">{{ play.shirt_number }}</a>
+								</td>
+								<td class="text-center col-xs-6 col-md-4">	
+									<a href="/player/{{ play.id }}">{{ play.position }}</a>
+								</td>
+								<td class="text-center col-xs-6 col-md-4">	
+									<a href="/player/{{ play.id }}">{{ play.full_name }}</a>
+								</td>
+							</tr>
+						{% endfor %}
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 
