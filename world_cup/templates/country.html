@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" js no-touch">
+
 	<head>
     	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
     	<script src="/static/js/bootstrap.min.js"></script>-->
@@ -8,22 +9,37 @@
     	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	</head>
+	{% include 'sidebar.html' %}
 	<body>
+		<br />
+		<br />
+		<br />
+		<br />
 		<div class="container">
 			<div class ="table-responsive">
         		<table class="table">
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ country }}</td>
-						<td class="text-center list-td" style="border-top:none">{{ rank }}</a></td>
+					<tr bgcolor = "#B0C4DE">
+        				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
+    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Flag</b></h4></center></th></td>
+    					<td width = "40%"class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Country Name</b></h4></center></th></td>
+    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Rank</b></h4></center></th></td>
+    					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
+    				</tr>
+    				<tr bgcolor = "#DCDCDC">
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+						<center><img width="150" height="100" src="{{ flagurl }}" class="imageClip thumbnail" alt="Responsive image"></center>
+						</td>
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none"><font size = "6"><center>{{ country }}</center></font></td>
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none"><font size = "6"><center>{{ rank }}</center></font></td>
 					</tr>
 				</table>
 
-   <iframe width="80%" height="450" frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?q=Arena da Baixada+Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"></iframe>
+  
 				<div class ="table-responsive">
         			<table class="table table-hover">
         				<thead>
-        					<tr>
+        					<br />
+        					<tr bgcolor = "#B0C4DE">
         						<th class="text-center list-td col-xs-6 col-md-4">Player Shirt-Number</th>
 	        					<th class="text-center list-td col-xs-6 col-md-4">Position</th>
 	        					<th class="text-center list-td col-xs-6 col-md-4">Name</th>
@@ -31,7 +47,7 @@
 	        			<thead>
 	        			<tbody>
 						{% for play in players %}
-							<tr>
+							<tr bgcolor = "#DCDCDC">
 								<td class="text-center col-xs-6 col-md-4">	
 									<a href="/player/{{ play.id }}">{{ play.shirt_number }}</a>
 								</td>
@@ -46,6 +62,9 @@
 						</tbody>
 					</table>
 				</div>
+				<center><iframe width="60%" height="400" frameborder="0" style="border:0"
+			  	src="{{mapurl}}"></iframe></center>
+ 				<center>
 			</div>
 		</div>
 

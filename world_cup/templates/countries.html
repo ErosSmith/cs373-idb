@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" js no-touch">
 	<head>
     	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
     	<script src="/static/js/bootstrap.min.js"></script>-->
@@ -10,28 +10,35 @@
     	<script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination.js"></script>
 
 	</head>
+	{% include 'sidebar.html' %}
 	<body>
+		<br />
+		<br />
+		<br />
+		<br />
 		<div class="container">
 			<div class ="table-responsive">
         		<table class="table table-hover">
         			<thead>
-        				<tr>
-        					<th class="text-center list-td col-xs-6 col-md-4">Flag</th>
-        					<th class="text-center list-td col-xs-6 col-md-4">Country Name</th>
-        					<th class="text-center list-td col-xs-6 col-md-4">Rank</th>
+        				<tr bgcolor = "#B0C4DE">
+        					<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
+        					<td class="text-center list-td col-xs-6 col-md-4"><h4>Flag</h4></th></td>
+        					<td class="text-center list-td col-xs-6 col-md-4"><h4>Country Name</h4></th></td>
+        					<td class="text-center list-td col-xs-6 col-md-4"><h4>Rank</h4></th></td>
+        					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
         				</tr>
         			<thead>
         				<tbody id="myTable">
 							{% for item in items %}
-								<tr>
+								<tr bgcolor = "#DCDCDC">
 									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<center><img src="{{ item.symbol_flag }}" class="imageClip thumbnail" alt="Responsive image"></center>
+										<center><a href="/countries/{{ item.id }}"><img src="{{ item.symbol_flag }}" class="imageClip thumbnail" alt="Responsive image"></a></center>
 									</td>
 									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<a href="/countries/{{ item.id }}">{{ item.country_name }}</a>
+										<a href="/countries/{{ item.id }}"><font size ="5">{{ item.country_name }}</font></a>
 									</td>
 									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<a href="/countries/{{ item.id }}">{{ item.rank }}</a>
+										<a href="/countries/{{ item.id }}"><font size ="5">{{ item.rank }}</font></a>
 									</td>
 								</tr>
 							{% endfor %}
