@@ -11,7 +11,7 @@
     <meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website">
     <meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu">
     <meta name="author" content="Codrops">
-    <link rel="shortcut icon" href="http://tympanus.net/Tutorials/favicon.ico">
+    <link rel="shortcut icon" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/StyleNavBar/favicon2.ico">
     <link rel="stylesheet" type="text/css" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/StyleNavBar/normalize.css">
     <link rel="stylesheet" type="text/css" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/StyleNavBar/demo.css">
     <link rel="stylesheet" type="text/css" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/StyleNavBar/component.css">
@@ -19,13 +19,17 @@
     <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/StyleNavBar/modernizr.custom.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <!-- carousel bootstrp -->
-    <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/carousel2.css" rel="stylesheet">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/bootstrap.css" rel="stylesheet"> -->
-    <!-- carousel bootstrp -->
+  <!-- Nivo stufff -->
+<link rel='stylesheet' id='nivoslider-css'  href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/nivo-slider.css" type='text/css' media='all' />
 
+<!-- this one has a color problem -->
+<link rel='stylesheet' id='twentytwelve-style-css'  href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/style.css" type='text/css' media='all' />
+
+<script type='text/javascript' src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/jquery.js"></script>
+
+<link rel="stylesheet" type="text/css" media="screen" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/custom.css" />
+
+<!-- Nivo stufff -->
 
     <style type="text/css"></style>
     <style type="text/css"></style>
@@ -74,49 +78,65 @@
 
       </ul>
       <!-- <header> -->
-<!-- Carousel addddd -->
-<div class= "container">
-<div class="carousel slide" id="myCarousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li class= "active" data-slide-to="0" data-target="#myCarousel"></li>
-    <li data-slide-to="1" data-target="#myCarousel"></li>
-    <li data-slide-to="2" data-target="#myCarousel"></li>
-  </ol>
+<!-- addd nivo here -->
 
-  <!-- Wrapper for the sliders -->
-  <div class="carousel-inner">
-    <!-- Slide 1 -->
-    <div class="item active" id="slide1">
-      <!-- you can add html image here -->
-        <div class="carousel-caption">
-          <h4>Germany Wins the 2014 World Cup</h4>
-          <p>See Highlights</p>
-        </div>
-    </div>
 
-    <!-- Slider 2 -->
-    <div class="item" id="slide2">
-        <div class="carousel-caption">
-          <h4>Brazil Loses Against Germany  1-7</h4>
-          <p>See Highlights</p>
-        </div>
-    </div>
+<body class="home page page-id-10 page-template page-template-page-templatesfull-width-php custom-background full-width custom-font-enabled single-author">
+<div id="page" class="hfeed site">
 
-    <div class="item" id="slide3">
-        <div class="carousel-caption">
-          <h4>Neymar Jr Injured</h4>
-          <p>Read Article</p>
-        </div>
-    </div>
-  </div> <!-- end of inner carousel -->
 
-<!-- Controls for the carousel -->
-  <a class="left carousel-control" data-slide="prev" href="#myCarousel"><span class="fa fa-chevron-circle-left"></span></a>
-  <a class="right carousel-control" data-slide="next" href="#myCarousel"><span class="fa fa-chevron-circle-right"></span></a>
-</div> <!-- end of the carousel -->
-</div>
-<!-- Carousel addddd -->
+    <!-- <div id="main" class="wrapper"> -->
+    <!-- <div id="primary" class="site-content"> -->
+        <!-- <div id="content" role="main"> -->
+
+        <!-- <div class="entry-content"> -->
+            <div class="slider-wrapper theme-default">
+                <!-- <div class="ribbon"></div> -->
+                <div id="nivoslider-4" class="nivoSlider">
+                    <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/germanyWinsWorldCup.jpg" alt="" />
+                    <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/marioGoWinningGoal.jpg" alt="" />
+                    <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/brazilLose1_7.jpg" alt="" />
+                    <img src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/neymarInjury2.jpg" alt="" />
+                </div>
+            </div>
+
+    <script type="text/javascript">
+
+        jQuery(window).load(function(){
+            jQuery("#nivoslider-4").nivoSlider({
+                effect:"random",
+                slices:15,
+                boxCols:8,
+                boxRows:4,
+                animSpeed:500,
+                pauseTime:3000,
+                startSlide:0,
+                directionNav:true,
+                controlNav:true,
+                controlNavThumbs:false,
+                pauseOnHover:true,
+                manualAdvance:false
+            });
+        });
+    </script>
+
+                    <!-- </div> -->
+                    <!-- .entry-content -->
+                   
+        <!-- </div> -->
+        <!-- #content -->
+    <!-- </div> -->
+    <!-- #primary -->
+
+    <!-- </div> -->
+    <!-- #main .wrapper -->
+
+
+</div><!-- #page -->
+</body>
+
+
+<!-- addd nivo here -->
 <!-- </header> -->
 
     </div><!-- /container -->
@@ -128,5 +148,17 @@
       new gnMenu( document.getElementById( 'gn-menu' ) );
     </script>
   
+
+    <!-- NIvo stuuf -->
+
+  <script type='text/javascript' src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/jquery.nivo.slider.pack.js"></script>
+
+
+<link rel='stylesheet' id='nivoslider-theme-default-css'  href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/slider/default.css" type='text/css' media='all' />    
+
+    <!-- NIvo stuuf -->
+
+
+
 </body>
 </html>
