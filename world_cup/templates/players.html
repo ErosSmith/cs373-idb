@@ -10,29 +10,38 @@
     	<script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination_players.js"></script>
 
 	</head>
+		{% include 'sidebar.html' %}
 	<body>
+		<br />
+		<br />
+		<br />
+		<br />
 		<div class="container">
 			<div class ="table-responsive">
         		<table class="table table-hover">
         			<thead>
         				<tr>
-        					<th class="text-center list-td col-xs-6 col-md-4">Player Shirt-Number</th>
-        					<th class="text-center list-td col-xs-6 col-md-4">Name</th>
-        					<th class="text-center list-td col-xs-6 col-md-4">Country</th>
+        					<tr bgcolor = "#B0C4DE">
+	        					<th class="text-center list-td col-xs-6 col-md-4">Player Shirt-Number</th>
+	        					<th class="text-center list-td col-xs-6 col-md-4">Name</th>
+	        					<th class="text-center list-td col-xs-6 col-md-4">Country</th>
+        					</tr>
         				</tr>
         			<thead>
         				<tbody id="myTable">
 							{% for item in items %}
 								<tr>
-									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<p> {{item.shirt_number}} </p>
-									</td>
-									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<a href="/players/{{ item.id }}">{{ item.full_name }}</a>
-									</td>
-									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<a href="/countries/{{ item.country.id }}">{{ item.country.country_name }}</a>
-									</td>
+									<tr bgcolor = "#DCDCDC">
+										<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+											<p> {{item.shirt_number}} </p>
+										</td>
+										<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+											<a href="/players/{{ item.id }}">{{ item.full_name }}</a>
+										</td>
+										<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+											<a href="/countries/{{ item.country.id }}">{{ item.country.country_name }}</a>
+										</td>
+									</tr>
 								</tr>
 							{% endfor %}
 					</tbody>
