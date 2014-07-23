@@ -46,16 +46,16 @@
 	        				</tr>
 	        			<thead>
 	        			<tbody>
-						{% for play in players %}
+						{% for x, y in wow_urls %}
 							<tr bgcolor = "#DCDCDC">
 								<td class="text-center col-xs-6 col-md-4">	
-									<a href="/player/{{ play.id }}">{{ play.shirt_number }}</a>
+									<a href="/players/{{ y }}">{{ x.shirt_number }}</a>
 								</td>
 								<td class="text-center col-xs-6 col-md-4">	
-									<a href="/player/{{ play.id }}">{{ play.position }}</a>
+									{{ x.position }}
 								</td>
 								<td class="text-center col-xs-6 col-md-4">	
-									<a href="/player/{{ play.id }}">{{ play.full_name }}</a>
+									<a href="/players/{{ y }}">{{ x.full_name }}</a>
 								</td>
 							</tr>
 						{% endfor %}

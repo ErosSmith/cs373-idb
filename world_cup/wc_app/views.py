@@ -39,7 +39,8 @@ def country(request, c_name):
     f = players.filter(position=pos_list[3]).order_by('shirt_number')
 
     ordered_players = list(chain(g,d,m,f))
-
+    l = [(x.full_name).replace(' ', '_') for x in ordered_players]
+    z = zip(ordered_players, l)
     # print(type(players))
     country_dict = {
     	'country': country.country_name,
@@ -47,6 +48,7 @@ def country(request, c_name):
         "players" : ordered_players,
         "mapurl" : country.map_url,
         'flagurl' : country.flag,
+        'wow_urls' : z
     }
 
     # print(country_dict['title'])
