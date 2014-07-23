@@ -12,11 +12,15 @@
 	    <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tabs.css" rel="stylesheet" />
 	    
 	    <link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/bootstrap.min.css" rel="stylesheet" />
+	    
+	    <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tab_responsive.css" rel="stylesheet" />
 
 	    <link href="http://codefeed.in.iis2103.shared-servers.com/tabs/css/preview.min.css" rel="stylesheet" />
 	    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 	    <link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/font-awesome.min.css" rel="stylesheet" />
 	
+	    <!-- source for navtab, http://wrapbootstrap.com/preview/WB066F8J6 -->
+
 	</head>
 
 	{% include 'sidebar.html' %}
@@ -36,7 +40,7 @@
 		</style>
 	</head>
 	<body>
-		<img src="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/Brazil/NEYMAR_JR.png"
+		<img src="{{player_image}}"
 		id="circle">
 	</body>
 
@@ -46,18 +50,26 @@
 		<div class = "container">
 			<div class="tabbable custom-tabs tabs-left tabs-animated  flat flat-all hide-label-980 shadow track-url auto-scroll">
 	                    <ul class="nav nav-tabs">
-	                        <li class="active"><a href="#panel2-1" data-toggle="tab" class="active "><i class="icon-lock"></i>&nbsp;<span>Login Panel</span></a></li>
-	                        <li><a href="#panel2-2" data-toggle="tab"><i class="icon-user"></i>&nbsp;<span>Register Panel</span></a></li>
-	                        <li><a href="#panel2-3" data-toggle="tab"><i class="icon-key"></i>&nbsp;<span>Forgot Password</span></a></li>
-	                        <li><a href="#panel2-4" data-toggle="tab"><i class="icon-envelope-alt"></i>&nbsp;<span>Contact Us</span></a></li>
+	                    	<!-- icon-lock, icon-user, icon-key, icon-envelope-alt -->
+	                        <li class="active"><a href="#panel2-1" data-toggle="tab" class="active "><i class="icon-user"></i>&nbsp;<span>Player Biography</span></a></li>
+	                        <li><a href="#panel2-2" data-toggle="tab"><i class="icon-camera"></i>&nbsp;<span>Career Highlights</span></a></li>
+	                        <li><a href="#panel2-3" data-toggle="tab"><i class="icon-group"></i>&nbsp;<span>Teams</span></a></li>
+	                        <li><a href="#panel2-4" data-toggle="tab"><i class="icon-film"></i>&nbsp;<span>Media</span></a></li>
 	                    </ul>
 	                    <div class="tab-content ">
 	                        <div class="tab-pane active" id="panel2-1">
 	                            <div class="row-fluid">
 	                                <div class="span5">
-	                                    <h4><i class="icon-user"></i>&nbsp;&nbsp; Login Here</h4>
+	                                    <h4><i class="icon-user"></i>&nbsp;&nbsp; Biography</h4>
+	                                    	<div class="box">
+		                                    	<p>
+		                                    		Hailed as a prodigy since his early teens and a much-talked about figure on the international football scene for years now, Neymar would appear at first glance to be a seasoned veteran. Yet in real terms, we are still in the formative phase of the career of a striker who is, at the tender age of 22, already seen as A Seleção’s leading man.
+		                                    		<br><br>
+		                                    		His ability with the ball at his feet, be it in exhilarating short dribbles or long mazy runs, is what strikes you most about the winner of the FIFA Puskás Award for 2011’s finest goal, along with a finalist for the same award in 2012 and 2013. But that is by no means the only way the versatile attacker can break down even the most stubborn of defences.
+		                                    	</p>
+	                                    	</div>
 
-	                                    <label>Username</label>
+	                                  <!--   <label>Username</label>
 	                                    <input type="text" class="input-block-level">
 	                                    <label>Password<a href="#" class="pull-right"><i class="icon-question-sign"></i>&nbsp;Forgot Password</a> </label>
 	                                    <input type="password" class="input-block-level">
@@ -67,33 +79,23 @@
 	                                    </label>
 	                                    <br>
 
-	                                    <a href="#" class=" btn  ">Sign In&nbsp;&nbsp;&nbsp;<i class="icon-chevron-sign-right"></i></a>
+	                                    <a href="#" class=" btn  ">Sign In&nbsp;&nbsp;&nbsp;<i class="icon-chevron-sign-right"></i></a> -->
 	                                </div>
 	                                <div class="span3">
 	                                    <h4><i class="icon-expand-alt"></i>&nbsp;&nbsp;Social</h4>
-	                                    <div class="socials clearfix">
+
+	                                   <!--  <div class="socials clearfix">
 	                                        <a class="icon-facebook facebook"></a>
 	                                        <a class="icon-twitter twitter"></a>
 	                                        <a class="icon-google-plus google-plus"></a>
 	                                        <a class="icon-pinterest pinterest"></a>
 	                                        <a class="icon-linkedin linked-in"></a>
 	                                        <a class="icon-github github"></a>
-	                                    </div>
+	                                    </div> -->
 	                                </div>
 	                                <div class="span4">
 	                                    <h4><i class="icon-question"></i>&nbsp;&nbsp;Registration</h4>
-	                                    <div class="box">
-	                                        <p>
-	                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel.
-	                                        </p>
-	                                        <p>
-	                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in.
-	                                        </p>
-	                                    </div>
-	                                    <div class="box">
-	                                        Don't Have An Account.<br>
-	                                        Click Here For <a href="#panel2" data-toggle="tab">Free Register</a>
-	                                    </div>
+
 	                                </div>
 	                            </div>
 	                        </div>
@@ -150,9 +152,15 @@
 	                        <div class="tab-pane" id="panel2-3">
 	                            <div class="row-fluid">
 	                                <div class="span5">
-	                                    <h4><i class="icon-unlock"></i>&nbsp;&nbsp;Password Recovery</h4>
+	                                    <h4><i class="icon-globe"></i>&nbsp;&nbsp;National Team</h4>
 
-	                                    <label>Email</label>
+	                                    <td class="text-center col-xs-6 col-md-4" style="border-top:none">
+											<!-- <center> -->
+												<a href="/countries/{{ item.id }}"><img src="{{country.flag}}" class="imageClip thumbnail" alt="Responsive image"></a>
+											<!-- </center> -->
+										</td>
+
+	                                    <!-- <label>Email</label>
 	                                    <input type="text" class="input-block-level">
 	                                    <label>Security Question</label>
 	                                    <select class="input-block-level">
@@ -166,7 +174,7 @@
 	                                    <input type="text" class="input-block-level">
 	                                    <br>
 	                                    <br>
-	                                    <a href="#" class=" btn  ">Recover Password&nbsp;&nbsp;&nbsp;<i class="icon-chevron-sign-right"></i></a>
+	                                    <a href="#" class=" btn  ">Recover Password&nbsp;&nbsp;&nbsp;<i class="icon-chevron-sign-right"></i></a> -->
 	                                </div>
 	                                <div class="span7">
 	                                    <h4><i class="icon-question"></i>&nbsp;&nbsp;Help</h4>
