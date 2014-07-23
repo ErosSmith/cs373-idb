@@ -31,13 +31,13 @@
 							{% for item in items %}
 								<tr bgcolor = "#DCDCDC">
 									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<center><a href="/countries/{{ item.id }}"><img src="{{ item.symbol_flag }}" class="imageClip thumbnail" alt="Responsive image"></a></center>
+										<center><a href="/countries/{{ item.country_name }}"><img src="{{ item.symbol_flag }}" class="imageClip thumbnail" alt="Responsive image"></a></center>
 									</td>
 									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<a href="/countries/{{ item.id }}"><font size ="5" color = "#16495C">{{ item.country_name }}</font></a>
+										<a href="/countries/{{ item.country_name }}"><font size ="5" color = "#16495C">{{ item.country_name }}</font></a>
 									</td>
 									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<a href="/countries/{{ item.id }}"><font size ="5" color="#16495C">{{ item.rank }}</font></a>
+										<a href="/countries/{{ item.country_name }}"><font size ="5" color="#16495C">{{ item.rank }}</font></a>
 									</td>
 								</tr>
 							{% endfor %}

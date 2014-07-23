@@ -6,6 +6,7 @@ from wc_app.models import *
 # Create your views here.
 from django.http import HttpResponse
 from itertools import chain
+import string
 
 def home(request):
     context = RequestContext(request)
@@ -22,11 +23,11 @@ def countries(request):
 	return render_to_response('countries.html', context_dict, context)
 
 
-def country(request, id):
+def country(request, c_name):
     context = RequestContext(request)
 
     # try:
-    country = Country.objects.get(pk=id)
+    country = Country.objects.get(country_name=c_name)
 
     #make the list so that it sort based on specific position they played
     pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
@@ -58,17 +59,23 @@ def country(request, id):
 def players(request):
     context = RequestContext(request)
     players = Player.objects.all().order_by('country__country_name', 'shirt_number')
+    l = [(x.full_name).replace(' ', '_') for x in players]
+    z = zip(players, l)
     players_dict = {
         'title' : 'Players',
         'items': players,
+        'wow_urls' : z
     }
     return render_to_response ('players.html', players_dict, context)
 
 
-def player(request,id):
+def player(request, p_name):
     context = RequestContext(request)
-
-    player = Player.objects.get(pk=id)
+    # p_name = p_name
+    print(p_name)
+    x = p_name.replace('_',' ')
+    print(x)
+    player = Player.objects.get(full_name = x)
 
     player_dic = {
         "full_name" : player.full_name,
@@ -89,7 +96,7 @@ def matches(request):
     }
     return render_to_response('matches.html',matches_dict,context)
 
-def match(request,id):
+def match(request, id):
     context = RequestContext(request)
 
     match = Match.objects.get(pk=id)
