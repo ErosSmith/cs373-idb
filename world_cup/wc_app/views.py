@@ -89,10 +89,10 @@ def matches(request):
     }
     return render_to_response('matches.html',matches_dict,context)
 
-def match(request,num):
+def match(request,id):
     context = RequestContext(request)
 
-    match = Match.objects.get(match_num= num)
+    match = Match.objects.get(pk=id)
 
     match_dic = {
         "country_A"  : match.country_A,

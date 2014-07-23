@@ -1,35 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" js no-touch">
+
 	<head>
+    	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
+    	<script src="/static/js/bootstrap.min.js"></script>-->
+    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	</head>
+	{% include 'sidebar.html' %}
 	<body>
+		<br />
+		<br />
+		<br />
+		<br />
 		<div class="container">
 			<div class ="table-responsive">
         		<table class="table">
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ country_A }}</td>
-					</tr>
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ country_B }}</td>
-					</tr>
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ winner }}</td>
-					</tr>
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ location }}</td>
-					</tr>
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ match_date }}</td>
-					</tr>
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ score }}</td>
-					</tr>
-					<tr>
-						<td class="text-center list-td" style="border-top:none">{{ match_num }}</td>
+					<tr bgcolor = "#B0C4DE">
+        				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
+    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>FLAG</b></h4></center></th></td>
+    					<td width = "40%"class="text-center list-td col-xs-6 col-md-4"><center><h4><b>MATCH {{match_num}}</b></h4></center></th></td>
+    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>FLAG</b></h4></center></th></td>
+    					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
+    				</tr>
+    				<tr bgcolor = "#DCDCDC">
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+						<center><img width="150" height="100" src="{{ country_A.flag }}" class="imageClip thumbnail" alt="Responsive image"></center>
+						</td>
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none"><font size = "6"><center>{{country_A}} VS {{country_B}}</center></font>
+						<font size = "6"><center>{{score}}</center></font>	
+						</td>
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+						<center><img width="150" height="100" src="{{ country_B.flag }}" class="imageClip thumbnail" alt="Responsive image"></center>
+						</td>
 					</tr>
 				</table>
+
+  
+				<div class ="table-responsive">
+        			<table class="table table-hover">
+        				<thead>
+        					<br />
+        					<tr bgcolor = "#B0C4DE">
+        						<th class="text-center list-td col-xs-6 col-md-4">HIGHLIGHTS</th>
+	        					<th class="text-center list-td col-xs-6 col-md-4">MATCH LOCATION</th>
+	        				</tr>
+	        			<thead>
+	        			<tbody>
+							<tr bgcolor = "#DCDCDC">
+								<td class="text-center col-xs-6 col-md-4">	
+									<script src="{{highlight_url}}" width="80%" height="450" frameborder="0" style="border:0"></script>
+								</td>
+								<td class="text-center col-xs-6 col-md-4">	
+									<iframe width="80%" height="320" frameborder="0" style="border:0"
+  									src="{{map_location}}"></iframe>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<center><iframe width="60%" height="400" frameborder="0" style="border:0"
+			  	src="{{mapurl}}"></iframe></center>
+ 				<center>
 			</div>
 		</div>
+
 	</body>
 </html>
