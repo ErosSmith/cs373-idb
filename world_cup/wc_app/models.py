@@ -41,6 +41,7 @@ class Player(models.Model):
     shirt_number = models.IntegerField(default=0)
     birth_date = models.DateField()
     player_image = models.CharField(max_length=500)
+    biography = models.CharField(max_length=5000)
 
 
     def __str__ (self):
@@ -57,8 +58,7 @@ class Match(models.Model):
     The __str__ method is used to return the two countries facing each other and the score. 
     """
 
-    match_num = models.IntegerField(default=0)
-    # country_AB = models.CharField(max_length=200)
+    match_num = models.IntegerField(default=0, primary_key=True)
     country_A = models.ForeignKey(Country, related_name='country_A')
     country_B = models.ForeignKey(Country, related_name='country_B')
     winner = models.CharField(max_length=200)

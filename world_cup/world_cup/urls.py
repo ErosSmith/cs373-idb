@@ -3,6 +3,8 @@ from django.conf import settings
 from wc_app import views
 
 from django.contrib import admin
+from wc_app.api import *
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -23,4 +25,9 @@ urlpatterns = patterns('',
     url(r'^matches/$', views.matches, name='matches'),
     url(r'^matches/(\d+)/$', views.match, name='match'),
     url(r'^test/$', views.test, name='test'),
+
+    #RESTful API
+    url(r'^api/', include(CountryResource().urls)),
+    url(r'^api/', include(PlayerResource().urls)),
+    url(r'^api/', include(MatchResource().urls)),
 )

@@ -85,9 +85,7 @@ def player(request, p_name):
         "sur_name" : player.sur_name,
         "clubname" : player.clubname,
         "position" : player.position,
-        "birth_date" : player.birth_date, 
-        "birth_date" : player.birth_date, 
-        "player_image" : player.player_image
+        "birth_date" : player.birth_date 
     }
 
     return render_to_response('player.html', player_dic, context)

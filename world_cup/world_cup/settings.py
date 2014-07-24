@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tastypie',
     'wc_app',
 )
 
@@ -78,7 +79,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME' : 'testing_db5',  #this is mysql db name
+        'NAME' : 'testing_db6',  #this is mysql db name
         'USER': 'kimyu92',      #create a user for this db
         'PASSWORD': '123456',
         'HOST': 'localhost',
