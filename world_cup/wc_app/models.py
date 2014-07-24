@@ -41,6 +41,11 @@ class Player(models.Model):
     shirt_number = models.IntegerField(default=0)
     birth_date = models.DateField()
     player_image = models.CharField(max_length=500)
+    #add
+    international_caps = models.IntegerField(default=0)
+    goals = models.IntegerField(default=0)
+    height = models.IntegerField(default=0)
+    first_international_appearance = models.CharField(max_length=500)
     biography = models.CharField(max_length=5000)
 
 
