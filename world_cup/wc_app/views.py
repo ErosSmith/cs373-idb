@@ -119,6 +119,15 @@ def match(request, id):
 
     return render_to_response('match.html',match_dic,context)
 
-def test(request):
+
+def aboutus(request):
     context = RequestContext(request)
-    return render_to_response('test.html',context)
+    aboutus_dict = {
+        'GDC_location': "https://www.google.com/maps/embed/v1/place?q=Gates-Dell+Complex+Austin+Texas+USA&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"
+    }
+    return render_to_response('aboutus.html',aboutus_dict,context)
+
+
+# def test(request):
+#     context = RequestContext(request)
+#     return render_to_response('test.html',context)

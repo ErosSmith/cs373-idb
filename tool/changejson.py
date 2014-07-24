@@ -18,6 +18,11 @@ def load_matche_date():
 	match_data_dic = json.load(s)
 	return match_data_dic
 
+def load_bio_data():
+	s = open("bio.json")
+	bio_data_dic = json.load(s)
+	return bio_data_dic
+
 #makes a dic country as the key and the value is a list of the rank and the country code
 def load_country_rank_code(dic):
 	country_dic = {}
@@ -51,15 +56,58 @@ def load_country_rank_code(dic):
 # bibnum
 
 #country,  2nd key full name, sur_name, country, clubname, position, birthdate 
-def load_player_info(dic):
+def load_player_info(dic, bio_dic):
 	player_dic = {}
 	count = 0
-
+	countOfPersonFound = 0
 	for outer_item in dic:
 		# if(outer_item["webname"] in player_dic):
 			# print(player_dic[outer_item["webname"]])
 			# print("counflciting name" + outer_item["webname"])
 		# print(outer_item["webname"])
+
+
+		#account for empty cases N/A
+		#print(items["international_goals"]) #this works without giving errors
+		#print(items["first_international"]) #this works without giving errors
+		#print(items["name"]) # works but need to check whether the fifa dic matches with this
+		#print(items["height_cm"]) # works
+		#print(items["international_caps"]) # works
+		#print(items["name"])#works
+		#print(items["article"])#works
+
+		international_caps = 0
+		first_international = ""
+		international_goals = 0
+		height_cm = 0
+		bio = ""
+
+		
+		for items in bio_dic:
+			if(outer_item["webname"] == items["name"]) :
+
+				if(items["international_caps"] != ""):
+					international_caps = int(items["international_caps"])
+				else:
+					international_caps = 0
+
+				if(items["international_goals"] != ""):
+					international_goals = int(items["international_goals"])
+				else:
+					international_goals = 0
+
+				if(items["height_cm"] != ""):
+					height_cm = int(items["height_cm"])
+				else:
+					height_cm = 0
+				
+				first_international = items["first_international"]
+				
+				bio = items["article"]
+				#print(items["name"])
+				countOfPersonFound+=1
+
+
 
 		position = ""
 
@@ -86,13 +134,13 @@ def load_player_info(dic):
 		surname = change_to_lower_case(outer_item["surname"])
 
 
-		player_dic[full_name] = [surname,outer_item["teamname"], outer_item["clubname"], position, outer_item["birthdate"][0:10],outer_item["bibnum"],player_image]
+		player_dic[full_name] = [surname,outer_item["teamname"], outer_item["clubname"], position, outer_item["birthdate"][0:10],outer_item["bibnum"],player_image, international_caps , first_international,international_goals,height_cm,bio]
 		count+=1
 
 	#print("dic size: "+ str(count) +str(len(player_dic.keys())))
 	#print("player count: " + str(count))
 
-	#print(player_dic)
+	#print(countOfPersonFound)
 	return player_dic
 
 #Items in the data collected
@@ -163,12 +211,16 @@ def change_to_lower_case(name):
 
 
 #pre process 1st two steps
+# 10 for players
 def run_prog():
+	bio_dic = load_bio_data()
 	dic = load_json()
 	#country_dic = load_country_rank_code(dic)
-	player_dic = load_player_info(dic)
+	player_dic = load_player_info(dic,bio_dic)
 	#match_data_dic = load_matche_date()
 	#collected_match_data = load_match_info(match_data_dic)
+
+	player_limit = 11
 
 	print("{", end=" ")
 	for player in player_dic:
@@ -180,7 +232,7 @@ def run_prog():
 
 			if(isinstance( items, int )):
 				print(items, end =", ")
-			elif(count == 6):
+			elif(count == player_limit):
 				print('"' + str(items) + '"', end = " ")
 			else:
 				print('"' + str(items) + '",', end = " ")
@@ -193,6 +245,32 @@ def run_prog():
 	#print(',', end=" ")
 
 	print("}", end=" ")
+
+
+
+
+
+
+
+
+
+
+
+	# count=0
+	# for items in bio_dic:
+	# 	#print(items)
+		
+	# 	#account for empty cases N/A
+	# 	#print(items["international_goals"]) #this works without giving errors
+	# 	#print(items["first_international"]) #this works without giving errors
+	# 	#print(items["name"]) # works but need to check whether the fifa dic matches with this
+	# 	#print(items["height_cm"]) # works
+	# 	#print(items["international_caps"]) # works
+	# 	#print(items["name"])#works
+	# 	#print(items["article"])#works
+	# 	count+=1
+
+	# print("countr: " + str(count))	
 
 run_prog()
 

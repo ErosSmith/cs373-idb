@@ -24,7 +24,8 @@ urlpatterns = patterns('',
     url(r'^players/(?P<p_name>[\w]+)/$', views.player, name='player'),
     url(r'^matches/$', views.matches, name='matches'),
     url(r'^matches/(\d+)/$', views.match, name='match'),
-    url(r'^test/$', views.test, name='test'),
+    #url(r'^test/$', views.test, name='test'),
+    url(r'^aboutus/$', views.aboutus, name='aboutus'),
 
     #RESTful API
     url(r'^api/', include(CountryResource().urls)),
