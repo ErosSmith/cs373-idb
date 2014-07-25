@@ -29,6 +29,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+# ALLOWED_HOSTS = []
+# For production error 404, debug = false
 ALLOWED_HOSTS = []
 
 

@@ -8,145 +8,177 @@ from django.http import HttpResponse
 from itertools import chain
 import string
 
+
 def home(request):
     context = RequestContext(request)
     return render_to_response('home.html',context)
 
+
 def countries(request):
     context = RequestContext(request)
-
-    countries = Country.objects.all().order_by('country_name')
-    l = [(x.country_name).replace(' ', '_') for x in countries]
-    z = zip(countries, l)
-    context_dict = {
-        'title': 'Countries',
-        'wow_urls' : z
-    }
-    return render_to_response('countries.html', context_dict, context)
+    try:
+        countries = Country.objects.all().order_by('country_name')
+        l = [(x.country_name).replace(' ', '_') for x in countries]
+        z = zip(countries, l)
+        context_dict = {
+            'title': 'Countries',
+            'wow_urls' : z
+        }
+        return render_to_response('countries.html', context_dict, context)
+    except:
+        return handler404(request)
 
 
 def country(request, c_name):
     context = RequestContext(request)
-    x = c_name.replace('_',' ')
-    # try:
-    country = Country.objects.get(country_name=x)
+    try:
+        x = c_name.replace('_',' ')
+        # try:
+        country = Country.objects.get(country_name=x)
 
-    #make the list so that it sort based on specific position they played
-    pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
-    # player = Player.objects.all().filter(country = country).order_by('position')
-    players = Player.objects.all().filter(country = country)
-    g = players.filter(position=pos_list[0]).order_by('shirt_number')
-    d = players.filter(position=pos_list[1]).order_by('shirt_number')
-    m = players.filter(position=pos_list[2]).order_by('shirt_number')
-    f = players.filter(position=pos_list[3]).order_by('shirt_number')
+        #make the list so that it sort based on specific position they played
+        pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
+        # player = Player.objects.all().filter(country = country).order_by('position')
+        players = Player.objects.all().filter(country = country)
+        g = players.filter(position=pos_list[0]).order_by('shirt_number')
+        d = players.filter(position=pos_list[1]).order_by('shirt_number')
+        m = players.filter(position=pos_list[2]).order_by('shirt_number')
+        f = players.filter(position=pos_list[3]).order_by('shirt_number')
 
-    ordered_players = list(chain(g,d,m,f))
-    l = [(x.full_name).replace(' ', '_') for x in ordered_players]
-    z = zip(ordered_players, l)
-    # print(type(players))
-    country_dict = {
-        'country': country.country_name,
-        'rank': country.rank,
-        "players" : ordered_players,
-        "mapurl" : country.map_url,
-        'flagurl' : country.flag,
-        'wow_urls' : z
-    }
+        ordered_players = list(chain(g,d,m,f))
+        l = [(x.full_name).replace(' ', '_') for x in ordered_players]
+        z = zip(ordered_players, l)
+        # print(type(players))
+        country_dict = {
+            'country': country.country_name,
+            'rank': country.rank,
+            "players" : ordered_players,
+            "mapurl" : country.map_url,
+            'flagurl' : country.flag,
+            'wow_urls' : z
+        }
 
-    # print(country_dict['title'])
-
-    return render_to_response('country.html', country_dict, context)
-    # except:
-    #     print("Error 404")
+        # print(country_dict['title'])
+        return render_to_response('country.html', country_dict, context)
+    except:
+        return handler404(request)
 
 
 def players(request):
     context = RequestContext(request)
-    players = Player.objects.all().order_by('country__country_name', 'shirt_number')
-    l = []
-    l2 = []
-    for x in players:
-        l += [(x.full_name).replace(' ', '_')]
-        l2 += [(x.country.country_name).replace(' ', '_')]
+    
+    try:
+        players = Player.objects.all().order_by('country__country_name', 'shirt_number')
+        l = []
+        l2 = []
+        for x in players:
+            l += [(x.full_name).replace(' ', '_')]
+            l2 += [(x.country.country_name).replace(' ', '_')]
 
-    z = zip(players, l, l2)
+        z = zip(players, l, l2)
 
-    players_dict = {
-        'title' : 'Players',
-        'wow_urls' : z,
-    }
-    return render_to_response ('players.html', players_dict, context)
+        players_dict = {
+            'title' : 'Players',
+            'wow_urls' : z,
+        }
+        return render_to_response ('players.html', players_dict, context)
+    except:
+        return handler404(request)
+
 
 
 def player(request, p_name):
     context = RequestContext(request)
     # p_name = p_name
     # print(p_name)
-    x = p_name.replace('_',' ')
     # print(x)
-    player = Player.objects.get(full_name = x)
-    country_url = (player.country.country_name).replace(' ', '_')
-    player_dic = {
-        "full_name" : player.full_name,
-        "country" : player.country,
-        "sur_name" : player.sur_name,
-        "clubname" : player.clubname,
-        "position" : player.position,
-        "birth_date" : player.birth_date, 
-        "birth_date" : player.birth_date, 
-        "player_image" : player.player_image,
-        #
-        "international_caps" : player.international_caps,
-        "goals" : player.goals,
-        "height" : player.height,
-        "first_international_appearance" : player.first_international_appearance,
-        "biography" : player.biography,
-        "c_url" : country_url
-    }
+    try:
+        x = p_name.replace('_',' ')
 
-    return render_to_response('player.html', player_dic, context)
+        player = Player.objects.get(full_name = x)
+        country_url = (player.country.country_name).replace(' ', '_')
+        player_dic = {
+            "full_name" : player.full_name,
+            "country" : player.country,
+            "sur_name" : player.sur_name,
+            "clubname" : player.clubname,
+            "position" : player.position,
+            "birth_date" : player.birth_date, 
+            "birth_date" : player.birth_date, 
+            "player_image" : player.player_image,
+            #
+            "international_caps" : player.international_caps,
+            "goals" : player.goals,
+            "height" : player.height,
+            "first_international_appearance" : player.first_international_appearance,
+            "biography" : player.biography,
+            "c_url" : country_url
+        }
+
+        return render_to_response('player.html', player_dic, context)
+    except:
+        return handler404(request)
+
+
 
 def matches(request):
     context = RequestContext(request)
-    matches = Match.objects.all()
-    matches_dict = {
-        'matches': matches,
-    }
-    return render_to_response('matches.html',matches_dict,context)
+
+    try:
+        matches = Match.objects.all()
+        matches_dict = {
+            'matches': matches,
+        }
+        return render_to_response('matches.html',matches_dict,context)
+    except:
+        return handler404(request)
+
+
 
 def match(request, id):
     context = RequestContext(request)
 
-    match = Match.objects.get(pk=id)
-    a = match.country_A.country_name.replace(' ', '_') 
-    b = match.country_B.country_name.replace(' ', '_')
+    try:
+        match = Match.objects.get(pk=id)
+        a = match.country_A.country_name.replace(' ', '_') 
+        b = match.country_B.country_name.replace(' ', '_')
 
-    match_dic = {
-        "country_A"  : match.country_A,
-        "country_B"  : match.country_B,
-        "winner"     : match.winner,
-        "score"      : match.score,
-        "location"   : match.location,
-        "match_date" : match.match_date,
-        "match_num"  : match.match_num,
-        "merge_flag" : match.merge_flag,
-        "map_location" : match.map_location,
-        "highlight_url" : match.highlight_url,
-        "a_url" : a,
-        "b_url" : b
-    }
+        match_dic = {
+            "country_A"  : match.country_A,
+            "country_B"  : match.country_B,
+            "winner"     : match.winner,
+            "score"      : match.score,
+            "location"   : match.location,
+            "match_date" : match.match_date,
+            "match_num"  : match.match_num,
+            "merge_flag" : match.merge_flag,
+            "map_location" : match.map_location,
+            "highlight_url" : match.highlight_url,
+            "a_url" : a,
+            "b_url" : b
+        }
 
-
-    return render_to_response('match.html',match_dic,context)
+        return render_to_response('match.html',match_dic,context)
+    except:
+        return handler404(request)
 
 
 def aboutus(request):
     context = RequestContext(request)
-    aboutus_dict = {
-        'GDC_location': "https://www.google.com/maps/embed/v1/place?q=Gates-Dell+Complex+Austin+Texas+USA&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"
-    }
-    return render_to_response('aboutus.html',aboutus_dict,context)
 
+    try:
+        aboutus_dict = {
+            'GDC_location': "https://www.google.com/maps/embed/v1/place?q=Gates-Dell+Complex+Austin+Texas+USA&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"
+        }
+        return render_to_response('aboutus.html',aboutus_dict,context)
+    except:
+        return handler404(request)
+
+
+
+#Error 404 page
+def handler404(request):
+    return render(request, '404.html')
 
 # def test(request):
 #     context = RequestContext(request)
