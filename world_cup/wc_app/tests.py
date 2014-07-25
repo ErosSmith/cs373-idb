@@ -36,35 +36,43 @@ class ModelTestCase(TestCase):
     def test_country_model1(self):
         #Dictionary Key: Country Name
         #Dictionary Value: [Country_code, country_rank]
-        country_test_dict1 = {"Brazil": ["BRA", 5]}
+        country_test_dict1 = {"Brazil": ["BRA", 3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/flags/brazil.png","https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/brazil.jpg","https://www.google.com/maps/embed/v1/place?q=Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"]}
 
         Country.objects.create(country_name="Brazil", country_code=country_test_dict1["Brazil"][0], rank = country_test_dict1["Brazil"][1])
  
         Country_Brazil = Country.objects.get(country_name="Brazil")
         self.assertEqual(Country_Brazil.country_name, "Brazil")
         self.assertEqual(Country_Brazil.country_code, "BRA")
-        self.assertEqual(Country_Brazil.rank, 5)
-        
+        self.assertEqual(Country_Brazil.rank, 3)
+        self.assertEqual(Country_Brazil.flag, "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/flags/brazil.png")
+        self.assertEqual(Country_Brazil.symbol_flag, "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/brazil.jpg")
+        self.assertEqual(Country_Brazil.map_url, "https://www.google.com/maps/embed/v1/place?q=Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ")
 
     def test_country_model2(self):
         #Dictionary Key: Country Name
         #Dictionary Value: [Country_code, country_rank]
-        country_test_dict2 = {'Brazil': ['BRA', 5], 'Italy': ['ITA',7]}
+        country_test_dict2 = {"Brazil": ["BRA", 3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/flags/brazil.png","https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/brazil.jpg","https://www.google.com/maps/embed/v1/place?q=Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"], "Italy": ["ITA", 9,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/flags/italy.png","https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/italy.jpg","https://www.google.com/maps/embed/v1/place?q=Italy&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ"]}
 
-        Country.objects.create(country_name="Brazil", country_code=country_test_dict2["Brazil"][0], rank = country_test_dict2["Brazil"][1])
-        Country.objects.create(country_name="Italy", country_code=country_test_dict2["Italy"][0], rank = country_test_dict2["Italy"][1])
+        Country.objects.create(country_name="Brazil", country_code=country_test_dict2["Brazil"][0], rank = country_test_dict2["Brazil"][1], flag = country_test_dict2["Brazil"][2], symbol_flag = country_test_dict2["Brazil"][3], map_url = country_test_dict2["Brazil"][4])
+        Country.objects.create(country_name="Italy", country_code=country_test_dict2["Italy"][0], rank = country_test_dict2["Italy"][1], flag = country_test_dict2["Italy"][2], symbol_flag = country_test_dict2["Italy"][3], map_url = country_test_dict2["Italy"][4])
 
         #Brazil check      
         Country_Brazil = Country.objects.get(country_name="Brazil")
         self.assertEqual(Country_Brazil.country_name, "Brazil")
         self.assertEqual(Country_Brazil.country_code, "BRA")
-        self.assertEqual(Country_Brazil.rank, 5)
+        self.assertEqual(Country_Brazil.rank, 3)
+        self.assertEqual(Country_Brazil.flag, country_test_dict2[2])
+        self.assertEqual(Country_Brazil.symbol_flag, country_test_dict2[3])
+        self.assertEqual(Country_Brazil.map_url, country_test_dict2[4])
 
         #Italy check       
         Country_Brazil = Country.objects.get(country_name="Italy")
         self.assertEqual(Country_Brazil.country_name, "Italy")
         self.assertEqual(Country_Brazil.country_code, 'ITA')
-        self.assertEqual(Country_Brazil.rank, 7)
+        self.assertEqual(Country_Brazil.rank, 9)
+        self.assertEqual(Country_Brazil.flag, country_test_dict2[2])
+        self.assertEqual(Country_Brazil.symbol_flag, country_test_dict2[3])
+        self.assertEqual(Country_Brazil.map_url, country_test_dict2[4])
 
 
     def test_country_model3(self):
@@ -76,13 +84,18 @@ class ModelTestCase(TestCase):
          s.close()
 
          for country in country_test_dic.keys():
-            Country.objects.create(country_name=country, country_code=country_test_dic[country][0], rank = country_test_dic[country][1])
+            Country.objects.create(country_name=country, country_code=country_test_dic[country][0], rank = country_test_dic[country][1], flag = country_test_dic[country][2], symbol_flag = country_test_dic[country][3], map_url = country_test_dic[country][4])
 
          for current_country in country_test_dic.keys():
             temp = Country.objects.get(country_name=current_country)
             self.assertEqual(temp.country_name, current_country)
             self.assertEqual(temp.country_code, country_test_dic[current_country][0])
             self.assertEqual(temp.rank, country_test_dic[current_country][1])
+            self.assertEqual(temp.flag, country_test_dic[current_country][2])
+            self.assertEqual(temp.symbol_flag, country_test_dic[current_country][3])
+            self.assertEqual(temp.map_url, country_test_dic[current_country][4])
+            
+            
 
     # -------------
     # Player_model
@@ -98,27 +111,36 @@ class ModelTestCase(TestCase):
 
     def test_player_model1(self):
         #Dictionary Key: Player full name
-        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
-        player_test_dict1 = {"Andrea Barzagli": ["Barzagli", "Italy", "Juventus FC", "Defender", "1981-05-08"]}
+        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate, something, image, something, first international appearance, something, somethingthing, bio]
+        player_test_dict1 = {"Andrea Barzagli": ["Barzagli", "Italy", "Juventus FC", "Defender", "1981-05-08", 15, "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/Italy/Andrea_BARZAGLI.png", 50, "Italy - Finland 17 Nov 2004", 0, 186, "Formidable in the air and a fine tackler who gives away very few fouls, centre-back Andrea Barzagli is viewed by Italy coach Cesare Prandelli as a defensive stand-in of the highest quality. Since joining Juventus in 2011, he has played regularly alongside Giorgio Chiellini and Leonardo Bonucci in a three-man back line, and the trio have developed an understanding crucial to their performances with "]}
 
         Country.objects.create(country_name = player_test_dict1["Andrea Barzagli"][1])
         c1 = Country.objects.create(country_name = player_test_dict1["Andrea Barzagli"][1])
 
-        Player.objects.create(country=c1, sur_name= player_test_dict1["Andrea Barzagli"][0],full_name = "Andrea Barzagli" ,clubname = player_test_dict1["Andrea Barzagli"][2], position = player_test_dict1["Andrea Barzagli"][3], birth_date =player_test_dict1["Andrea Barzagli"][4])
+        Player.objects.create(country=c1, sur_name= player_test_dict1["Andrea Barzagli"][0],full_name = "Andrea Barzagli" ,clubname = player_test_dict1["Andrea Barzagli"][2], position = player_test_dict1["Andrea Barzagli"][3], birth_date =player_test_dict1["Andrea Barzagli"][4], player_image = player_test_dict1["Andrea Barzagli"][6], international_caps = player_test_dict1["Andrea Barzagli"][5], goals = player_test_dict1["Andrea Barzagli"][5], height = player_test_dict1["Andrea Barzagli"][5], first_international_appearance = player_test_dict1["Andrea Barzagli"][8], biography = player_test_dict1["Andrea Barzagli"][11])
         
         player_get = Player.objects.get(full_name = "Andrea Barzagli")
-        self.assertEqual(player_get.country.__str__(), player_test_dict1["Andrea Barzagli"][1])
+        self.assertEqual(player_get.country.__str__(), player_tests_dict1["Andrea Barzagli"][1])
         self.assertEqual(player_get.sur_name, player_test_dict1["Andrea Barzagli"][0])
         self.assertEqual(player_get.full_name, "Andrea Barzagli")
         self.assertEqual(player_get.clubname, player_test_dict1["Andrea Barzagli"][2])
         self.assertEqual(player_get.position, player_test_dict1["Andrea Barzagli"][3])
         self.assertEqual(player_get.birth_date.__str__(), player_test_dict1["Andrea Barzagli"][4])
+        self.assertEqual(player_get.player_image, player_test_dict1["Andrea Barzagli"][6]) #string
+        self.assertEqual(player_get.international_caps, player_test_dict1["Andrea Barzagli"][5]) #int
+        self.assertEqual(player_get.goals, player_test_dict1["Andrea Barzagli"][5]) #int
+        self.assertEqual(player_get.height, player_test_dict1["Andrea Barzagli"][5]) #int
+        self.assertEqual(player_get.first_international_appearance, player_test_dict1["Andrea Barzagli"][8]) #string
+        self.assertEqual(player_get.biography, player_test_dict1["Andrea Barzagli"][11]) #string
+
+
 
 
     def test_player_model2(self):
         #Dictionary Key: Player full name
-        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
-        player_test_dict1 = {"Andrea Barzagli": ["Barzagli", "Italy", "Juventus FC", "Defender", "1981-05-08"],"Yoshito Okubo": ["Okubo", "Japan", "Kawasaki Frontale", "Forward", "1982-06-09"]}
+        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate, something, image, something, first international appearance, something, somethingthing, bio]
+        player_test_dict1 = {"Andrea Barzagli": ["Barzagli", "Italy", "Juventus FC", "Defender", "1981-05-08", 15, "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/Italy/Andrea_BARZAGLI.png", 50, "Italy - Finland 17 Nov 2004", 0, 186, "Formidable in the air and a fine tackler who gives away very few fouls, centre-back Andrea Barzagli is viewed by Italy coach Cesare Prandelli as a defensive stand-in of the highest quality. Since joining Juventus in 2011, he has played regularly alongside Giorgio Chiellini and Leonardo Bonucci in a three-man back line, and the trio have developed an understanding crucial to their performances with "],
+        "Yoshito Okubo": ["Okubo", "Japan", "Kawasaki Frontale", "Forward", "1982-06-09", 13, "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players/Japan/Yoshito_OKUBO.png", 60, "Japan - Korea Republic 31 May 2003", 6, 170, "After winning the J.League golden boot in 2013, striker Yoshito Okubo will be brimming with confidence as he appears at his second FIFA World Cup. Even so, the inclusion of the seasoned Kawasaki Frontale forward for Brazil 2014 was something of a surprise, as his last game for the Samurai Blue came more than two years ago. "]}
 
         Country.objects.create(country_name = player_test_dict1["Andrea Barzagli"][1])
         Country.objects.create(country_name = player_test_dict1["Yoshito Okubo"][1])
@@ -129,8 +151,8 @@ class ModelTestCase(TestCase):
         player1_name= "Andrea Barzagli"
         player2_name= "Yoshito Okubo"
 
-        Player.objects.create(country=c1, sur_name= player_test_dict1[player1_name][0],full_name = "Andrea Barzagli" ,clubname = player_test_dict1[player1_name][2], position = player_test_dict1[player1_name][3], birth_date =player_test_dict1[player1_name][4])
-        Player.objects.create(country=c2, sur_name= player_test_dict1[player2_name][0],full_name = "Yoshito Okubo" ,clubname = player_test_dict1[player2_name][2], position = player_test_dict1[player2_name][3], birth_date =player_test_dict1[player2_name][4])
+        Player.objects.create(country=c1, sur_name= player_test_dict1[player1_name][0],full_name = "Andrea Barzagli" ,clubname = player_test_dict1[player1_name][2], position = player_test_dict1[player1_name][3], birth_date =player_test_dict1[player1_name][4], player_image = player_test_dict1[player1_name][6], international_caps = player_test_dict1[player1_name][5], goals = player_test_dict1[player1_name][5], height = player_test_dict1[player1_name][5], first_international_appearance = player_test_dict1[player1_name][8], biography = player_test_dict1[player1_name][11])
+        Player.objects.create(country=c2, sur_name= player_test_dict1[player2_name][0],full_name = "Yoshito Okubo" ,clubname = player_test_dict1[player2_name][2], position = player_test_dict1[player2_name][3], birth_date =player_test_dict1[player2_name][4], player_image = player_test_dict1[player2_name][6], international_caps = player_test_dict1[player2_name][5], goals = player_test_dict1[player2_name][5], height = player_test_dict1[player2_name][5], first_international_appearance = player_test_dict1[player2_name][8], biography = player_test_dict1[player2_name][11])
         
 
         player_get = Player.objects.get(full_name = player1_name)
@@ -141,6 +163,13 @@ class ModelTestCase(TestCase):
         self.assertEqual(player_get.position, player_test_dict1[player1_name][3])
         self.assertEqual(player_get.birth_date.__str__(), player_test_dict1[player1_name][4])
 
+        self.assertEqual(player_get.player_image, player_test_dict1[player1_name][6])
+        self.assertEqual(player_get.international_caps, player_test_dict1[player1_name][5])
+        self.assertEqual(player_get.goals, player_test_dict1[player1_name][5])
+        self.assertEqual(player_get.height, player_test_dict1[player1_name][5])
+        self.assertEqual(player_get.first_international_appearance, player_test_dict1[player1_name][8])
+        self.assertEqual(player_get.biography, player_test_dict1[player1_name][11])
+
         
         player_get = Player.objects.get(full_name = player2_name)
         self.assertEqual(player_get.country.__str__(), player_test_dict1[player2_name][1])
@@ -150,9 +179,16 @@ class ModelTestCase(TestCase):
         self.assertEqual(player_get.position, player_test_dict1[player2_name][3])
         self.assertEqual(player_get.birth_date.__str__(), player_test_dict1[player2_name][4])
 
+        self.assertEqual(player_get.player_image, player_test_dict1[player2_name][6])
+        self.assertEqual(player_get.international_caps, player_test_dict1[player2_name][5])
+        self.assertEqual(player_get.goals, player_test_dict1[player2_name][5])
+        self.assertEqual(player_get.height, player_test_dict1[player2_name][5])
+        self.assertEqual(player_get.first_international_appearance, player_test_dict1[player2_name][8])
+        self.assertEqual(player_get.biography, player_test_dict1[player2_name][11])
+
     def test_player_model3(self):
         #Dictionary Key: Player full name
-        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate]
+        #Dictionary Value: [sur_name, country,Clubname,Position,Birthdate, something, image, something, first international appearance, something, somethingthing, bio]
 
         s = open("wc_app/testing_player_data.json")
         player_test_diction = json.load(s)
@@ -167,7 +203,7 @@ class ModelTestCase(TestCase):
         
         for player_name in player_test_diction.keys(): 
             c1 = Country.objects.get(country_name = player_test_diction[player_name][1])
-            Player.objects.create(country=c1, sur_name= player_test_diction[player_name][0],full_name = player_name ,clubname = player_test_diction[player_name][2], position = player_test_diction[player_name][3], birth_date =player_test_diction[player_name][4])
+            Player.objects.create(country=c1, sur_name= player_test_diction[player_name][0],full_name = player_name ,clubname = player_test_diction[player_name][2], position = player_test_diction[player_name][3], birth_date =player_test_diction[player_name][4], player_image = player_test_diction[player_name][6], international_caps = player_test_diction[player_name][5], goals = player_test_diction[player_name][5], height = player_test_diction[player_name][5], first_international_appearance = player_test_diction[player_name][8], biography = player_test_diction[player_name][11])
 
         for player_name in player_test_diction.keys():
             player_get = Player.objects.get(full_name = player_name)
@@ -177,6 +213,13 @@ class ModelTestCase(TestCase):
             self.assertEqual(player_get.clubname, player_test_diction[player_name][2])
             self.assertEqual(player_get.position, player_test_diction[player_name][3])
             self.assertEqual(player_get.birth_date.__str__(), player_test_diction[player_name][4])
+
+            self.assertEqual(player_get.player_image, player_test_diction[player_name][6])
+            self.assertEqual(player_get.international_caps, player_test_diction[player_name][5])
+            self.assertEqual(player_get.goals, player_test_diction[player_name][5])
+            self.assertEqual(player_get.height, player_test_diction[player_name][5])
+            self.assertEqual(player_get.first_international_appearance, player_test_diction[player_name][8])
+            self.assertEqual(player_get.biography, player_test_diction[player_name][11])
 
 
     # -------------
@@ -194,59 +237,73 @@ class ModelTestCase(TestCase):
 
     def test_match_model1(self):
         #Dictionary Key: HomeTeam vs AwayTeam
-        #Dictionary Value: [Match_Number, HomeTeam, HomeTeamScore,AwayTeam, AwayTeamScore, Winner, Location, date]
-        match_test_dict1 = {'Argentina-Belgium': [60, 'Argentina', 1, 'Belgium', 0, 'Argentina', 'Estadio Nacional', '2014-07-05']}
+        #Dictionary Value: [Match_Number, HomeTeam, HomeTeamScore,AwayTeam, AwayTeamScore, Winner, Location, date, merged flag, maps location, hightlights]
+        match_test_dict1 = { "Ivory Coast-Japan" : [ 6, "Ivory Coast", 2, "Japan", 1, "Ivory Coast", "Arena Pernambuco", "2014-06-14", "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_symbol/civ_jpn.jpg", "https://www.google.com/maps/embed/v1/place?q=Arena Pernambuco+Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ", "http://player.espn.com/player.js?pcode=B4a3E63GKeEtO92XK7NI067ak980&width=576&height=324&externalId=intl:1881469" ]}
 
-        score_cat = str(match_test_dict1["Argentina-Belgium"][2]) + "-" + str(match_test_dict1["Argentina-Belgium"][4])
+        score_cat = str(match_test_dict1["Ivory Coast-Japan"][2]) + "-" + str(match_test_dict1["Ivory Coast-Japan"][4])
                 
-        Country.objects.create(country_name = "Argentina")
-        Country.objects.create(country_name = "Belgium")
+        Country.objects.create(country_name = "Ivory Coast")
+        Country.objects.create(country_name = "Japan")
         
-        Match.objects.create(match_num = match_test_dict1["Argentina-Belgium"][0], country_A = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][3]), winner = match_test_dict1["Argentina-Belgium"][5], score = score_cat, location = match_test_dict1["Argentina-Belgium"][6], match_date = match_test_dict1["Argentina-Belgium"][7])
+        Match.objects.create(match_num = match_test_dict1["Ivory Coast-Japan"][0], country_A = Country.objects.get(country_name = match_test_dict1["Ivory Coast-Japan"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Ivory Coast-Japan"][3]), winner = match_test_dict1["Ivory Coast-Japan"][5], score = score_cat, location = match_test_dict1["Ivory Coast-Japan"][6], match_date = match_test_dict1["Ivory Coast-Japan"][7], merge_flag = match_test_dict1["Ivory Coast-Japan"][8], map_location = match_test_dict1["Ivory Coast-Japan"][9], highlight_url = match_test_dict1["Ivory Coast-Japan"][10])
 
         #need to create country objects and add __str__ methods assert equals
-        match_get = Match.objects.get(match_num = match_test_dict1["Argentina-Belgium"][0])
-        self.assertEqual(match_get.match_num, match_test_dict1["Argentina-Belgium"][0])
-        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Argentina-Belgium"][1])
-        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Argentina-Belgium"][3])
-        self.assertEqual(match_get.winner, match_test_dict1["Argentina-Belgium"][5])
+        match_get = Match.objects.get(match_num = match_test_dict1["Ivory Coast-Japan"][0])
+        self.assertEqual(match_get.match_num, match_test_dict1["Ivory Coast-Japan"][0])
+        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Ivory Coast-Japan"][1])
+        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Ivory Coast-Japan"][3])
+        self.assertEqual(match_get.winner, match_test_dict1["Ivory Coast-Japan"][5])
         self.assertEqual(match_get.score, score_cat)
-        self.assertEqual(match_get.location, match_test_dict1["Argentina-Belgium"][6])
-        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Argentina-Belgium"][7])
+        self.assertEqual(match_get.location, match_test_dict1["Ivory Coast-Japan"][6])
+        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Ivory Coast-Japan"][7])
+        self.assertEqual(match_get.merge_flag, match_test_dict1["Ivory Coast-Japan"][8])
+        self.assertEqual(match_get.map_location, match_test_dict1["Ivory Coast-Japan"][9])
+        self.assertEqual(match_get.highlight_url, match_test_dict1["Ivory Coast-Japan"][10])
 
     def test_match_model2(self):
         #Dictionary Key: HomeTeam vs AwayTeam
         #Dictionary Value: [Match_Number, HomeTeam, HomeTeamScore,AwayTeam, AwayTeamScore, Winner, Location, date]
-        match_test_dict1 ={'Argentina-Belgium': [60, 'Argentina', 1, 'Belgium', 0, 'Argentina', 'Estadio Nacional', '2014-07-05'], 'Russia-Korea Republic': [16, 'Russia', 1, 'Korea Republic', 1, 'Draw', 'Arena Pantanal', '2014-06-17']}
+        match_test_dict1 ={ "Ivory Coast-Japan" : [ 6, "Ivory Coast", 2, "Japan", 1, "Ivory Coast", "Arena Pernambuco", "2014-06-14", "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_symbol/civ_jpn.jpg", "https://www.google.com/maps/embed/v1/place?q=Arena Pernambuco+Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ", "http://player.espn.com/player.js?pcode=B4a3E63GKeEtO92XK7NI067ak980&width=576&height=324&externalId=intl:1881469" ] , "Cameroon-Croatia" : [ 18, "Cameroon", 0, "Croatia", 4, "Croatia", "Arena Amazonia", "2014-06-18", "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_symbol/cmr_cro.jpg", "https://www.google.com/maps/embed/v1/place?q=Arena Amazonia+Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ", "http://player.espn.com/player.js?pcode=B4a3E63GKeEtO92XK7NI067ak980&width=576&height=324&externalId=intl:1891625 " ]}
 
-        Country.objects.create(country_name = "Argentina")
-        Country.objects.create(country_name = "Belgium")
-        Country.objects.create(country_name = "Russia")
-        Country.objects.create(country_name = "Korea Republic")
+        Country.objects.create(country_name = "Ivory Coast")
+        Country.objects.create(country_name = "Japan")
+        Country.objects.create(country_name = "Cameroon")
+        Country.objects.create(country_name = "Croatia")
 
-        score_cat = str(match_test_dict1["Argentina-Belgium"][2]) + "-" + str(match_test_dict1["Argentina-Belgium"][4])
-        Match.objects.create(match_num = match_test_dict1["Argentina-Belgium"][0], country_A = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Argentina-Belgium"][3]), winner = match_test_dict1["Argentina-Belgium"][5], score = score_cat, location = match_test_dict1["Argentina-Belgium"][6], match_date = match_test_dict1["Argentina-Belgium"][7])
+        score_cat = str(match_test_dict1["Ivory Coast-Japan"][2]) + "-" + str(match_test_dict1["Ivory Coast-Japan"][4])
+        Match.objects.create(match_num = match_test_dict1["Ivory Coast-Japan"][0], country_A = Country.objects.get(country_name = match_test_dict1["Ivory Coast-Japan"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Ivory Coast-Japan"][3]), winner = match_test_dict1["Ivory Coast-Japan"][5], score = score_cat, location = match_test_dict1["Ivory Coast-Japan"][6], match_date = match_test_dict1["Ivory Coast-Japan"][7], merge_flag = match_test_dict1["Ivory Coast-Japan"][8], map_location, = match_test_dict1["Ivory Coast-Japan"][9], highlight_url = match_test_dict1["Ivory Coast-Japan"][10])
         
-        score_cat2 = str(match_test_dict1["Russia-Korea Republic"][2]) + "-" + str(match_test_dict1["Russia-Korea Republic"][4])
-        Match.objects.create(match_num = match_test_dict1["Russia-Korea Republic"][0], country_A = Country.objects.get(country_name = match_test_dict1["Russia-Korea Republic"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Russia-Korea Republic"][3]), winner = match_test_dict1["Russia-Korea Republic"][5], score = score_cat2, location = match_test_dict1["Russia-Korea Republic"][6], match_date = match_test_dict1["Russia-Korea Republic"][7])
+        score_cat2 = str(match_test_dict1["Cameroon-Croatia"][2]) + "-" + str(match_test_dict1["Cameroon-Croatia"][4])
+        Match.objects.create(match_num = match_test_dict1["Cameroon-Croatia"][0], country_A = Country.objects.get(country_name = match_test_dict1["Cameroon-Croatia"][1]), country_B = Country.objects.get(country_name = match_test_dict1["Cameroon-Croatia"][3]), winner = match_test_dict1["Cameroon-Croatia"][5], score = score_cat2, location = match_test_dict1["Cameroon-Croatia"][6], match_date = match_test_dict1["Cameroon-Croatia"][7], merge_flag = match_test_dict1["Cameroon-Croatia"][8], map_location = match_test_dict1["Cameroon-Croatia"][9], highlight_url = match_test_dict1["Cameroon-Croatia"][10])
 
-        match_get = Match.objects.get(match_num = match_test_dict1["Argentina-Belgium"][0])
-        self.assertEqual(match_get.match_num, match_test_dict1["Argentina-Belgium"][0])
-        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Argentina-Belgium"][1])
-        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Argentina-Belgium"][3])
-        self.assertEqual(match_get.winner, match_test_dict1["Argentina-Belgium"][5])
+        match_get = Match.objects.get(match_num = match_test_dict1["Ivory Coast-Japan"][0])
+        self.assertEqual(match_get.match_num, match_test_dict1["Ivory Coast-Japan"][0])
+        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Ivory Coast-Japan"][1])
+        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Ivory Coast-Japan"][3])
+        self.assertEqual(match_get.winner, match_test_dict1["Ivory Coast-Japan"][5])
         self.assertEqual(match_get.score, score_cat)
-        self.assertEqual(match_get.location, match_test_dict1["Argentina-Belgium"][6])
-        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Argentina-Belgium"][7])
+        self.assertEqual(match_get.location, match_test_dict1["Ivory Coast-Japan"][6])
+        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Ivory Coast-Japan"][7])
 
-        match_get = Match.objects.get(match_num = match_test_dict1["Russia-Korea Republic"][0])
-        self.assertEqual(match_get.match_num, match_test_dict1["Russia-Korea Republic"][0])
-        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Russia-Korea Republic"][1])
-        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Russia-Korea Republic"][3])
-        self.assertEqual(match_get.winner, match_test_dict1["Russia-Korea Republic"][5])
+        self.assertEqual(match_get.merge_flag, match_test_dict1["Ivory Coast-Japan"][8])
+        self.assertEqual(match_get.map_location, match_test_dict1["Ivory Coast-Japan"][9])
+        self.assertEqual(match_get.highlight_url, match_test_dict1["Ivory Coast-Japan"][10])
+
+
+
+        match_get = Match.objects.get(match_num = match_test_dict1["Cameroon-Croatia"][0])
+        self.assertEqual(match_get.match_num, match_test_dict1["Cameroon-Croatia"][0])
+        self.assertEqual(match_get.country_A.country_name, match_test_dict1["Cameroon-Croatia"][1])
+        self.assertEqual(match_get.country_B.country_name, match_test_dict1["Cameroon-Croatia"][3])
+        self.assertEqual(match_get.winner, match_test_dict1["Cameroon-Croatia"][5])
         self.assertEqual(match_get.score, score_cat2)
-        self.assertEqual(match_get.location, match_test_dict1["Russia-Korea Republic"][6])
-        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Russia-Korea Republic"][7])
+        self.assertEqual(match_get.location, match_test_dict1["Cameroon-Croatia"][6])
+        self.assertEqual(match_get.match_date.__str__(), match_test_dict1["Cameroon-Croatia"][7])
+
+        self.assertEqual(match_get.merge_flag, match_test_dict1["Cameroon-Croatia"][8])
+        self.assertEqual(match_get.map_location, match_test_dict1["Cameroon-Croatia"][9])
+        self.assertEqual(match_get.highlight_url, match_test_dict1["Cameroon-Croatia"][10])
+
 
     def test_match_model3(self):
         #Dictionary Key: HomeTeam vs AwayTeam
@@ -264,7 +321,7 @@ class ModelTestCase(TestCase):
         
         for match_vs in match_test_diction:
             score_cat = str(match_test_diction[match_vs][2]) + "-" + str(match_test_diction[match_vs][4])
-            Match.objects.create(match_num = match_test_diction[match_vs][0], country_A = Country.objects.get(country_name = match_test_diction[match_vs][1]), country_B = Country.objects.get(country_name = match_test_diction[match_vs][3]), winner = match_test_diction[match_vs][5], score = score_cat, location = match_test_diction[match_vs][6], match_date = match_test_diction[match_vs][7])
+            Match.objects.create(match_num = match_test_diction[match_vs][0], country_A = Country.objects.get(country_name = match_test_diction[match_vs][1]), country_B = Country.objects.get(country_name = match_test_diction[match_vs][3]), winner = match_test_diction[match_vs][5], score = score_cat, location = match_test_diction[match_vs][6], match_date = match_test_diction[match_vs][7], merge_flag = match_test_diction[match_vs][8], map_location = match_test_diction[match_vs][9], highlight_url = match_test_diction[match_vs][10])
             
         for match_vs in match_test_diction:    
             match_get = Match.objects.get(match_num = match_test_diction[match_vs][0])
@@ -275,6 +332,9 @@ class ModelTestCase(TestCase):
             self.assertEqual(match_get.score, str(match_test_diction[match_vs][2]) + "-" + str(match_test_diction[match_vs][4]))
             self.assertEqual(match_get.location, match_test_diction[match_vs][6])
             self.assertEqual(match_get.match_date.__str__(), match_test_diction[match_vs][7])
+            self.assertEqual(match_get.merge_flag, match_test_diction[match_vs][8])
+            self.assertEqual(match_get.map_location, match_test_diction[match_vs][9])
+            self.assertEqual(match_get.highlight_url, match_test_diction[match_vs][10])
 
 
 class APItests(unittest.TestCase) :
