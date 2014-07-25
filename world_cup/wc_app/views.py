@@ -85,7 +85,7 @@ def player(request, p_name):
     x = p_name.replace('_',' ')
     # print(x)
     player = Player.objects.get(full_name = x)
-
+    country_url = (player.country.country_name).replace(' ', '_')
     player_dic = {
         "full_name" : player.full_name,
         "country" : player.country,
@@ -100,7 +100,8 @@ def player(request, p_name):
         "goals" : player.goals,
         "height" : player.height,
         "first_international_appearance" : player.first_international_appearance,
-        "biography" : player.biography
+        "biography" : player.biography,
+        "c_url" : country_url
     }
 
     return render_to_response('player.html', player_dic, context)
