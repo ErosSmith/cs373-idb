@@ -61,18 +61,18 @@ class ModelTestCase(TestCase):
         self.assertEqual(Country_Brazil.country_name, "Brazil")
         self.assertEqual(Country_Brazil.country_code, "BRA")
         self.assertEqual(Country_Brazil.rank, 3)
-        self.assertEqual(Country_Brazil.flag, country_test_dict2[2])
-        self.assertEqual(Country_Brazil.symbol_flag, country_test_dict2[3])
-        self.assertEqual(Country_Brazil.map_url, country_test_dict2[4])
+        self.assertEqual(Country_Brazil.flag, country_test_dict2["Brazil"][2])
+        self.assertEqual(Country_Brazil.symbol_flag, country_test_dict2["Brazil"][3])
+        self.assertEqual(Country_Brazil.map_url, country_test_dict2["Brazil"][4])
 
         #Italy check       
         Country_Brazil = Country.objects.get(country_name="Italy")
         self.assertEqual(Country_Brazil.country_name, "Italy")
         self.assertEqual(Country_Brazil.country_code, 'ITA')
         self.assertEqual(Country_Brazil.rank, 9)
-        self.assertEqual(Country_Brazil.flag, country_test_dict2[2])
-        self.assertEqual(Country_Brazil.symbol_flag, country_test_dict2[3])
-        self.assertEqual(Country_Brazil.map_url, country_test_dict2[4])
+        self.assertEqual(Country_Brazil.flag, country_test_dict2["Italy"][2])
+        self.assertEqual(Country_Brazil.symbol_flag, country_test_dict2["Italy"][3])
+        self.assertEqual(Country_Brazil.map_url, country_test_dict2["Italy"][4])
 
 
     def test_country_model3(self):
