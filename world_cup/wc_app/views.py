@@ -13,21 +13,23 @@ def home(request):
     return render_to_response('home.html',context)
 
 def countries(request):
-	context = RequestContext(request)
+    context = RequestContext(request)
 
-	countries = Country.objects.all().order_by('country_name')
-	context_dict = {
-		'title': 'Countries',
-		'items': countries,
-	}
-	return render_to_response('countries.html', context_dict, context)
+    countries = Country.objects.all().order_by('country_name')
+    l = [(x.country_name).replace(' ', '_') for x in countries]
+    z = zip(countries, l)
+    context_dict = {
+        'title': 'Countries',
+        'wow_urls' : z
+    }
+    return render_to_response('countries.html', context_dict, context)
 
 
 def country(request, c_name):
     context = RequestContext(request)
-
+    x = c_name.replace('_',' ')
     # try:
-    country = Country.objects.get(country_name=c_name)
+    country = Country.objects.get(country_name=x)
 
     #make the list so that it sort based on specific position they played
     pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
@@ -43,7 +45,7 @@ def country(request, c_name):
     z = zip(ordered_players, l)
     # print(type(players))
     country_dict = {
-    	'country': country.country_name,
+        'country': country.country_name,
         'rank': country.rank,
         "players" : ordered_players,
         "mapurl" : country.map_url,
@@ -61,12 +63,17 @@ def country(request, c_name):
 def players(request):
     context = RequestContext(request)
     players = Player.objects.all().order_by('country__country_name', 'shirt_number')
-    l = [(x.full_name).replace(' ', '_') for x in players]
-    z = zip(players, l)
+    l = []
+    l2 = []
+    for x in players:
+        l += [(x.full_name).replace(' ', '_')]
+        l2 += [(x.country.country_name).replace(' ', '_')]
+
+    z = zip(players, l, l2)
+
     players_dict = {
         'title' : 'Players',
-        'items': players,
-        'wow_urls' : z
+        'wow_urls' : z,
     }
     return render_to_response ('players.html', players_dict, context)
 
@@ -74,9 +81,9 @@ def players(request):
 def player(request, p_name):
     context = RequestContext(request)
     # p_name = p_name
-    print(p_name)
+    # print(p_name)
     x = p_name.replace('_',' ')
-    print(x)
+    # print(x)
     player = Player.objects.get(full_name = x)
 
     player_dic = {

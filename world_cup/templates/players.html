@@ -30,7 +30,7 @@
         				</tr>
         			<thead>
         				<tbody id="myTable">
-							{% for x, y in wow_urls %}
+							{% for x, y, z in wow_urls %}
 								<tr>
 									<tr bgcolor = "#DCDCDC">
 										<td class="text-center col-xs-6 col-md-4" style="border-top:none">
@@ -40,7 +40,7 @@
 											<a href="/players/{{ y }}">{{x.full_name}}</a>
 										</td>
 										<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-											<a href="/countries/{{ x.country.country_name }}">{{ x.country.country_name }}</a>
+											<a href="/countries/{{ z }}">{{ x.country.country_name }}</a>
 										</td>
 									</tr>
 								</tr>
