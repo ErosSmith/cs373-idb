@@ -222,29 +222,30 @@ def run_prog():
 
 	player_limit = 11
 
-	print("{", end=" ")
-	for player in player_dic:
-		print('"' + str(player) + '" :', end = " ") 
-		count = 0
-		print("[", end=" ")
+	print(json.dumps(player_dic).encode('utf8'))
+	# print("{", end=" ")
+	# for player in player_dic:
+	# 	print('"' + str(player) + '" :', end = " ") 
+	# 	count = 0
+	# 	print("[", end=" ")
 
-		for items in player_dic[player]:
+	# 	for items in player_dic[player]:
 
-			if(isinstance( items, int )):
-				print(items, end =", ")
-			elif(count == player_limit):
-				print('"' + str(items) + '"', end = " ")
-			else:
-				print('"' + str(items) + '",', end = " ")
-			count+=1
+	# 		if(isinstance( items, int )):
+	# 			print(items, end =", ")
+	# 		elif(count == player_limit):
+	# 			print('"' + str(items) + '"', end = " ")
+	# 		else:
+	# 			print('"' + str(items) + '",', end = " ")
+	# 		count+=1
 
-		print("]", end=" ")
+	# 	print("]", end=" ")
 
-		print(',', end=" ")
+	# 	print(',', end=" ")
 
-	#print(',', end=" ")
+	# #print(',', end=" ")
 
-	print("}", end=" ")
+	# print("}", end=" ")
 
 
 
