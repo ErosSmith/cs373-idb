@@ -7,10 +7,15 @@ Notes API is a *short texts saving* service similar to its physical paper presen
 # Group Countries
 Notes related resources of the **WCC API**
 
-## Countries Collection [/api/countries]
+## Countries Collection [/api/countries/?offset={offset}&limit={limit}]
+
++ Parameters
+    + offset (required, number, `1`) ... number `offset` of the Country to perform action with. Has example value.
+    + limit (required, number, `1`) ... number `limit` of the Country to perform action with. Has example value.
 
 
-### List all Countries [GET]
+
+### List first {limit} Countries starting from {offset}. Queries are bounded by the number of countries which is 32 [GET]
 + Response 200 (application/json)
 
         [
@@ -50,10 +55,15 @@ A single Country object with all its details
                 "symbol_flag": "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/usa.jpg"
             }
 
-## Players Collection [/api/players]
+## Players Collection [/api/players/?offset={offset}&limit={limit}]
+
++ Parameters
+    + offset (required, number, `1`) ... number `offset` of the Players to perform action with. Has example value.
+    + limit (required, number, `1`) ... number `limit` of the Players to perform action with. Has example value.
 
 
-### List all Players [GET]
+
+### List first {limit} Players starting from {offset}. Queries are bounded by the number of players which is 736. [GET]
 + Response 200 (application/json)
 
         [
@@ -84,7 +94,7 @@ A single Country object with all its details
 A single Player object with all its details
 
 + Parameters
-    + id (required, number, `Joao Moutinho`) ... String `id` of the Country to perform action with. Has example value.
+    + id (required, string, `Joao Moutinho`) ... String `id` of the Country to perform action with. Has example value.
 
 ### Retrieve a Player [GET]
 + Response 200 (application/json)
@@ -108,10 +118,15 @@ A single Player object with all its details
         }
  
 
-## Matches Collection [/api/matches]
+## Matches Collection [/api/matches/?offset={offset}&limit={limit}]
++ Parameters
+    + offset (required, number, `1`) ... number `offset` of the Matches to perform action with. Has example value.
+    + limit (required, number, `1`) ... number `limit` of the Matches to perform action with. Has example value.
 
 
-### List all Matches [GET]
+
+### List first {limit} Matches starting from {offset}. Queries are bounded by the number of matches which is 64 [GET]
+
 + Response 200 (application/json)
 
         [
