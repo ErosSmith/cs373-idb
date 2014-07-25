@@ -118,6 +118,8 @@ def match(request, id):
     context = RequestContext(request)
 
     match = Match.objects.get(pk=id)
+    a = match.country_A.country_name.replace(' ', '_') 
+    b = match.country_B.country_name.replace(' ', '_')
 
     match_dic = {
         "country_A"  : match.country_A,
@@ -129,7 +131,9 @@ def match(request, id):
         "match_num"  : match.match_num,
         "merge_flag" : match.merge_flag,
         "map_location" : match.map_location,
-        "highlight_url" : match.highlight_url
+        "highlight_url" : match.highlight_url,
+        "a_url" : a,
+        "b_url" : b
     }
 
 
