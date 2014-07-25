@@ -38,18 +38,22 @@
     				</tr>
     				
     				<tr bgcolor = "#DCDCDC">
-						
+						<!-- Country A flag -->
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
 							<center>
-								<img width="150" height="100" src="{{ country_A.flag }}" 
-								class="imageClip thumbnail" alt="Responsive image">
+								<a href="/countries/{{ country_A }}">
+									<img width="150" height="100" src="{{ country_A.flag }}" 
+									class="imageClip thumbnail" alt="Responsive image">
+								</a>
 							</center>
 						</td>
-						
+						<!-- Country A vs Country B -->
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
 							<font size = "6">
 								<center>
-									{{country_A}} vs {{country_B}}
+									<a href="/countries/{{ country_A }}">{{country_A}}</a> 
+									vs 
+									<a href="/countries/{{ country_B}}">{{country_B}}</a>
 								</center>
 							</font>
 							<font size = "6">
@@ -58,21 +62,22 @@
 								</center>
 							</font>	
 						</td>
-						
+						<!-- Country B flag -->
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
 							<center>
-								<img width="150" height="100" src="{{ country_B.flag }}" 
-								class="imageClip thumbnail" alt="Responsive image">
+								<a href="/countries/{{ country_B }}">
+									<img width="150" height="100" src="{{ country_B.flag }}" 
+									class="imageClip thumbnail" alt="Responsive image">
+								</a>
 							</center>
 						</td>
 					</tr>
 				</table>
-
-  
+				<!-- Highlights and Stadium Map -->
 				<div class ="table-responsive">
         			<table class="table table-hover">
         				<thead>
-        					<br />
+        					<br/>
         					<tr bgcolor = "#B0C4DE">
         						<th class="text-center list-td col-xs-6 col-md-4">HIGHLIGHTS</th>
 	        					<th class="text-center list-td col-xs-6 col-md-4">MATCH LOCATION</th>
@@ -91,9 +96,6 @@
 						</tbody>
 					</table>
 				</div>
-				<center><iframe width="60%" height="400" frameborder="0" style="border:0"
-			  	src="{{mapurl}}"></iframe></center>
- 				<center>
 			</div>
 		</div>
 

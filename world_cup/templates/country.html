@@ -42,8 +42,8 @@
         					<br />
         					<tr bgcolor = "#B0C4DE">
         						<th class="text-center list-td col-xs-6 col-md-4">Player Shirt-Number</th>
-	        					<th class="text-center list-td col-xs-6 col-md-4">Position</th>
 	        					<th class="text-center list-td col-xs-6 col-md-4">Name</th>
+	        					<th class="text-center list-td col-xs-6 col-md-4">Position</th>
 	        				</tr>
 	        			<thead>
 	        			<tbody>
@@ -53,10 +53,10 @@
 									<a href="/players/{{ y }}">{{ x.shirt_number }}</a>
 								</td>
 								<td class="text-center col-xs-6 col-md-4">	
-									{{ x.position }}
+									<a href="/players/{{ y }}">{{ x.full_name }}</a>
 								</td>
 								<td class="text-center col-xs-6 col-md-4">	
-									<a href="/players/{{ y }}">{{ x.full_name }}</a>
+									{{ x.position }}
 								</td>
 							</tr>
 						{% endfor %}
