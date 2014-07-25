@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>World Cup - {{sur_name}}</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination.css">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination_players.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tabs.css" rel="stylesheet" />
+		<!-- <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tabs.css" rel="stylesheet" /> -->
 		
-		<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/bootstrap.min.css" rel="stylesheet" />
+		<!-- <link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/bootstrap.min.css" rel="stylesheet" /> -->
 		
 		<link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tab_responsive.css" rel="stylesheet" />
 		<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/css/preview.min.css" rel="stylesheet" />
@@ -17,25 +18,9 @@
 			<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/font-awesome.min.css" rel="stylesheet" />
 			<!-- source for navtab, http://wrapbootstrap.com/preview/WB066F8J6 -->
 		</head>
+
 		{% include 'sidebar.html' %}
-		<!-- neymar image lol -->
-		<!-- 	<head>
-				<br />
-				<br />
-				<br />
-				<br />
-			<style>
-				#circle{
-						border-radius:50% 50% 50% 50%;
-				width:155px;
-				height:150px;
-				}
-			</style>
-		</head> -->
-		<!-- 	<body>
-				<img src="{{player_image}}"
-				id="circle">
-		</body> -->
+
 		<!-- responsive tabs aligned from left -->
 		<br>
 		<br>
@@ -43,13 +28,18 @@
 		<br>
 		<body>
 			<div class = "container">
-				<div class="tabbable custom-tabs tabs-left tabs-animated  flat flat-all hide-label-980 shadow track-url auto-scroll">
+            <div class="row-fluid" id="demo-1">
+				<div class="tabbable custom-tabs tabs-animated  flat flat-all hide-label-980 shadow track-url auto-scroll">
 					<ul class="nav nav-tabs">
 						<!-- icon-lock, icon-user, icon-key, icon-envelope-alt -->
 						<li class="active"><a href="#panel2-1" data-toggle="tab" class="active "><i class="icon-user"></i>&nbsp;<span>Player Biography</span></a></li>
 						<li><a href="#panel2-2" data-toggle="tab"><i class="icon-group"></i>&nbsp;<span>Teams</span></a></li>
-						<li><a href="#panel2-3" data-toggle="tab"><i class="icon-camera"></i>&nbsp;<span>Career Highlights</span></a></li>
-						<li><a href="#panel2-4" data-toggle="tab"><i class="icon-film"></i>&nbsp;<span>Media</span></a></li>
+						
+						<!-- this is media information that needs to be updated 
+						i.e. twitter feeds, highlights, etc -->
+
+						<!-- <li><a href="#panel2-3" data-toggle="tab"><i class="icon-camera"></i>&nbsp;<span>Career Highlights</span></a></li>
+						<li><a href="#panel2-4" data-toggle="tab"><i class="icon-film"></i>&nbsp;<span>Media</span></a></li> -->
 					</ul>
 					<div class="tab-content ">
 						<div class="tab-pane active" id="panel2-1">
@@ -64,31 +54,63 @@
 									<h4><i class="icon-bar-chart"></i>&nbsp;&nbsp;Information</h4>
 									<div class="box">
 										<ul>
-											<li class="p-name">NEYMAR</li><li class="p-team">
-											<div class="t" data-team-id="43924">
-												<div class="t-i i-3">
-											</div>
-											<div class="t-n"><span class="t-nText ">Brazil</span>
-												<span class="t-nTri">BRA</span>
-											</div>
-										</div>
-									</li>
-									<li class="role"><span class="data">Forward</span>
-									</li>
-									<li class="caps"><span class="data">54</span>
-										<span class="description">International Caps</span>
-									</li>
-									<li class="international-goals"><span class="data">35</span>
-										<span class="description">International Goals</span>
-									</li>
-									<li class="age"><span class="data" data-birthdate="1992-02-05">22</span>
-										<span class="description">years old</span></li><li class="height"><span class="data">175</span><span class="description">cm</span></li><li class="first-international"><span class="description">First international</span><span class="data">USA - Brazil 10 Aug 2010</span></li><li class="birthdate"><span class="description">Date of Birth</span><span class="data">05 Feb 1992</span></li><li class="clubname"><span class="description">Current club</span><span class="data">FC Barcelona (ESP)</span></li></ul>
+											<!-- name -->
+											<li class="p-name">{{full_name}}</li><li class="p-team">
+												<div class="t-n">
+													<span class="t-nText ">{{country.country_name}}</span>
+													<span class="t-nTri">({{country.country_code}})</span>
+												</div>
+											</li>
+											<!-- position -->
+											<li class="role">
+												<span class="description">Role: </span>
+												<span class="data">{{position}}</span>
+											</li>
+											<!-- international caps -->
+											<li class="caps">
+												<span class="data">needs fixing {{international_caps}}</span>
+												<span class="description">International Caps</span>
+											</li>
+											<!-- goals -->
+											<li class="international-goals">
+												<span class="data">needs fixing {{goals}}</span>
+												<span class="description">International Goals</span>
+											</li>
+											<!-- age -->
+											<!-- <li class="age">
+												<span class="description">Age:</span>
+												<span class="data" data-birthdate="1992-02-05"> 22</span>
+											</li> -->
+											<!-- height -->
+											<li class="height">
+												<span class="description">Height:</span>
+												<span class="data">175</span>
+												<span class="description">cm</span>
+											</li>
+											<!-- first inter appearance -->
+											<li class="first-international">
+												<span class="description">First international:</span>
+												<br>
+												<span class="data">USA - Brazil 10 Aug 2010</span>
+											</li>
+											<!-- birthday -->
+											<li class="birthdate">
+												<span class="description">Date of Birth:</span>
+												<span class="data"> {{birth_date}}</span>
+											</li>
+											<!-- club info -->
+											<li class="clubname">
+												<span class="description">Current club:</span>
+												<span class="data">{{clubname}}</span>
+											</li>
+										</ul>
 									</div>
 								</div>
 								<div class="span5">
 									<h4><i class="icon-user"></i>&nbsp;&nbsp; Biography</h4>
 									<div class="box">
 										<p>
+										{{biography}}
 										Have to get the bio from json
 										trying to access a page that doesn't exist? 
 										you can't be saved!
@@ -104,15 +126,29 @@
 						<div class="tab-pane" id="panel2-2">
 							<div class="row-fluid">
 								<div class="span5">
-									<h4><i class="icon-globe"></i>&nbsp;&nbsp;National Team</h4>
-									<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-										<!-- <center> -->
-										<a href="/countries/{{ item.id }}"><img src="{{country.flag}}" class="imageClip thumbnail" alt="Responsive image"></a>
-										<!-- </center> -->
-									</td>
+									<h4>
+										<i class="icon-globe"></i>&nbsp;&nbsp;National Team: 
+											<span class="data">
+												{{country.country_name}}
+											</span>
+									</h4>
+									<!-- flag image -->
+									<div class="box clearfix">
+										<center>
+											<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+												<a href="/countries/{{ country.country_name }}">
+													<img src="{{country.flag}}" class="imageClip thumbnail" alt="Responsive image">
+												</a>
+											</td>
+										</center>
+									</div>
 								</div>
 								<div class="span7">
-									<h4><i class="icon-question"></i>&nbsp;&nbsp;Help</h4>
+									<h4>&nbsp;&nbsp;Club Team:
+										<span class="data">
+											{{clubname}}
+										</span>
+									</h4>
 									<div class="box">
 										<p>Getting Error With Password Recovery Click Here For <a href="#">Support</a></p>
 										<ul>
@@ -120,20 +156,10 @@
 											<li>Iaculis lectus augue pulvinar taciti.</li>
 										</ul>
 									</div>
-									<div class="box">
-										<ul>
-											<li>Potenti facilisis felis sociis blandit euismod.</li>
-											<li>Odio mi hendrerit ad nostra.</li>
-											<li>Rutrum mi commodo molestie taciti.</li>
-											<li>Interdum ipsum ad risus conubia, porttitor.</li>
-											<li>Placerat litora, proin hac hendrerit ac volutpat.</li>
-											<li>Ornare, aliquam condimentum  habitasse.</li>
-										</ul>
-									</div>
 								</div>
 							</div>
 						</div>
-						<div class="tab-pane" id="panel2-3">
+						<!-- <div class="tab-pane" id="panel2-3">
 							<div class="row-fluid">
 								<div class="span5">
 									<h4><i class="icon-user"></i>&nbsp;&nbsp; Register Here</h4>
@@ -220,11 +246,12 @@
 										</address>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</body>
 </html>

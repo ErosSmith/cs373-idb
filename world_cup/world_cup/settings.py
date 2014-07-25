@@ -79,7 +79,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME' : 'testing_db6',  #this is mysql db name
+        'NAME' : 'testing_db91',  #this is mysql db name
         'USER': 'kimyu92',      #create a user for this db
         'PASSWORD': '123456',
         'HOST': 'localhost',

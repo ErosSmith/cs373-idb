@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" class=" js no-touch">
-
 	<head>
+		<title>World Cup - {{country_A.country_code}} vs {{country_B.country_code}}</title>
     	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
     	<script src="/static/js/bootstrap.min.js"></script>-->
     	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
     	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
 	</head>
 	{% include 'sidebar.html' %}
 	<body>
@@ -20,20 +19,51 @@
         		<table class="table">
 					<tr bgcolor = "#B0C4DE">
         				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
-    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>FLAG</b></h4></center></th></td>
-    					<td width = "40%"class="text-center list-td col-xs-6 col-md-4"><center><h4><b>MATCH {{match_num}}</b></h4></center></th></td>
-    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>FLAG</b></h4></center></th></td>
+    					<td class="text-center list-td col-xs-6 col-md-4">
+    						<center>
+    							<h4><b>FLAG</b></h4>
+    						</center>
+    					</td>
+    					<td width = "40%"class="text-center list-td col-xs-6 col-md-4">
+    						<center>
+    							<h4><b>MATCH {{match_num}}</b></h4>
+    						</center>
+    					</td>
+    					<td class="text-center list-td col-xs-6 col-md-4">
+    						<center>
+    							<h4><b>FLAG</b></h4>
+    						</center>
+    					</td>
     					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
     				</tr>
+    				
     				<tr bgcolor = "#DCDCDC">
+						
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-						<center><img width="150" height="100" src="{{ country_A.flag }}" class="imageClip thumbnail" alt="Responsive image"></center>
+							<center>
+								<img width="150" height="100" src="{{ country_A.flag }}" 
+								class="imageClip thumbnail" alt="Responsive image">
+							</center>
 						</td>
-						<td class="text-center col-xs-6 col-md-4" style="border-top:none"><font size = "6"><center>{{country_A}} VS {{country_B}}</center></font>
-						<font size = "6"><center>{{score}}</center></font>	
-						</td>
+						
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-						<center><img width="150" height="100" src="{{ country_B.flag }}" class="imageClip thumbnail" alt="Responsive image"></center>
+							<font size = "6">
+								<center>
+									{{country_A}} vs {{country_B}}
+								</center>
+							</font>
+							<font size = "6">
+								<center>
+									{{score}}
+								</center>
+							</font>	
+						</td>
+						
+						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+							<center>
+								<img width="150" height="100" src="{{ country_B.flag }}" 
+								class="imageClip thumbnail" alt="Responsive image">
+							</center>
 						</td>
 					</tr>
 				</table>

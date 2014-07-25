@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <!-- "\f0ac" countries one -->
 <!-- saved from url=(0053)http://tympanus.net/Tutorials/GoogleNexusWebsiteMenu/ -->
-
 <html lang="en" class=" js no-touch">
-  {% include 'sidebar.html' %}
-<body>
-	<br />
-	<br />
-	<br />
-	<br />
-
-<div class="container">
-    	<!-- <center> -->
-	  <div >
-      <center>
-		<!-- <div class="[ col-xs-12 col-sm-offset-2 col-sm-8 ]"> -->
-		<div id="myTable" >
-				<ul class="event-list"> 
-					{% for match in matches %}
-          					
-          <li id="match_{{match.match_num}}">
-						<img alt="Independence Day" src="{{match.merge_flag}}" />
-
-						<div class="info">
-							<h4 class="title"><a href="/matches/{{match.match_num}}">{{match.country_A}} VS {{match.country_B}}</a></h4>
-							<p class="desc">Score: {{match.score}}</p>
-							<p class="desc">Winner: {{match.winner}}</p>
-							<p class="desc">Location: {{match.location}}</p>
-						</div>
-					</li>
-					{% endfor %}
-			</ul>
+	<head>
+		<title>World Cup - Matches</title>
+	</head>
+	{% include 'sidebar.html' %}
+	<body>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<div class="container">
+			<div>
+			  	<center>
+					<div id="myTable" >
+						<ul class="event-list"> 
+							{% for match in matches %}
+					        	<li id="match_{{match.match_num}}">
+									<img alt="Independence Day" src="{{match.merge_flag}}" />
+									<div class="info">
+										<h4 class="title">
+											<a href="/matches/{{match.match_num}}">
+												{{match.country_A}} vs {{match.country_B}}
+											</a>
+										</h4>
+										<p class="desc">Score: {{match.score}}</p>
+										<p class="desc">Winner: {{match.winner}}</p>
+										<p class="desc">Location: {{match.location}}</p>
+									</div>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
+			    </center> 
+			</div>
 		</div>
-    </center> 
-		<!-- </div> -->
-	</div>
-	<!-- </center> -->
-</div>
-</body>
+	</body>
 </html>
-
-<!-- <!DOCTYPE html> -->
-<!-- <html lang="en"> -->
-	<!-- <head> -->
-    	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
-    	<script src="/static/js/bootstrap.min.js"></script>-->
-    	
-		  
-    
-	<!-- </head> -->
-
