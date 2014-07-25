@@ -1,4 +1,5 @@
 open terminal
+for mac start mysql: mysqld
 execute: mysql -u root -p
 enter password
 
