@@ -1,3 +1,15 @@
+commit 5f71985b47e719eff688aaea4632829e7c92e0fc
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Jul 25 21:26:48 2014 -0500
+
+    change match json
+
+commit 9261f3f80ed2fad2291ec86ee715fefd22d67de5
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Jul 25 21:12:43 2014 -0500
+
+    updated the IDB.log and move old file to old_documents folder
+
 commit 158bcfb9159c2fa37cb71c4c8c7daf6f91c1b914
 Author: aseal134 <aseal134@hotmail.com>
 Date:   Fri Jul 25 19:08:57 2014 -0700
