@@ -14,90 +14,87 @@
 		<br />
 		<br />
 		<br />
-		<div class="container">
-			<div class ="table-responsive">
-        		<table class="table">
+		<div class ="container table-responsive">
+    		<table class="table table-hover">
+				<tr bgcolor = "#B0C4DE">
+    				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
+					<td class="text-center list-td col-xs-6 col-md-4">
+						<center>
+							<h4><b>FLAG</b></h4>
+						</center>
+					</td>
+					<td class="text-center list-td col-xs-6 col-md-4">
+						<center>
+							<h4><b>MATCH {{match_num}}</b></h4>
+						</center>
+					</td>
+					<td class="text-center list-td col-xs-6 col-md-4">
+						<center>
+							<h4><b>FLAG</b></h4>
+						</center>
+					</td>
+					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
+				</tr>
+				
+				<tr bgcolor = "#DCDCDC">
+					<!-- Country A flag -->
+					<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+						<center>
+							<a href="/countries/{{ country_A }}">
+								<img width="150" height="100" src="{{ country_A.flag }}" 
+								class="imageClip thumbnail" alt="Responsive image">
+							</a>
+						</center>
+					</td>
+					<!-- Country A vs Country B -->
+					<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+						<font size = "6">
+							<center>
+								<a href="/countries/{{ a_url }}">{{country_A}}</a> 
+								vs 
+								<a href="/countries/{{ b_url }}">{{country_B}}</a>
+							</center>
+						</font>
+						<font size = "6">
+							<center>
+								{{score}}
+							</center>
+						</font>	
+					</td>
+					<!-- Country B flag -->
+					<td class="text-center col-xs-6 col-md-4" style="border-top:none">
+						<center>
+							<a href="/countries/{{ country_B }}">
+								<img width="150" height="100" src="{{ country_B.flag }}" 
+								class="imageClip thumbnail" alt="Responsive image">
+							</a>
+						</center>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- Highlights and Stadium Map -->
+		<div class ="container table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<br/>
 					<tr bgcolor = "#B0C4DE">
-        				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
-    					<td class="text-center list-td col-xs-6 col-md-4">
-    						<center>
-    							<h4><b>FLAG</b></h4>
-    						</center>
-    					</td>
-    					<td width = "40%"class="text-center list-td col-xs-6 col-md-4">
-    						<center>
-    							<h4><b>MATCH {{match_num}}</b></h4>
-    						</center>
-    					</td>
-    					<td class="text-center list-td col-xs-6 col-md-4">
-    						<center>
-    							<h4><b>FLAG</b></h4>
-    						</center>
-    					</td>
-    					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
+						<th class="text-center list-td col-xs-6 col-md-4">HIGHLIGHTS</th>
+    					<th class="text-center list-td col-xs-6 col-md-4">MATCH LOCATION</th>
     				</tr>
-    				
-    				<tr bgcolor = "#DCDCDC">
-						<!-- Country A flag -->
-						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-							<center>
-								<a href="/countries/{{ country_A }}">
-									<img width="150" height="100" src="{{ country_A.flag }}" 
-									class="imageClip thumbnail" alt="Responsive image">
-								</a>
-							</center>
+    			</thead>
+    			<tbody>
+					<tr bgcolor = "#DCDCDC">
+						<td class="text-center col-xs-6 col-md-4">	
+							<script src="{{highlight_url}}" width="80%" height="auto" frameborder="0" style="border:0"></script>
 						</td>
-						<!-- Country A vs Country B -->
-						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-							<font size = "6">
-								<center>
-									<a href="/countries/{{ a_url }}">{{country_A}}</a> 
-									vs 
-									<a href="/countries/{{ b_url }}">{{country_B}}</a>
-								</center>
-							</font>
-							<font size = "6">
-								<center>
-									{{score}}
-								</center>
-							</font>	
-						</td>
-						<!-- Country B flag -->
-						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-							<center>
-								<a href="/countries/{{ country_B }}">
-									<img width="150" height="100" src="{{ country_B.flag }}" 
-									class="imageClip thumbnail" alt="Responsive image">
-								</a>
-							</center>
+						<td class="text-center col-xs-6 col-md-4">	
+							<iframe width="80%" height="320" frameborder="0" style="border:0"
+								src="{{map_location}}"></iframe>
 						</td>
 					</tr>
-				</table>
-				<!-- Highlights and Stadium Map -->
-				<div class ="table-responsive">
-        			<table class="table table-hover">
-        				<thead>
-        					<br/>
-        					<tr bgcolor = "#B0C4DE">
-        						<th class="text-center list-td col-xs-6 col-md-4">HIGHLIGHTS</th>
-	        					<th class="text-center list-td col-xs-6 col-md-4">MATCH LOCATION</th>
-	        				</tr>
-	        			<thead>
-	        			<tbody>
-							<tr bgcolor = "#DCDCDC">
-								<td class="text-center col-xs-6 col-md-4">	
-									<script src="{{highlight_url}}" width="80%" height="450" frameborder="0" style="border:0"></script>
-								</td>
-								<td class="text-center col-xs-6 col-md-4">	
-									<iframe width="80%" height="320" frameborder="0" style="border:0"
-  									src="{{map_location}}"></iframe>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
+				</tbody>
+			</table>
 		</div>
-
 	</body>
 </html>
