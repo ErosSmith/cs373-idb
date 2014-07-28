@@ -146,7 +146,7 @@ def match(request, id):
         match_dic = {
             "country_A"  : match.country_A,
             "country_B"  : match.country_B,
-            "winner"     : match.winner,
+            "winner"     : match.winner,    
             "score"      : match.score,
             "location"   : match.location,
             "match_date" : match.match_date,
@@ -173,6 +173,34 @@ def aboutus(request):
         return render_to_response('aboutus.html',aboutus_dict,context)
     except:
         return handler404(request)
+
+def testing(request):
+    context = RequestContext(request)
+    countries = Country.objects.all().order_by('country_name')
+    l = [(x.country_name).replace(' ', '_') for x in countries]
+    z = zip(countries, l)
+    context_dict = {
+        'title': 'Countries',
+        'wow_urls' : z
+    }
+    return render_to_response('testing.html', context_dict, context)
+
+def testing2(request):
+    context = RequestContext(request)
+    players = Player.objects.all().order_by('country__country_name', 'shirt_number')
+    l = []
+    l2 = []
+    for x in players:
+        l += [(x.full_name).replace(' ', '_')]
+        l2 += [(x.country.country_name).replace(' ', '_')]
+
+    z = zip(players, l, l2)
+
+    players_dict = {
+        'title' : 'Players',
+        'wow_urls' : z,
+    }
+    return render_to_response ('testing2.html', players_dict, context)
 
 
 
