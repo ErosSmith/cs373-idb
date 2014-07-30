@@ -36,6 +36,13 @@
                   <input placeholder="Search" type="search" class="gn-search">
                   <a class="gn-icon gn-icon-search"><span>Search</span></a>
                 </li> -->
+
+                <form action="/search">
+                  <input name="q" value="{{request.GET.q}}">
+                  <input type="submit" value="Go">
+              </form>
+
+                
                 <li>
                   <a class="gn-icon gn-icon-globe" href="/countries">Countries</a>
                   <!-- <ul class="gn-submenu"> -->
