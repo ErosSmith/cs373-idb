@@ -55,6 +55,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'tastypie',
     'wc_app',
+    'watson',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,7 +82,7 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'mysql.connector.django',
-        'NAME' : 'testing_db8',  #this is mysql db name
+        'NAME' : 'testing_db11',  #this is mysql db name
         'USER': 'kimyu92',      #create a user for this db
         'PASSWORD': '123456',
         'HOST': 'localhost',

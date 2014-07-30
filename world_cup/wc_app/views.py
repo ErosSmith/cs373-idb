@@ -8,6 +8,81 @@ from django.http import HttpResponse
 from itertools import chain
 import string
 
+import watson
+import re
+
+def splitParagraph(paragraph):
+    sentenceEnders = re.compile('[.!?]')
+    sentenceList = sentenceEnders.split(paragraph)
+    return sentenceList
+
+def search(request):
+    context = RequestContext(request)
+    
+    query = ""
+    query_words = []
+    #if there exist a 'q' property in get and that 'q' has something other than white space assign that value to query
+    if ('q' in request.GET) and request.GET['q'].strip():
+        query = request.GET['q']
+    
+    #split query on white space
+    query_words = query.split()
+    
+    #get the resesults using the entire query together
+    and_results = watson.search(query, ranking=True)
+
+    for i in and_results:
+        print(i.url)
+        print(i)
+
+    results = list(and_results)
+
+    #add on each individual result to the and results
+    for wd in query_words:
+        or_results = list(watson.search(wd, ranking=True))
+        for r in or_results:
+            if not r in results:
+                results.append(r)
+    
+    snippets = []
+    
+    
+    for i in range(0, len(results)):
+        final_sentence = ""
+
+        sentences = splitParagraph(results[i].content)
+
+        #First highlight terms in sentences matching the phrase
+        for s in list(sentences):
+            if(s.lower().find(query.lower()) != -1):
+                sentences.remove(s)
+                s = s.lower().replace(query.lower(), "<B class='search_term'>"+query.lower()+"</B>")
+                final_sentence += "..." + s
+                break
+
+        #Then highlight the separate words of a query separately
+        for q_wd in query_words:
+            for s in list(sentences):
+                if (s.lower().find(q_wd.lower()) != -1):
+                    sentences.remove(s)
+                    s = s.lower().replace(q_wd.lower(), "<B class='search_term'>"+q_wd.lower()+"</B>")
+                    final_sentence += "..." + s
+                    break
+
+        final_sentence += "..."
+        snippets.append(final_sentence)
+
+    zipped = None
+    if len(results) > 0:
+        zipped = zip(results, snippets)
+    length_results = len(results)
+    # for i in results:
+    #     print(i.url)
+
+    return render_to_response('search.html', {"query": query, "length_results": length_results, "results": zipped}, context)
+
+
+
 
 def home(request):
     context = RequestContext(request)
@@ -146,7 +221,7 @@ def match(request, id):
         match_dic = {
             "country_A"  : match.country_A,
             "country_B"  : match.country_B,
-            "winner"     : match.winner,    
+            "winner"     : match.winner,
             "score"      : match.score,
             "location"   : match.location,
             "match_date" : match.match_date,
@@ -173,34 +248,6 @@ def aboutus(request):
         return render_to_response('aboutus.html',aboutus_dict,context)
     except:
         return handler404(request)
-
-def testing(request):
-    context = RequestContext(request)
-    countries = Country.objects.all().order_by('country_name')
-    l = [(x.country_name).replace(' ', '_') for x in countries]
-    z = zip(countries, l)
-    context_dict = {
-        'title': 'Countries',
-        'wow_urls' : z
-    }
-    return render_to_response('testing.html', context_dict, context)
-
-def testing2(request):
-    context = RequestContext(request)
-    players = Player.objects.all().order_by('country__country_name', 'shirt_number')
-    l = []
-    l2 = []
-    for x in players:
-        l += [(x.full_name).replace(' ', '_')]
-        l2 += [(x.country.country_name).replace(' ', '_')]
-
-    z = zip(players, l, l2)
-
-    players_dict = {
-        'title' : 'Players',
-        'wow_urls' : z,
-    }
-    return render_to_response ('testing2.html', players_dict, context)
 
 
 

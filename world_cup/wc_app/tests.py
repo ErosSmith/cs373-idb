@@ -22,6 +22,8 @@ except:
     from urllib2 import *
 
 from tastypie.test import ResourceTestCase
+
+import watson
 #end New Imports
 
     # -----------
@@ -1239,6 +1241,14 @@ class MatchResourceTest(ResourceTestCase):
         resp = self.api_client.get(self.url+'api/matches/', format='json')
         self.assertValidJSONResponse(resp)
 
+class SearchTests(unittest.TestCase):
+
+    def test_search_1(self):
+        query = "brazil"
+        
+        results = watson.search(query, ranking=True)
+        if len(results) > 0:
+            self.assertTrue([x.title for x in results] == ['Greek mythology', 'Roman mythology', 'Trojan War', 'Zeus', 'Labours of Hercules', 'Osiris', 'Athena'])
 
 
 

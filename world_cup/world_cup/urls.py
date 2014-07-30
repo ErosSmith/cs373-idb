@@ -8,6 +8,8 @@ from wc_app.views import handler404
 
 admin.autodiscover()
 
+
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'world_cup.views.home', name='home'),
@@ -35,16 +37,16 @@ urlpatterns = patterns('',
     
     url(r'^aboutus/$', views.aboutus, name='aboutus'),
 
-    url(r'^testing/$', views.testing, name='testing'),
-    url(r'^testing2/$', views.testing2, name = 'testing2'),
+
     #RESTful API
     url(r'^api/', include(CountryResource().urls)),
     url(r'^api/', include(PlayerResource().urls)),
     url(r'^api/', include(MatchResource().urls)),
 
     #Error 404
-    url(r'./$', views.handler404, name='handler404')
-    
+    url(r'./$', views.handler404, name='handler404'),
+    #Search url
+    url(r'^search', views.search, name="search"),    
     #For testing stuff
     #url(r'^test/$', views.test, name='test'),
 )

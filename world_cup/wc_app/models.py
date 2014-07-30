@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User
+from django.utils.html import format_html
 
 
     # -------------
@@ -17,6 +19,9 @@ class Country(models.Model):
     flag = models.CharField(max_length=500)
     symbol_flag = models.CharField(max_length=500)
     map_url = models.CharField(max_length=500)
+
+    def get_absolute_url(self):
+        return "/countries/%s/" % self.country_name
 
     def __str__ (self):
         return self.country_name
@@ -48,6 +53,9 @@ class Player(models.Model):
     first_international_appearance = models.CharField(max_length=500)
     biography = models.CharField(max_length=5000)
 
+    def get_absolute_url(self):
+        url_name = self.full_name.replace(' ', '_')
+        return "/players/%s/" % url_name
 
     def __str__ (self):
         return self.full_name
@@ -74,5 +82,21 @@ class Match(models.Model):
     map_location = models.CharField(max_length=500)
     highlight_url = models.CharField(max_length=500)
 
+    def get_absolute_url(self):
+        return "/matches/%d/" % self.match_num
+
     def __str__ (self):
         return self.country_A.country_name + " " + self.country_B.country_name + " " + self.score
+
+
+
+
+import watson
+
+# watson.register(Country,fields=("country_name","country_code"))
+# watson.register(Player,fields=("sur_name","full_name","clubname","position","biography"))
+# watson.register(Match,fields=("winner","score","location"))
+watson.register(Country)
+watson.register(Player)
+watson.register(Match)
+
