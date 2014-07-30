@@ -6,6 +6,36 @@
 		<title>World Cup - Matches</title>
 		<!-- calender stuff -->
 		<link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/calender.css">
+
+<style type="text/css">  
+a.nounderline:link  
+{  
+ text-decoration:none;  
+}  
+</style> 
+
+<style>
+/* unvisited link */
+a:link {
+    color: #328DE0;
+}
+
+/* visited link */
+a:visited {
+    color: #528F52;
+}
+
+/* mouse over link */
+a:hover {
+    color: #858585;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+</style>
+
 	</head>
 	{% include 'sidebar.html' %}
 	<body>
@@ -23,7 +53,7 @@
 									<img alt="Independence Day" src="{{match.merge_flag}}" />
 									<div class="info">
 										<h4 class="title">
-											<a href="/matches/{{match.match_num}}">
+											<a href="/matches/{{match.match_num}}" class="nounderline">
 												{{match.country_A}} vs {{match.country_B}}
 											</a>
 										</h4>
