@@ -5,7 +5,7 @@ enter password
 
 enter this commands and hit enter:
 
-CREATE USER 'kimyu92'@'localhost' IDENTIFIED BY '123456';CREATE DATABASE testing_db8;GRANT ALL ON testing_db8.* TO 'kimyu92'@'localhost';
+CREATE USER 'kimyu92'@'localhost' IDENTIFIED BY '123456';CREATE DATABASE testing_db11;GRANT ALL ON testing_db11.* TO 'kimyu92'@'localhost';
 
 python3 manage.py syncdb
 
@@ -16,3 +16,5 @@ python3 manage.py shell < player_insert_script6.py
 python3 manage.py shell < match_insert_script.py 
 
 to change the database change the testing_db to a new number and update the settings.py to reflect the change
+
+SET default_storage_engine=MYISAM;
