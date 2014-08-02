@@ -32,15 +32,18 @@
 
                 <!-- this is also in home.html -->
                 
-                <!-- <li class="gn-search-item">
+                <li class="gn-search-item">
                   <input placeholder="Search" type="search" class="gn-search">
-                  <a class="gn-icon gn-icon-search"><span>Search</span></a>
-                </li> -->
+                  <a class="gn-icon gn-icon-search"><form action="/search" >
+                    <input name="q" value="{{request.GET.q}}">
+                    <input type="submit" value="Go">
+                  </form>
 
-                <form action="/search">
-                  <input name="q" value="{{request.GET.q}}">
-                  <input type="submit" value="Go">
-              </form>
+                  </a>
+                  
+                </li>
+
+                
 
                 
                 <li>
@@ -59,6 +62,10 @@
 
         <!-- To put the world cup on the left side -->
         <li> </li>
+        <div location = "right">
+
+
+        </div>
 
       </ul>
       <!-- <header> -->

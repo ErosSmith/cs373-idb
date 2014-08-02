@@ -6,6 +6,22 @@
 		<title>World Cup - Search</title>
 		<!-- calender stuff -->
 		<link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/calender.css">
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination_players.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tabs.css" rel="stylesheet" /> -->
+		
+		<!-- <link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/bootstrap.min.css" rel="stylesheet" /> -->
+		
+		<link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tab_responsive.css" rel="stylesheet" />
+		<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/css/preview.min.css" rel="stylesheet" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+		<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/font-awesome.min.css" rel="stylesheet" />
 	</head>
 
 	{% include 'sidebar.html' %}
@@ -19,28 +35,30 @@
 	        <table class="table ">
 	          <thead>
 	            <tr>
-	              <th class="text-center" style="color:#fff;font-size:24px">{% block tableHeader %} Search Results{% endblock tableHeader %}</th>
+	              <th class="text-center" style="color:#000000;font-size:24px">{% block tableHeader %} Search Results{% endblock tableHeader %}</th>
 	            </tr>
 	          </thead>
 	          <tbody>
 	          	{% if results %}
 	                <tr>
-	                    <td style="color:#fff; font-size: 1.3em;">Your search for "{{ query }}" returned {{ length_results }} results.</td>
+	                    <td style="color:#000000; font-size: 1.3em;">Your search for "{{ query }}" returned {{ length_results }} results.</td>
 	                </tr>
 		        	{% for result, snippet in results %}
+           
 	                    <tr>
 	                        <td style="border-top:none">
 
 	        			        <tr>
 	        			            <td class="list-td" style="border-top:none">
-	                                    <a class="list-td-a" href="{{ result.url }}">blah blah  {{ result.url }} </a>
+	                                    <a class="list-td-a" href="{{ result.url }}"> {{ result.url }} </a>
 	                                </td>
 	        			        </tr>
 	                            <tr>
-	                                <td class="list-td" style="border-top:none">{{ snippet|safe }}</td>
+	                                <td style="color:#000000" class="list-td" style="border-top:none">{{ snippet|safe }}</td>
 	                            </tr>
 	                        </td>
 	                    </tr>
+	   
 				    {% endfor %}
 				{% else %}
 						<tr>
