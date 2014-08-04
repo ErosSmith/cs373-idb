@@ -33,13 +33,10 @@
                 <!-- this is also in home.html -->
                 
                 <li class="gn-search-item">
-                  <input placeholder="Search" type="search" class="gn-search">
-                  <a class="gn-icon gn-icon-search"><form action="/search" >
-                    <input name="q" value="{{request.GET.q}}">
-                    <input type="submit" value="Go">
+                  <form action="/search" >
+                  <input placeholder="Search" type="search" name="q" class="gn-search" value="{{request.GET.q}}">
                   </form>
-
-                  </a>
+                  <a class="gn-icon gn-icon-search"></a>
                   
                 </li>
 

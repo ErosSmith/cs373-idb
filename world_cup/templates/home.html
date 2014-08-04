@@ -67,6 +67,14 @@
                   <input placeholder="Search" type="search" class="gn-search">
                   <a class="gn-icon gn-icon-search"><span>Search</span></a>
                 </li> -->
+                <li class="gn-search-item">
+                  <form action="/search" >
+                  <input placeholder="Search" type="search" name="q" class="gn-search" value="{{request.GET.q}}">
+                  </form>
+                  <a class="gn-icon gn-icon-search"></a>
+                  
+                </li>
+                
                 <li>
                   <a class="gn-icon gn-icon-globe" href="/countries">Countries</a>
                   <li><a class="gn-icon gn-icon-players" href="/players">Players</a></li>
