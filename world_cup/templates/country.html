@@ -2,43 +2,15 @@
 <html lang="en">
 
 <head>
-
-
-
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-
-
 	<title>World Cup - {{country}}</title>
-	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
-	<script src="/static/js/bootstrap.min.js"></script>-->
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='http://css.fifa.com/components/style/framework/lang=en/base.css?v=20140731084643'> </link> -->
-	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/fifa_base.css'> </link> -->
-
-
-	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='http://css.fifa.com/components/style/framework/lang=en/footballdata.css?v=20140728113834'> </link> -->
-
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>\
 	<link type='text/css' title='standard' rel='stylesheet'  href='https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/fifa_football_data.css'> </link>
-
-	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='http://css.fifa.com/components/style/framework/lang=en/worldcup/base.css?v=20140728113834'> </link> -->
-
-
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/scrolling-nav.css" rel="stylesheet">
-
 </head>
 
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
@@ -76,6 +48,7 @@
 			</div>
 		</div>
     </section>
+	
 
     <!-- About Section -->
     <section id="about" class="about-section"> 
@@ -88,15 +61,33 @@
 	                            <div class="p-list">
 	                            {% for x, y in wow_urls %}
 	                                <div class="p p-i p-i-prt-1" data-player-id="356166" data-player-role="g">
-	                                    <div class="p-i"><span class="p-i-bibnum">{{x.shirt_number}}</span>
-	                                        <div class="picture-wrap">
+	                                    <div class="p-i">
+	                                    	<!-- tooltip added -->
+	                                        <div class="picture-wrap" data-toggle="tooltip" data-placement="bottom" title="{{x.full_name}},
+	                                        {{x.position}}">
 	                                            <a href="/players/{{ y }}">
 	                                                <img class="player" src="{{x.player_image}}" data-src="{{x.player_image}}">
 	                                            </a>
 	                                        </div>
+	                                        <!-- tooltip.js -->
+	                                        <script>
+												$('.picture-wrap').tooltip({
+													trigger: 'hover'
+												})
+											</script>
+											<!-- css for tooltip -->
+											<style type="text/css">
+												.tooltip.bottom .tooltip-inner {
+													background-color: white;
+												}
+												.tooltip.bottom .tooltip-arrow {
+													border-bottom-color: white;
+											    }  
+											</style>
 	                                    </div>
-	                                    <div class="p-n"><a href="/players/{{ y }}"><span class="p-n-webname">{{ x.full_name }}</span></a><span class="p-i-fieldpos">{{ x.position }}</span><span class="p-i-clubname">{{ x.country.country_name }}</span>
-	                                    </div>
+
+	                                    <!-- <div class="p-n"><a href="/players/{{ y }}"><span class="p-n-webname">{{ x.full_name }}</span></a><span class="p-i-fieldpos">{{ x.position }}</span><span class="p-i-clubname">{{ x.country.country_name }}</span>
+	                                    </div> -->
 	                                </div>
 	                            {% endfor %}
 	                            </div>
