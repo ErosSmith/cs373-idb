@@ -11,8 +11,12 @@ python3 manage.py syncdb
 
 run scripts to load data
 
-python3 manage.py shell < country_insert_script.py 
-python3 manage.py shell < player_insert_script6.py 
+python3 manage.py shell < country_insert_script.py
+python3 manage.py shell < country_insert_stats_script.py 
+python3 manage.py shell < country_insert_article.py  
+python3 manage.py shell < player_insert_script6.py
+python3 manage.py shell < player_insert_script7.py
+python3 manage.py shell < player_insert_twitter_name.py 
 python3 manage.py shell < match_insert_script.py 
 
 to change the database change the testing_db to a new number and update the settings.py to reflect the change
