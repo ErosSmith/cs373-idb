@@ -130,7 +130,9 @@ def country(request, c_name):
             "players" : ordered_players,
             "mapurl" : country.map_url,
             'flagurl' : country.flag,
-            'wow_urls' : z
+            'wow_urls' : z,
+            'team_logo_url' : country.team_logo_url,
+            'team_video_url' : country.team_video_url
         }
 
         # print(country_dict['title'])

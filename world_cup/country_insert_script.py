@@ -33,7 +33,7 @@ from wc_app.models import *
 adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/flags/brazil.png","https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/brazil.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Brazil&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/bra.gif",
-      "https://www.youtube.com/watch?v=6E_Lav_N-Ho"
+      "//www.youtube.com/embed/6E_Lav_N-Ho"
    ],
    "Italy":[  
       "ITA",
@@ -42,7 +42,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/italy.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Italy&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/ita.gif",
-      "https://www.youtube.com/watch?v=NofTWmHkDg8"
+      "//www.youtube.com/embed/NofTWmHkDg8"
    ],
    "USA":[  
       "USA",
@@ -51,7 +51,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/usa.jpg",
       "https://www.google.com/maps/embed/v1/place?q=USA&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/usa.gif",
-      "https://www.youtube.com/watch?v=YJty7rg3eds"
+      "//www.youtube.com/embed/YJty7rg3eds"
    ],
    "Costa Rica":[  
       "CRC",
@@ -60,7 +60,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/costa_rica.jpg",
       "https://www.google.com/maps/embed/v1/place?q=CostaRica&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/crc.gif",
-      "https://www.youtube.com/watch?v=H1R8R0via38"
+      "//www.youtube.com/embed/H1R8R0via38"
    ],
    "France":[  
       "FRA",
@@ -69,7 +69,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/france.jpg",
       "https://www.google.com/maps/embed/v1/place?q=France&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/fra.gif",
-      "https://www.youtube.com/watch?v=pCEvxlHMcDg"
+      "//www.youtube.com/embed/pCEvxlHMcDg"
    ],
    "Argentina":[  
       "ARG",
@@ -78,7 +78,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/argentina.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Argentina&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/arg.gif",
-      "https://www.youtube.com/watch?v=MsNLpGHC6MM"
+      "//www.youtube.com/embed/MsNLpGHC6MM"
    ],
    "Cameroon":[  
       "CMR",
@@ -87,7 +87,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/cameroon.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Cameroon&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/cmr.gif",
-      "https://www.youtube.com/watch?v=ygntRxCUqrQ"
+      "//www.youtube.com/embed/ygntRxCUqrQ"
    ],
    "Nigeria":[  
       "NGA",
@@ -96,7 +96,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/nigeria.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Nigeria&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/nga.gif",
-      "https://www.youtube.com/watch?v=fetWGB62rOI"
+      "//www.youtube.com/embed/fetWGB62rOI"
    ],
    "Ecuador":[  
       "ECU",
@@ -105,7 +105,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/ecuador.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Ecuador&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/ecu.gif",
-      "https://www.youtube.com/watch?v=TClfl0PoTzQ"
+      "//www.youtube.com/embed/TClfl0PoTzQ"
    ],
    "Ghana":[  
       "GHA",
@@ -114,7 +114,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/ghana.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Ghana&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/gha.gif",
-      "https://www.youtube.com/watch?v=5zQgjAESpZE"
+      "//www.youtube.com/embed/5zQgjAESpZE"
    ],
    "Australia":[  
       "AUS",
@@ -123,7 +123,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/australia.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Australia&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/aus.gif",
-      "https://www.youtube.com/watch?v=2gn6VWRWkzY"
+      "//www.youtube.com/embed/2gn6VWRWkzY"
    ],
    "Iran":[  
       "IRN",
@@ -132,7 +132,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/iran.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Iran&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/irn.gif",
-      "https://www.youtube.com/watch?v=8Ia6ea9fSLA"
+      "//www.youtube.com/embed/8Ia6ea9fSLA"
    ],
    "Algeria":[  
       "ALG",
@@ -141,7 +141,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/algeria.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Algeria&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/alg.gif",
-      "https://www.youtube.com/watch?v=Yp41xOAY0EE"
+      "//www.youtube.com/embed/Yp41xOAY0EE"
    ],
    "Korea Republic":[  
       "KOR",
@@ -150,7 +150,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/korea.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Korea&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/kor.gif",
-      "https://www.youtube.com/watch?v=OUkb2-vKFkU"
+      "//www.youtube.com/embed/OUkb2-vKFkU"
    ],
    "Germany":[  
       "GER",
@@ -159,7 +159,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/germany.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Germany&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/ger.gif",
-      "https://www.youtube.com/watch?v=RoSOGoolFGs"
+      "//www.youtube.com/embed/RoSOGoolFGs"
    ],
    "Bosnia and Herzegovina":[  
       "BIH",
@@ -168,7 +168,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/bosnia_and_herzegovina.jpg",
       "https://www.google.com/maps/embed/v1/place?q=BosniaandHerzegovina&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/bih.gif",
-      "https://www.youtube.com/watch?v=aXp0uMQ9eI4"
+      "//www.youtube.com/embed/aXp0uMQ9eI4"
    ],
    "Chile":[  
       "CHI",
@@ -177,7 +177,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/chile.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Chile&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/chi.gif",
-      "https://www.youtube.com/watch?v=_bnOs1Av5nw"
+      "//www.youtube.com/embed/_bnOs1Av5nw"
    ],
    "Belgium":[  
       "BEL",
@@ -186,7 +186,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/belgium.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Belgium&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/bel.gif",
-      "https://www.youtube.com/watch?v=4iBEwofrgLY"
+      "//www.youtube.com/embed/4iBEwofrgLY"
    ],
    "Spain":[  
       "ESP",
@@ -195,7 +195,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/spain.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Spain&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/esp.gif",
-      "https://www.youtube.com/watch?v=p6CtWn89CgU"
+      "//www.youtube.com/embed/p6CtWn89CgU"
    ],
    "Netherlands":[  
       "NED",
@@ -204,7 +204,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/netherlands.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Netherlands&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/ned.gif",
-      "https://www.youtube.com/watch?v=BJt7Bm_xiRg"
+      "//www.youtube.com/embed/BJt7Bm_xiRg"
    ],
    "Croatia":[  
       "CRO",
@@ -213,7 +213,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/croatia.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Croatia&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/cro.gif",
-      "https://www.youtube.com/watch?v=n_0Yz0-nrSQ"
+      "//www.youtube.com/embed/n_0Yz0-nrSQ"
    ],
    "Switzerland":[  
       "SUI",
@@ -222,7 +222,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/switzerland.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Switzerland&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/sui.gif",
-      "https://www.youtube.com/watch?v=lIrKW0_gPdY"
+      "//www.youtube.com/embed/lIrKW0_gPdY"
    ],
    "Honduras":[  
       "HON",
@@ -231,7 +231,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/honduras.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Honduras&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/hon.gif",
-      "https://www.youtube.com/watch?v=IZsYf0Ov8g0"
+      "//www.youtube.com/embed/IZsYf0Ov8g0"
    ],
    "Ivory Coast":[  
       "CIV",
@@ -240,7 +240,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/ivory_coast.jpg",
       "https://www.google.com/maps/embed/v1/place?q=IvoryCoast&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/civ.gif",
-      "https://www.youtube.com/watch?v=4mop073orrI"
+      "//www.youtube.com/embed/4mop073orrI"
    ],
    "Russia":[  
       "RUS",
@@ -249,7 +249,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/russia.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Russia&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/rus.gif",
-      "https://www.youtube.com/watch?v=pNii1Iy02Jc"
+      "//www.youtube.com/embed/pNii1Iy02Jc"
    ],
    "England":[  
       "ENG",
@@ -258,7 +258,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/england.jpg",
       "https://www.google.com/maps/embed/v1/place?q=England&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/eng.gif",
-      "https://www.youtube.com/watch?v=-6q5xn84kGU"
+      "//www.youtube.com/embed/-6q5xn84kGU"
    ],
    "Portugal":[  
       "POR",
@@ -267,7 +267,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/portugal.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Portugal&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/por.gif",
-      "https://www.youtube.com/watch?v=DSyYg_N3zcw"
+      "//www.youtube.com/embed/DSyYg_N3zcw"
    ],
    "Mexico":[  
       "MEX",
@@ -276,7 +276,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/mexico.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Mexico&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/mex.gif",
-      "https://www.youtube.com/watch?v=wK2CcP5rSNo"
+      "//www.youtube.com/embed/wK2CcP5rSNo"
    ],
    "Uruguay":[  
       "URU",
@@ -285,7 +285,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/uruguay.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Uruguay&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/uru.gif",
-      "https://www.youtube.com/watch?v=eELyHuqYlsU"
+      "//www.youtube.com/embed/eELyHuqYlsU"
    ],
    "Colombia":[  
       "COL",
@@ -294,7 +294,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/colombia.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Colombia&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/col.gif",
-      "https://www.youtube.com/watch?v=67813ps8cR4"
+      "//www.youtube.com/embed/67813ps8cR4"
    ],
    "Greece":[  
       "GRE",
@@ -303,7 +303,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/greece.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Greece&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/gre.gif",
-      "https://www.youtube.com/watch?v=C-PRYMOvpSA"
+      "//www.youtube.com/embed/C-PRYMOvpSA"
    ],
    "Japan":[  
       "JPN",
@@ -312,7 +312,7 @@ adict = {"Brazil":[  "BRA",3,"https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVU
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/symbol_flags/japan.jpg",
       "https://www.google.com/maps/embed/v1/place?q=Japan&key=AIzaSyDZQEI-0qREquMzHQf8Gl6Z2zYt_YBjrmQ",
       "https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/team_logos/jpn.gif",
-      "https://www.youtube.com/watch?v=cR37y8EtLRs"
+      "//www.youtube.com/embed/cR37y8EtLRs"
    ]
 }
 for key in adict:

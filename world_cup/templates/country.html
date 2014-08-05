@@ -1,32 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" class=" js no-touch">
+<html lang="en">
 
-	<head>
-		<title>World Cup - {{country}}</title>
-		<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
-    	<script src="/static/js/bootstrap.min.js"></script>-->
-    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
-    	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-    	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<head>
 
-	</head>
-	{% include 'sidebar.html' %}
-	<body>
-		<br />
-		<br />
-		<br />
-		<br />
+
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+	<title>World Cup - {{country}}</title>
+	<!-- <link href="/static/css/animate.css" rel="stylesheet" type="text/css">
+	<script src="/static/js/bootstrap.min.js"></script>-->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='http://css.fifa.com/components/style/framework/lang=en/base.css?v=20140731084643'> </link> -->
+	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/fifa_base.css'> </link> -->
+
+
+	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='http://css.fifa.com/components/style/framework/lang=en/footballdata.css?v=20140728113834'> </link> -->
+
+	<link type='text/css' title='standard' rel='stylesheet'  href='https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/fifa_football_data.css'> </link>
+
+	<!-- <link type='text/css' title='standard' rel='stylesheet'  href='http://css.fifa.com/components/style/framework/lang=en/worldcup/base.css?v=20140728113834'> </link> -->
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/scrolling-nav.css" rel="stylesheet">
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" >
+
+    {% include 'sidebar_country.html' %}
+    <style type="text/css">
+	    .intro-section{
+	    	background-image: url('{{symbol_flag}}');
+	    	z-index: 1000;
+	    }
+    </style>
+
+    <!-- Intro Section -->
+    <section id="intro" class="intro-section">
 		<div class="container">
 			<div class ="table-responsive">
-        		<table class="table">
+	    		<table class="table">
 					<tr bgcolor = "#B0C4DE">
-        				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
-    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Flag</b></h4></center></th></td>
-    					<td width = "40%"class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Country Name</b></h4></center></th></td>
-    					<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Rank</b></h4></center></th></td>
-    					<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
-    				</tr>
-    				<tr bgcolor = "#DCDCDC">
+	    				<!-- <td class="text-center list-td col-xs-6 col-md-1"></th></td> -->
+						<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Flag</b></h4></center></th></td>
+						<td width = "40%"class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Country Name</b></h4></center></th></td>
+						<td class="text-center list-td col-xs-6 col-md-4"><center><h4><b>Rank</b></h4></center></th></td>
+						<!-- <td class="text-center list-td col-xs-6 col-md-1"></td> -->
+					</tr>
+					<tr bgcolor = "#DCDCDC">
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none">
 						<center><img width="150" height="100" src="{{ flagurl }}" class="img-responsive imageClip thumbnail" alt="Responsive image"></center>
 						</td>
@@ -34,40 +73,81 @@
 						<td class="text-center col-xs-6 col-md-4" style="border-top:none"><font size = "6"><center>{{ rank }}</center></font></td>
 					</tr>
 				</table>
-
-  
-				<div class ="table-responsive">
-        			<table class="table table-hover">
-        				<thead>
-        					<br />
-        					<tr bgcolor = "#B0C4DE">
-        						<th class="text-center list-td col-xs-6 col-md-4">Player Shirt-Number</th>
-	        					<th class="text-center list-td col-xs-6 col-md-4">Name</th>
-	        					<th class="text-center list-td col-xs-6 col-md-4">Position</th>
-	        				</tr>
-	        			<thead>
-	        			<tbody>
-						{% for x, y in wow_urls %}
-							<tr bgcolor = "#DCDCDC">
-								<td class="text-center col-xs-6 col-md-4">	
-									<a href="/players/{{ y }}">{{ x.shirt_number }}</a>
-								</td>
-								<td class="text-center col-xs-6 col-md-4">	
-									<a href="/players/{{ y }}">{{ x.full_name }}</a>
-								</td>
-								<td class="text-center col-xs-6 col-md-4">	
-									{{ x.position }}
-								</td>
-							</tr>
-						{% endfor %}
-						</tbody>
-					</table>
-				</div>
-				<center><iframe width="60%" height="400" frameborder="0" style="border:0"
-			  	src="{{mapurl}}"></iframe></center>
- 				<center>
 			</div>
 		</div>
+    </section>
 
-	</body>
+    <!-- About Section -->
+    <section id="about" class="about-section"> 
+    	<div class="container">
+	        <div class="team-players-list">
+	            <div class="col-xs-12 clear-grid ">
+	                <div id="players" data-title="2014 FIFA World Cup™ - Players">
+	                    <div class="module">
+	                        <div class="inner loaded" style="min-height:367px;height:auto !important;height: 367px;" >
+	                            <div class="p-list">
+	                            {% for x, y in wow_urls %}
+	                                <div class="p p-i p-i-prt-1" data-player-id="356166" data-player-role="g">
+	                                    <div class="p-i"><span class="p-i-bibnum">{{x.shirt_number}}</span>
+	                                        <div class="picture-wrap">
+	                                            <a href="/players/{{ y }}">
+	                                                <img class="player" src="{{x.player_image}}" data-src="{{x.player_image}}">
+	                                            </a>
+	                                        </div>
+	                                    </div>
+	                                    <div class="p-n"><a href="/players/{{ y }}"><span class="p-n-webname">{{ x.full_name }}</span></a><span class="p-i-fieldpos">{{ x.position }}</span><span class="p-i-clubname">{{ x.country.country_name }}</span>
+	                                    </div>
+	                                </div>
+	                            {% endfor %}
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+        </div>     
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                   	<center>
+						<iframe width="560" height="315" src="{{team_video_url}}?autoplay=0&amp;showinfo=0&amp;modestbranding=1&amp;theme=light&amp;iv_load_policy=3&amp;rel=0&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+                	</center>
+				<center>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class = "map">
+                   		<iframe width="60%" height="400" frameborder="0" style="border:0" src="{{mapurl}}"></iframe>
+                   		<br>
+                   		<br>
+                   		<center><img  src="{{ team_logo_url }}" class="img-responsive imageClip thumbnail" alt="Responsive image"></center>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="http://startbootstrap.com/templates/scrolling-nav/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://startbootstrap.com/templates/scrolling-nav/js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="http://startbootstrap.com/templates/scrolling-nav/js/jquery.easing.min.js"></script>
+    <script src="http://startbootstrap.com/templates/scrolling-nav/js/scrolling-nav.js"></script>
+
+</body>
+
 </html>
