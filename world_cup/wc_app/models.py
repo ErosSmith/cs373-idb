@@ -21,6 +21,8 @@ class Country(models.Model):
     map_url = models.CharField(max_length=500)
     team_logo_url = models.CharField(max_length=600)
     team_video_url = models.CharField(max_length=600)
+    article = models.CharField(max_length=6000)
+    continent = models.CharField(max_length=500)
 
     # Country Statistics
     matches_played = models.CharField(max_length=20)
