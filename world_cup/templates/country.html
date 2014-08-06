@@ -113,19 +113,53 @@
 
     <!-- Map Section -->
     <section id="contact" class="container content-section text-center">
-        <div class="container">
-            <div class="row map">
-                <center>
-                    <img  src="{{ team_logo_url }}" class="img-responsive imageClip thumbnail" alt="Responsive image">
-                    <div class="iframe-rwd">
-                        <iframe max-height="50%" frameborder="0" style="border:0" src="{{mapurl}}"></iframe>
-                    </div>
-                </center>
+
+
+        <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="{{team_logo_url}}">
+            </a>
+            <h4 class="media-heading-article">Country Biography</h4>
+            <div class="media-body" style = "width:500px; height:360px; overflow:auto;">
+                {{article}}
             </div>
         </div>
+        <style type="text/css">
+            .media-heading-article{
+                margin: 0 0 15px;
+                color: #bbb !important;
+                text-align: left;
+            }
+            .media-body{
+                color: #000 !important;
+                text-align: left;
+            }
+        </style>
+
+        <!-- <div class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="{{team_logo_url}}" >
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">Country Biography</h4>
+                <div class="box-country-article" style = "height:330px; overflow:auto;">
+                    <p>{{article}}</p>
+                </div>
+                <style type="text/css">
+                        .box-country-article{
+                            color: #000000;
+                        }
+                </style>
+            </div>
+        </div> -->
+
+        
     </section>
 
     <style type="text/css">
+        #contact{
+            padding-bottom: 270px;
+        }
         .iframe-rwd  {
             position: relative;
             padding-bottom: 65.25%;
@@ -142,17 +176,6 @@
             height: 60%;
         }
     </style>
-
-    <!-- Map Section -->
-<!--     <div id="map">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Download Grayscale</h2>
-                <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-            </div>
-        </div>
-    </div> -->
 
     <!-- Footer -->
 <!--     <footer>

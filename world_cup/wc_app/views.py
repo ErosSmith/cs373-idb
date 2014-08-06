@@ -132,7 +132,8 @@ def country(request, c_name):
             'flagurl' : country.flag,
             'wow_urls' : z,
             'team_logo_url' : country.team_logo_url,
-            'team_video_url' : country.team_video_url
+            'team_video_url' : country.team_video_url,
+            'article' : country.article
         }
 
         # print(country_dict['title'])
