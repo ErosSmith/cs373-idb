@@ -1,50 +1,64 @@
 <!DOCTYPE html>
-{% include 'sidebar.html' %}
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>World Cup - About Us</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/bootstrap.min.css" rel="stylesheet" /> -->
-        <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/aboutusbootsrap.css" rel="stylesheet">
-        <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/preview.min.css" rel="stylesheet" />
-        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{country_A}} vs {{country_B}}</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 
-        <!--[if IE 7]>
-            <link href="styles/font-awesome-ie7.min.css" rel="stylesheet" />
-        <![endif]-->
-        <!--[if IE 8]>
-            <style type="text/css">
-            .navbar-inner{
-                filter:none;
-            }
-             </style>
-            <![endif]-->
-    </head>
+    <!-- the table -->
+     <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/preview.min.css" rel="stylesheet" />
+     <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/bootstrap-responsive.min.css" rel="stylesheet" />
 
-    <body>
-        <div class="container">
-            <div class="row-fluid" id="demo-1">
-                <div class="span10 offset1">
-                    <h4>ABOUT US</h4>
-                    <div class="tabbable custom-tabs tabs-animated  flat flat-all hide-label-980 shadow track-url auto-scroll">
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#panel1" data-toggle="tab" class="active ">
-                                    <i class="fa fa-shield"></i>&nbsp;
-                                    <span>Match</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#panel2" data-toggle="tab">
-                                    <i class="fa fa-film"></i>&nbsp;
-                                    <span>Highlights</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content ">
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<!-- <Navigation> -->
+{% include 'sidebar_match.html' %}
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Match {{match_num}}</h1>
+                        <!-- <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p> -->
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="tab-content ">
                             <div class="tab-pane active" id="panel1">
                                 <div class="row-fluid">
                                     <div class="span4">
@@ -76,7 +90,6 @@
                             </center>
                         </font> 
                                     </div>
-                                    <!-- Github Icon and Link -->
                                     <div class="span4">
                                             <center><h4>AWAY TEAM FLAG</h4></center>
                                             <center>
@@ -90,94 +103,70 @@
                             </div>
                             <!-- Address information -->
                             <!-- Tab two -->
-                            <div id="panel2" class="tab-pane">
-                                <div class="row-fluid">
-                                    <div class="span7">
-                                        <center><h4> HIGHLIGHTS </h4></center>
-                                        <script src="{{highlight_url}}" width="80%" height="auto" frameborder="0" style="border:0"></script>
-                                    </div>
-                                    <!-- Google Map of GDC -->
-                                    <div class="span7">
-                                        <div class="row-fluid">
-                                                <center><h4>MATCH LOCATION</h4></center>
-                                                <iframe width="100%" height="320" frameborder="0" style="border:0"
-                                                src="{{map_location}}"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- <you can add more tabs here> -->
                         </div>
-                    </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>Download Grayscale</h2>
+                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-        <script src="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/jquery-1.9.1.min.js"></script>
-        <script src="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/bootstrap.min.js"></script>
-        <script src="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/tabs-addon.js"></script>
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Start Bootstrap</h2>
+                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
+                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-        <script type="text/javascript">
-            $(function ()
-            {
-                $("a[href^='#demo']").click(function (evt)
-                {
-                    evt.preventDefault();
-                    var scroll_to = $($(this).attr("href")).offset().top;
-                    $("html,body").animate({ scrollTop: scroll_to - 80 }, 600);
-                });
-                $("a[href^='#bg']").click(function (evt)
-                {
-                    evt.preventDefault();
-                    $("body").removeClass("light").removeClass("dark").addClass($(this).data("class")).css("background-image", "url('bgs/" + $(this).data("file") + "')");
-                    console.log($(this).data("file"));
-                });
-                $("a[href^='#color']").click(function (evt)
-                {
-                    evt.preventDefault();
-                    var elm = $(".tabbable");
-                    elm.removeClass("grey").removeClass("dark").removeClass("dark-input").addClass($(this).data("class"));
-                    if (elm.hasClass("dark dark-input"))
-                    {
-                        $(".btn", elm).addClass("btn-inverse");
-                    }
-                    else
-                    {
-                        $(".btn", elm).removeClass("btn-inverse");
+    <!-- Map Section -->
+    <div id="map"></div>
 
-                    }
-                });
-                $(".color-swatch div").each(function ()
-                {
-                    $(this).css("background-color", $(this).data("color"));
-                });
-                $(".color-swatch div").click(function (evt)
-                {
-                    evt.stopPropagation();
-                    $("body").removeClass("light").removeClass("dark").addClass($(this).data("class")).css("background-color", $(this).data("color"));
-                });
-                $("#texture-check").mouseup(function (evt)
-                {
-                    evt.preventDefault();
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Your Website 2014</p>
+        </div>
+    </footer>
 
-                    if (!$(this).hasClass("active"))
-                    {
-                        $("body").css("background-image", "url(bgs/n1.png)");
-                    }
-                    else
-                    {
-                        $("body").css("background-image", "none");
-                    }
-                });
+    <!-- jQuery Version 1.11.0 -->
+    <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/js/jquery-1.11.0.js"></script>
 
-                $("a[href='#']").click(function (evt)
-                {
-                    evt.preventDefault();
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/js/bootstrap.min.js"></script>
 
-                });
-                $("a[data-toggle='popover']").popover({
-                    trigger:"hover",html:true,placement:"top"
-                });
-            });
-        </script>
-    </body>
+    <!-- Plugin JavaScript -->
+    <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/js/grayscale.js"></script>
+
+</body>
+
 </html>
