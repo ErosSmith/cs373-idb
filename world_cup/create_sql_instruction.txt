@@ -3,14 +3,14 @@ for mac start mysql: mysqld
 execute: mysql -u root -p
 enter password
 
-enter this commands and hit enter:
-
+Enter this commands and hit enter:
+==================================
 CREATE USER 'kimyu92'@'localhost' IDENTIFIED BY '123456';CREATE DATABASE testing_db11;GRANT ALL ON testing_db11.* TO 'kimyu92'@'localhost';
 
 python3 manage.py syncdb
 
-run scripts to load data
-
+Run scripts to load data
+------------------------
 python3 manage.py shell < country_insert_script.py
 python3 manage.py shell < country_insert_stats_script.py 
 python3 manage.py shell < country_insert_article.py  
@@ -21,4 +21,27 @@ python3 manage.py shell < match_insert_script.py
 
 to change the database change the testing_db to a new number and update the settings.py to reflect the change
 
+IMPORTANT!!!
+============
+Documentation of having problem searching less than 4 letter words
+http://blog.tatedavies.com/2012/09/14/where-is-my-cnf-on-mac-osx/
+Ref: https://github.com/etianen/django-watson/issues/27
+
+Windows
+1. add ft_min_word_len = 2 C:\ProgramData\MySQL\MySQL Server 5.6 on my.ini
+2. restart server (bottom icon) or computer
+
+MAC OSX
+1. add ft_min_word_len = 2 on installation mysql server folder of my.cnf
+2. sudo cp /usr/local/mysql/support.files/my-huge.cnf /etc/my.cnf
+
+3. restart server
+
+python manage.py uninstallwatson (change to @transaction.atomic)
+python manage.py installwatson
+python manage.py buildwatson
+
+
+Prerequsite: Set database to MYISAM to support FULLTEXT
+=======================================================
 SET default_storage_engine=MYISAM;
