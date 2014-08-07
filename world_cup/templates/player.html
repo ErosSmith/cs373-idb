@@ -86,7 +86,7 @@
                                 </li>
 
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-5">
                                 <div>
                                     <div class="row-md-5">
                                         <h2 class="media-heading-article">Player Biography:</h2>
@@ -130,6 +130,8 @@
             </div>
     </section>
 
+
+
     <style type="text/css">
         #player-profile{
             background: url(https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/grad_bg.png) no-repeat;
@@ -137,18 +139,29 @@
         }
     </style>
 
+    <section>
+    </section>
+
     <!-- Video Section -->
-    <section id="country-media" class="content-section text-center">
-        <div class="country-media-section">
+    <section id="player-country" class="content-section text-center">
+        <div class="player-country-section">
             <div class="row">
-                <!-- <div class="col-xs-12 table-container">
-                    <div class="col-sm-5">
-                        <h2 class="media-heading-article">Player Biography:</h2>
-                        <div class="media-body" style = "width:500px; height:360px; overflow:auto;">
-                            {{biography}}
-                        </div>
+                <div class="col-sm-3-center">
+                     <div class="row" style="float:center; padding-bottom:15px;">
+                        <center>
+                            <a class="twitter-timeline" href="https://twitter.com/{{twitter_name}}" data-widget-id="486875096263307264" data-screen-name="{{twitter_name}}">Tweets by @{{twitter_name}}</a>
+
+                            <script>
+                                !function(d,s,id)
+                                {
+                                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                                if(!d.getElementById(id)){js=d.createElement(s);
+                                    js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+                                (document,"script","twitter-wjs");
+                            </script>
+                        </center>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -157,7 +170,7 @@
             background-color: rgba(0,0,0,0.3);
             width: 100%;
         }
-        .country-media-section{
+        .player-country-section{
             color: #7e7e7e;
             float: left;
             font-family: 'Open Sans',sans-serif;

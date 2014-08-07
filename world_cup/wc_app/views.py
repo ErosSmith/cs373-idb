@@ -124,12 +124,6 @@ def country(request, c_name):
         am = Match.objects.all().filter(country_A__country_name = country.country_name)
         bm = Match.objects.all().filter(country_B__country_name = country.country_name)
         
-        print(type(am))
-        print(am)
-        print(bm)
-        print(type(bm))
-
-
         ordered_players = list(chain(g,d,m,f))
         l = [(x.full_name).replace(' ', '_') for x in ordered_players]
         z = zip(ordered_players, l)
@@ -217,7 +211,9 @@ def player(request, p_name):
             "height" : player.height,
             "first_international_appearance" : player.first_international_appearance,
             "biography" : player.biography,
-            "c_url" : country_url
+            "c_url" : country_url,
+
+            "twitter_name": player.twitter_name
         }
 
         return render_to_response('player.html', player_dic, context)
