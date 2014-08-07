@@ -7,7 +7,8 @@ from wc_app.models import *
 from django.http import HttpResponse
 from itertools import chain
 import string
-
+import urllib
+import json
 import watson
 import re
 
