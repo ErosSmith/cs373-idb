@@ -8,12 +8,6 @@ from django.http import HttpResponse
 from itertools import chain
 import string
 
-# For excersing API
-import json
-import os
-import urllib
-
-# Search
 import watson
 import re
 
@@ -112,40 +106,56 @@ def countries(request):
 
 def country(request, c_name):
     context = RequestContext(request)
-    # try:
-    x = c_name.replace('_',' ')
-    # try:
-    country = Country.objects.get(country_name=x)
+    try:
+        x = c_name.replace('_',' ')
+        # try:
+        country = Country.objects.get(country_name=x)
 
-    #make the list so that it sort based on specific position they played
-    pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
-    # player = Player.objects.all().filter(country = country).order_by('position')
-    players = Player.objects.all().filter(country = country)
-    g = players.filter(position=pos_list[0]).order_by('shirt_number')
-    d = players.filter(position=pos_list[1]).order_by('shirt_number')
-    m = players.filter(position=pos_list[2]).order_by('shirt_number')
-    f = players.filter(position=pos_list[3]).order_by('shirt_number')
+        #make the list so that it sort based on specific position they played
+        pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
+        # player = Player.objects.all().filter(country = country).order_by('position')
+        players = Player.objects.all().filter(country = country)
+        g = players.filter(position=pos_list[0]).order_by('shirt_number')
+        d = players.filter(position=pos_list[1]).order_by('shirt_number')
+        m = players.filter(position=pos_list[2]).order_by('shirt_number')
+        f = players.filter(position=pos_list[3]).order_by('shirt_number')
 
-    ordered_players = list(chain(g,d,m,f))
-    l = [(x.full_name).replace(' ', '_') for x in ordered_players]
-    z = zip(ordered_players, l)
-    # print(type(players))
-    country_dict = {
-        'country': country.country_name,
-        'rank': country.rank,
-        "players" : ordered_players,
-        "mapurl" : country.map_url,
-        'flagurl' : country.flag,
-        'wow_urls' : z,
-        'team_logo_url' : country.team_logo_url,
-        'team_video_url' : country.team_video_url,
-        'article' : country.article
-    }
+        ordered_players = list(chain(g,d,m,f))
+        l = [(x.full_name).replace(' ', '_') for x in ordered_players]
+        z = zip(ordered_players, l)
+        # print(type(players))
+        country_dict = {
+            'country': country.country_name,
+            'rank': country.rank,
+            "players" : ordered_players,
+            "mapurl" : country.map_url,
+            'flagurl' : country.flag,
+            'wow_urls' : z,
+            'team_logo_url' : country.team_logo_url,
+            'team_video_url' : country.team_video_url,
+            'article' : country.article,
 
-    # print(country_dict['title'])
-    return render_to_response('country.html', country_dict, context)
-    # except:
-    #     return handler404(request)
+            'matches_played': country.matches_played,
+            'goals_scored': country.goals_scored,
+            'attempts_on_target': country.attempts_on_target,
+            'distance_covered': country.distance_covered,
+
+            'one_g_freq_min': country.one_g_freq_min,
+            'one_g_freq_attempts': country.one_g_freq_attempts,
+            'scoring_method_total': country.scoring_method_total,
+            'att_attempts': country.att_attempts,
+
+            'def_tackles': country.def_tackles,
+            'def_saves': country.def_saves,
+            'def_blocks': country.def_blocks,
+            'def_total_defense': country.def_total_defense
+
+        }
+
+        # print(country_dict['title'])
+        return render_to_response('country.html', country_dict, context)
+    except:
+        return handler404(request)
 
 
 def players(request):
