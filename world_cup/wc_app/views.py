@@ -8,6 +8,12 @@ from django.http import HttpResponse
 from itertools import chain
 import string
 
+# For excersing API
+import json
+import os
+import urllib
+
+# Search
 import watson
 import re
 
@@ -252,6 +258,69 @@ def aboutus(request):
     except:
         return handler404(request)
 
+
+
+def tourguide(request):
+    context = RequestContext(request)
+    
+    """
+    ^api/cities/$ [name='api']
+    ^api/languages/$ [name='api']
+    ^api/activities/$ [name='api']
+    """
+
+    #Exercising all their API
+    urlAPI = "http://flappybirds.pythonanywhere.com/"
+    requestCities = urllib.request.urlopen(urlAPI+"api/cities/")
+    response_Cities = requestCities.read().decode("utf-8")
+    format_Cities = json.loads(response_Cities)
+
+    requestLanguages = urllib.request.urlopen(urlAPI+"api/languages/")
+    response_Languages = requestLanguages.read().decode("utf-8")
+    format_Languages = json.loads(response_Languages)
+
+    requestActivities = urllib.request.urlopen(urlAPI+"api/activities/")
+    response_Activities = requestActivities.read().decode("utf-8")
+    city_languages = json.load(open("wc_app/meta_key.json", "r"))["object"]
+    format_Activities = json.loads(response_Activities)
+        
+    
+    for cur_dict in city_languages:
+        new_list = []  
+        for current_element in cur_dict["language"] : 
+            for dic in format_Languages:
+                if dic["name"] == current_element:
+                    new_list += [(current_element, dic["description"])]
+        cur_dict["language"] = new_list
+
+    for cur_dict in city_languages:
+        new_list = [] 
+        current_element = cur_dict["id"]
+        for dic in format_Activities:
+            if dic["city"] == current_element:
+                new_list += [(dic["name"], dic["description"])]
+        cur_dict["activities"] = new_list
+
+    
+    # print(city_languages)
+
+    combolist = []
+    #language and country
+    p = iter(city_languages)
+    for city in format_Cities:
+        combolist += [(city, next(p)),]
+
+    # print(combolist)
+    try:
+        tour_dict = {
+            "cities" : format_Cities,
+            "languages" : format_Languages,
+            "activities" : format_Activities,
+            "cities_languages" : combolist
+        }
+        return render_to_response('tourguide.html', tour_dict, context)
+    except:
+        return handler404(request)
 
 
 #Error 404 page

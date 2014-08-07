@@ -9,7 +9,6 @@ from wc_app.views import handler404
 admin.autodiscover()
 
 
-
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'world_cup.views.home', name='home'),
@@ -46,7 +45,12 @@ urlpatterns = patterns('',
     #Error 404
     url(r'./$', views.handler404, name='handler404'),
     #Search url
-    url(r'^search', views.search, name="search"),    
+    url(r'^search', views.search, name="search"),
+
+
+    #Tourism aka Flappybird API
+    url(r'^tourguide', views.tourguide, name="tourguide"),  
+
     #For testing stuff
     #url(r'^test/$', views.test, name='test'),
 )
