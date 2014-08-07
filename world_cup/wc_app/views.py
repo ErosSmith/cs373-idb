@@ -199,7 +199,6 @@ def player(request, p_name):
             "position" : player.position,
             "shirt_number": player.shirt_number,
             "birth_date" : player.birth_date, 
-            "birth_date" : player.birth_date, 
             "player_image" : player.player_image,
             #
             "international_caps" : player.international_caps,
