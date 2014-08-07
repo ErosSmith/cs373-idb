@@ -112,40 +112,40 @@ def countries(request):
 
 def country(request, c_name):
     context = RequestContext(request)
-    try:
-        x = c_name.replace('_',' ')
-        # try:
-        country = Country.objects.get(country_name=x)
+    # try:
+    x = c_name.replace('_',' ')
+    # try:
+    country = Country.objects.get(country_name=x)
 
-        #make the list so that it sort based on specific position they played
-        pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
-        # player = Player.objects.all().filter(country = country).order_by('position')
-        players = Player.objects.all().filter(country = country)
-        g = players.filter(position=pos_list[0]).order_by('shirt_number')
-        d = players.filter(position=pos_list[1]).order_by('shirt_number')
-        m = players.filter(position=pos_list[2]).order_by('shirt_number')
-        f = players.filter(position=pos_list[3]).order_by('shirt_number')
+    #make the list so that it sort based on specific position they played
+    pos_list = ['Goalkeeper', 'Defender', 'Midfielder','Forward']
+    # player = Player.objects.all().filter(country = country).order_by('position')
+    players = Player.objects.all().filter(country = country)
+    g = players.filter(position=pos_list[0]).order_by('shirt_number')
+    d = players.filter(position=pos_list[1]).order_by('shirt_number')
+    m = players.filter(position=pos_list[2]).order_by('shirt_number')
+    f = players.filter(position=pos_list[3]).order_by('shirt_number')
 
-        ordered_players = list(chain(g,d,m,f))
-        l = [(x.full_name).replace(' ', '_') for x in ordered_players]
-        z = zip(ordered_players, l)
-        # print(type(players))
-        country_dict = {
-            'country': country.country_name,
-            'rank': country.rank,
-            "players" : ordered_players,
-            "mapurl" : country.map_url,
-            'flagurl' : country.flag,
-            'wow_urls' : z,
-            'team_logo_url' : country.team_logo_url,
-            'team_video_url' : country.team_video_url,
-            'article' : country.article
-        }
+    ordered_players = list(chain(g,d,m,f))
+    l = [(x.full_name).replace(' ', '_') for x in ordered_players]
+    z = zip(ordered_players, l)
+    # print(type(players))
+    country_dict = {
+        'country': country.country_name,
+        'rank': country.rank,
+        "players" : ordered_players,
+        "mapurl" : country.map_url,
+        'flagurl' : country.flag,
+        'wow_urls' : z,
+        'team_logo_url' : country.team_logo_url,
+        'team_video_url' : country.team_video_url,
+        'article' : country.article
+    }
 
-        # print(country_dict['title'])
-        return render_to_response('country.html', country_dict, context)
-    except:
-        return handler404(request)
+    # print(country_dict['title'])
+    return render_to_response('country.html', country_dict, context)
+    # except:
+    #     return handler404(request)
 
 
 def players(request):
