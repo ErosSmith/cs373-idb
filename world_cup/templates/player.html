@@ -1,155 +1,108 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>World Cup - {{sur_name}}</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/pagination/pagination_players.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<!-- <link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tabs.css" rel="stylesheet" /> -->
-		
-		<!-- <link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/bootstrap.min.css" rel="stylesheet" /> -->
-		
-		<link href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/tab_responsive.css" rel="stylesheet" />
-		<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/css/preview.min.css" rel="stylesheet" />
-		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
-			<link href="http://codefeed.in.iis2103.shared-servers.com/tabs/styles/font-awesome.min.css" rel="stylesheet" />
-			<!-- source for navtab, http://wrapbootstrap.com/preview/WB066F8J6 -->
-		</head>
+<html lang="en">
 
-		{% include 'sidebar.html' %}
+<head>
+    <title>{{sur_name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link type='text/css' title='standard' rel='stylesheet'  href='https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/fifa_football_data.css'> </link>
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/players_page/grayscale_p.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+</head>
 
-		<!-- responsive tabs aligned from left -->
-		<br>
-		<br>
-		<br>
-		<br>
-		<body>
-			<div class = "container">
-            <div class="row-fluid" id="demo-1">
-				<div class="tabbable custom-tabs tabs-animated  flat flat-all hide-label-980 shadow track-url auto-scroll">
-					<ul class="nav nav-tabs">
-						<!-- icon-lock, icon-user, icon-key, icon-envelope-alt -->
-						<li class="active"><a href="#panel2-1" data-toggle="tab" class="active "><i class="icon-user"></i>&nbsp;<span>Player Biography</span></a></li>
-						<li><a href="#panel2-2" data-toggle="tab"><i class="icon-group"></i>&nbsp;<span>Teams</span></a></li>
-					</ul>
-					<div class="tab-content ">
-						<div class="tab-pane active" id="panel2-1">
-							<div class="row-fluid">
-								<div class="span3">
-									<h4>&nbsp;&nbsp;{{full_name}}</h4>
-									<div class= "box" class="picture-wrap">
-										<img src="{{player_image}}" class="player img-responsive">
-									</div>
-								</div>
-								<div class="span4">
-									<h4><i class="icon-bar-chart"></i>&nbsp;&nbsp;Information</h4>
-									<div class="box">
-										<ul>
-											<!-- name -->
-											<li class="p-name">{{full_name}}</li><li class="p-team">
-												<div class="t-n">
-													<span class="t-nText ">{{country.country_name}}</span>
-													<span class="t-nTri">({{country.country_code}})</span>
-												</div>
-											</li>
-											<!-- position -->
-											<li class="role">
-												<span class="description">Role: </span>
-												<span class="data">{{position}}</span>
-											</li>
-											<!-- international caps -->
-											<li class="caps">
-												<span class="data">{{international_caps}}</span>
-												<span class="description">International Caps</span>
-											</li>
-											<!-- goals -->
-											<li class="international-goals">
-												<span class="data">{{goals}}</span>
-												<span class="description">International Goals</span>
-											</li>
-											<!-- age -->
-											<!-- <li class="age">
-												<span class="description">Age:</span>
-												<span class="data" data-birthdate="1992-02-05"> 22</span>
-											</li> -->
-											<!-- height -->
-											<li class="height">
-												<span class="description">Height:</span>
-												<span class="data">175</span>
-												<span class="description">cm</span>
-											</li>
-											<!-- first inter appearance -->
-											<li class="first-international">
-												<span class="description">First international:</span>
-												<br>
-												<span class="data">USA - Brazil 10 Aug 2010</span>
-											</li>
-											<!-- birthday -->
-											<li class="birthdate">
-												<span class="description">Date of Birth:</span>
-												<span class="data"> {{birth_date}}</span>
-											</li>
-											<!-- club info -->
-											<li class="clubname">
-												<span class="description">Current club:</span>
-												<span class="data">{{clubname}}</span>
-											</li>
-										</ul>
-									</div>
-								</div>
-								<div class="span5">
-									<h4><i class="icon-user"></i>&nbsp;&nbsp; Biography</h4>
-									<div class="box" style = "height:330px; overflow:auto;">
-										<p>{{biography}}</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tab-pane" id="panel2-2">
-							<div class="row-fluid">
-								<div class="span5">
-									<h4>
-										<i class="icon-globe"></i>&nbsp;&nbsp;National Team: 
-											<span class="data">
-												{{country.country_name}}
-											</span>
-									</h4>
-									<!-- flag image -->
-									<div class="box clearfix">
-										<center>
-											<td class="text-center col-xs-6 col-md-4" style="border-top:none">
-												<a href="/countries/{{ c_url }}">
-													<img src="{{country.flag}}" class="imageClip thumbnail" alt="Responsive image">
-												</a>
-											</td>
-										</center>
-									</div>
-								</div>
-								<div class="span7">
-									<h4>&nbsp;&nbsp;Club Team:
-										<span class="data">
-											<!-- {{clubname}} -->
-										</span>
-									</h4>
-									<div class="box">
-										<large>{{clubname}}</large>
-										<!-- <p>Getting Error With Password Recovery Click Here For <a href="#">Support</a></p> -->
-										<ul>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</body>
+ <!-- Navigation -->
+    {% include 'sidebar_player.html' %}
+
+     <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">#{{shirt_number}}, {{full_name}}</h1>
+                        <a href="#player-profile" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- player-profile Section -->
+    <section id="player-profile" class="container content-section text-center">
+        <div class = "player-profile-section">
+            <div class="row">
+                <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class= "box" class="picture-wrap">
+                            <img src="{{player_image}}" class="player img-responsive">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                      <h2>Heading</h2>
+                      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                   </div>
+                    <div class="col-md-4">
+                      <h2>Heading</h2>
+                      <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style type="text/css">
+        #player-profile{
+            background: url(https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/grad_bg.png) no-repeat;
+            width: 100%;
+        }
+    </style>
+
+    <!-- Video Section -->
+    <section id="country-media" class="content-section text-center">
+        <div class="country-media-section">
+            <div class="container">
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="country-profile" class="container content-section text-center">
+
+
+        
+    </section>
+
+    <style type="text/css">
+        #country-profile{
+            background: url(https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/unused_pics/grad_final.png) no-repeat;
+            width: 100%;
+        }
+    </style>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="http://startbootstrap.com/templates/grayscale/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="http://startbootstrap.com/templates/grayscale/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://startbootstrap.com/templates/grayscale/js/jquery.easing.min.js"></script>
+    <script src="http://startbootstrap.com/templates/grayscale/js/grayscale.js"></script>
+
+</body>
+
 </html>
