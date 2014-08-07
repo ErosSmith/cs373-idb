@@ -40,7 +40,7 @@
 <style type="text/css">
 a.white:link {color: #fff; text-decoration: underline; }
 a.white:active {color: #0000ff; text-decoration: underline; }
-a.white:visited {color: #008000; text-decoration: underline; }
+a.white:visited {color: #fff; text-decoration: underline; }
 a.white:hover {color: #ff0000; text-decoration: none; }
 
 .embed-container {
@@ -80,6 +80,8 @@ a.white:hover {color: #ff0000; text-decoration: none; }
         height: 50% !important;
 }
 
+
+
 </style>
 
 
@@ -95,7 +97,7 @@ a.white:hover {color: #ff0000; text-decoration: none; }
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading" >Match {{match_num}}</h1>
+                        <h1 class="brand-heading" >{{country_A}}<br> VS <br> {{country_B}}</h1>
                         <!-- <p class="intro-text">A free, responsive, one page Bootstrap theme.<br>Created by Start Bootstrap.</p> -->
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
@@ -115,7 +117,7 @@ a.white:hover {color: #ff0000; text-decoration: none; }
                                 <td bgcolor="FFFFFF">
                                 <div class="row-fluid">
                                     <div class="span4">
-                                    <center><h4>HOME TEAM FLAG</h4></center>
+                                    <center><h4><font size = "6">HOME TEAM FLAG</font></h4></center>
                                         <center>
                                          <a href="/countries/{{ country_A }}">
                                            <img width="150" height="100" src="{{ country_A.flag }}" 
@@ -126,9 +128,9 @@ a.white:hover {color: #ff0000; text-decoration: none; }
                                     </div>
                                     <!-- Documentation for our project -->
                                     <div class="span4">
-                                       <center><h4>MATCH DETAILS</h4></center>
+                                       <center><h4><font size = "6">MATCH DETAILS</font></h4></center>
                                        <center>
-                                       <font size = "5"> MATCH {{match_num}} </font>
+                                       <font size = "6"> MATCH {{match_num}} </font>
                                    </center>
                                         <font size = "6">
                                          <center>
@@ -136,15 +138,11 @@ a.white:hover {color: #ff0000; text-decoration: none; }
                                               vs 
                                              <a class="white" href="/countries/{{ b_url }}">{{country_B}}</a>
                                           </center>
-                        </font>
-                        <font size = "6">
-                            <center>
-                                {{score}}
-                            </center>
-                        </font> 
+                                    </font>
+                            <center><font size = "6">{{score}}</font> </center>
                                     </div>
                                     <div class="span4">
-                                            <center><h4>AWAY TEAM FLAG</h4></center>
+                                            <center><h4><font size = "6">AWAY TEAM FLAG</font></h4></center>
                                             <center>
                                             <a href="/countries/{{ country_B }}">
                                             <img width="150" height="100" src="{{ country_B.flag }}" 
