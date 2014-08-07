@@ -46,10 +46,11 @@ a.white:hover {color: #ff0000; text-decoration: none; }
 .embed-container {
     position: relative;
     padding-bottom: 56.25%; /* 16/9 ratio */
-    padding-top: 30px; /* IE6 workaround*/
+    /*padding-top: 30px;  IE6 workaround*/
     height: 0;
     overflow: hidden;
-    max-width: 80%;
+    max-width: 60%;
+    max-height: 50%
 }
 
 .embed-container iframe,
@@ -59,7 +60,24 @@ a.white:hover {color: #ff0000; text-decoration: none; }
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 50%;
+}
+
+.google-maps {
+        position: relative;
+        padding-bottom: 75%; 
+        height: 0;
+        overflow: hidden;
+        max-width: 50%;
+        max-height: 50%;
+}
+
+.google-maps iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 50% !important;
 }
 </style>
 
@@ -143,54 +161,34 @@ a.white:hover {color: #ff0000; text-decoration: none; }
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center">
-        <!-- <div class="download-section"> -->
-            <!-- <div class="container"> -->
-   <center>
-               <div class="embed-container">
-   <!-- <iframe>  -->
-      <script src="{{highlight_url}}"></script> 
-      <!-- frameborder="0"  -->
-      <!-- webkitAllowFullScreen mozallowfullscreen allowFullScreen> -->
-   <!-- </iframe> -->
-</div>
-  </center>
-            <!-- </div> -->
-        <!-- </div> -->
+    <section id="download" class="videoBack content-section text-center">
+        <center>
+            <div class="embed-container">
+                <script src="{{highlight_url}}"></script> 
+            </div>
+        </center>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                    </li>
-                    <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- <section id="contact" class="container content-section text-center"> -->
+ 
+    <!-- </section> -->
 
     <!-- Map Section -->
-    <div id="map"></div>
+    <section id="location" class="mapBack content-section text-center">>
+        <center>
+        <div class="google-maps">
+    <iframe src="{{map_location}}" frameborder="0" style="border:0"></iframe>
+    </div>
+</center>
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; Your Website 2014</p>
-        </div>
-    </footer>
+    <!-- <footer> -->
+        <!-- <div class="container text-center"> -->
+            <!-- <p>Copyright &copy; Your Website 2014</p> -->
+        <!-- </div> -->
+    <!-- </footer> -->
 
     <!-- jQuery Version 1.11.0 -->
     <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/js/jquery-1.11.0.js"></script>
