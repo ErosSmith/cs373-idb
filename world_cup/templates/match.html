@@ -37,6 +37,34 @@
       <!-- <link href="http://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/aboutus/aboutusbootsrap.css" rel="stylesheet"> -->
 
 
+<style type="text/css">
+a.white:link {color: #fff; text-decoration: underline; }
+a.white:active {color: #0000ff; text-decoration: underline; }
+a.white:visited {color: #008000; text-decoration: underline; }
+a.white:hover {color: #ff0000; text-decoration: none; }
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16/9 ratio */
+    padding-top: 30px; /* IE6 workaround*/
+    height: 0;
+    overflow: hidden;
+    max-width: 80%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
+
+
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -85,9 +113,9 @@
                                    </center>
                                         <font size = "6">
                                          <center>
-                                           <a href="/countries/{{ a_url }}">{{country_A}}</a> 
+                                           <a class="white" href="/countries/{{ a_url }}">{{country_A}}</a> 
                                               vs 
-                                             <a href="/countries/{{ b_url }}">{{country_B}}</a>
+                                             <a class="white" href="/countries/{{ b_url }}">{{country_B}}</a>
                                           </center>
                         </font>
                         <font size = "6">
@@ -117,13 +145,17 @@
     <!-- Download Section -->
     <section id="download" class="content-section text-center">
         <!-- <div class="download-section"> -->
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-                </div>
-            </div>
+            <!-- <div class="container"> -->
+   <center>
+               <div class="embed-container">
+   <!-- <iframe>  -->
+      <script src="{{highlight_url}}"></script> 
+      <!-- frameborder="0"  -->
+      <!-- webkitAllowFullScreen mozallowfullscreen allowFullScreen> -->
+   <!-- </iframe> -->
+</div>
+  </center>
+            <!-- </div> -->
         <!-- </div> -->
     </section>
 
@@ -174,7 +206,6 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/match_page_css/js/grayscale.js"></script>
-
 
 </body>
 
