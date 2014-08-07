@@ -121,6 +121,15 @@ def country(request, c_name):
         m = players.filter(position=pos_list[2]).order_by('shirt_number')
         f = players.filter(position=pos_list[3]).order_by('shirt_number')
 
+        am = Match.objects.all().filter(country_A__country_name = country.country_name)
+        bm = Match.objects.all().filter(country_B__country_name = country.country_name)
+        
+        print(type(am))
+        print(am)
+        print(bm)
+        print(type(bm))
+
+
         ordered_players = list(chain(g,d,m,f))
         l = [(x.full_name).replace(' ', '_') for x in ordered_players]
         z = zip(ordered_players, l)
@@ -149,8 +158,9 @@ def country(request, c_name):
             'def_tackles': country.def_tackles,
             'def_saves': country.def_saves,
             'def_blocks': country.def_blocks,
-            'def_total_defense': country.def_total_defense
-
+            'def_total_defense': country.def_total_defense,
+            'ma' : am,
+            'mb' : bm
         }
 
         # print(country_dict['title'])
