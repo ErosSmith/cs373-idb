@@ -150,11 +150,40 @@
     </section>
 
 <style type="text/css">
+    
+    @media (min-width:200px) {
+        /* rules for mobile horizontal (320 > 480)  */
+        .mycontent-left{
+            font-size:40px;
+        }
+        .blah-text{
+            font-size:80%;
+        }
+        table{
+            width: 15%;
+        }
+    }
+
+    @media (min-width:320px) {
+        /* rules for mobile horizontal (320 > 480)  */
+        .mycontent-left{
+            font-size:40px;
+        }
+        .blah-text{
+            font-size:80%;
+        }
+        table{
+            width: 15%;
+        }
+    }
 
     @media (min-width:480px) {
         /* rules for mobile horizontal (480 > 768)  */
         .mycontent-left{
             font-size:50px;
+        }
+        .blah-text{
+            font-size:80%;
         }
         table{
             width: 15%;
@@ -164,6 +193,9 @@
        /* rules for tablet (768 > 992) */
         .mycontent-left{
             font-size:75px;
+        }
+        .blah-text{
+            font-size:100%;
         }
         table{
             width: 30%;
@@ -176,6 +208,9 @@
         .mycontent-left{
             font-size:100px;
         }
+        .blah-text{
+            font-size:100%;
+        }
         table {
             width: 50%;
             padding-left: 40px;
@@ -186,10 +221,14 @@
         .mycontent-left{
             font-size:100px;
         }
+        .blah-text{
+            font-size:100%;
+        }
         table {
             width: 100%;
             padding-left: 45px;
         }
+        
     }
 
 
@@ -215,14 +254,15 @@
                       <li class=""><a href="#Defending" role="tab" data-toggle="tab">Defending</a></li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
-                      <div class="tab-pane fade active in" id="general">
+                        <!-- <div class="container"> -->
+                      <div class="table-responsive tab-pane fade active in" id="general">
                         <table class="table bordered team-gen-stats">
                             <tbody>
                                 <tr>
-                                    <th style="padding:13px;">Matches Played</th>
-                                    <th style="padding:13px;">Goals Scored</th>
-                                    <th style="padding:13px;">Attempts on Target</th>
-                                    <th style="padding:13px;">Distance Covered (km)</th>
+                                    <th class= "blah-text" style="padding:13px;">Matches Played</th>
+                                    <th class= "blah-text" style="padding:13px;">Goals Scored</th>
+                                    <th class= "blah-text" style="padding:13px;">Attempts on Target</th>
+                                    <th class= "blah-text" style="padding:13px;">Distance Covered (km)</th>
                                 </tr>
                             </tbody>
                             <tbody>
@@ -234,16 +274,17 @@
                                 </tr>
                             </tbody>
                         </table>
-                      </div>
+                        <!-- </div> -->
+                    </div>
 
                       <div class="tab-pane fade" id="Attacking">
                         <table class="table bordered team-attacking-stats">
                             <tbody>
                                 <tr>
-                                    <th style="padding:13px;">Goal per Min</th>
-                                    <th style="padding:13px;">Goal per Attempt</th>
-                                    <th style="padding:13px;">Total Goals</th>
-                                    <th style="padding:13px;">Total Attempts</th>
+                                    <th class= "blah-text" style="padding:13px;">Goal per Min</th>
+                                    <th class= "blah-text" style="padding:13px;">Goal per Attempt</th>
+                                    <th class= "blah-text" style="padding:13px;">Total Goals</th>
+                                    <th class= "blah-text" style="padding:13px;">Total Attempts</th>
                                 </tr>
                                 <tr>
                                     <td class = "mycontent-left" style="padding:13px;">{{one_g_freq_min}}</td>
@@ -258,10 +299,10 @@
                         <table class="table bordered team-attacking-stats">
                             <tbody>
                                 <tr>
-                                    <th style="padding:13px;">Tackles</th>
-                                    <th style="padding:13px;">Saves</th>
-                                    <th style="padding:13px;">Blocks</th>
-                                    <th style="padding:13px;">Total</th>
+                                    <th class= "blah-text" style="padding:13px;">Tackles</th>
+                                    <th class= "blah-text" style="padding:13px;">Saves</th>
+                                    <th class= "blah-text" style="padding:13px;">Blocks</th>
+                                    <th class= "blah-text" style="padding:13px;">Total</th>
                                 </tr>
                                 <tr>
                                     <td id="7000027" class="num matches_played" style="padding:13px;" class = "mycontent-left">{{def_tackles}}</td>
