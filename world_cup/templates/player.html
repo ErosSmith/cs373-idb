@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">#{{shirt_number}}, {{full_name}}</h1>
+                        <h1 class="brand-heading" style = "background: rgba(244, 197, 197, 0.11);">#{{shirt_number}}, {{full_name}}</h1>
                         <a href="#player-profile" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -43,7 +43,6 @@
     <section id="player-profile" class="container content-section text-center">
         <div class = "container">
             <div class = "player-profile-section">
-                <!-- <div class="row"> -->
                     <div id="profile">
                         <div class="header-wrap ">
                             <div class="title-wrap">
@@ -88,15 +87,60 @@
                             </div>
                             <div class="col-md-5">
                                 <div>
-                                    <div class="row-md-5">
+                                    <div class="box">
                                         <h2 class="media-heading-article">Player Biography:</h2>
-                                        <div class="media-body" style = "width:450px; height:360px; overflow:auto;">
+                                        <div id = "scrollbox3" class="media-body" style = "width:100%; height:100%;max-width:450px; max-height:360px; overflow:auto;">
                                             {{biography}}
                                         </div>
                                     </div>
+                                    <script type="text/javascript">
+                                        $('body, #scrollbox3').enscroll({
+                                            showOnHover: false,
+                                            verticalTrackClass: 'track3',
+                                            verticalHandleClass: 'handle3'
+                                        });
+                                    </script>
                                 </div>
-
                             </div>
+
+                            <style type="text/css">
+                                #scrollbox3 {
+                                    overflow: auto;
+                                    width: 400px;
+                                    height: 360px;
+                                    padding: 0 5px;
+                                }
+
+                                .track3 {
+                                    width: 10px;
+                                    background: rgba(0, 0, 0, 0);
+                                    margin-right: 2px;
+                                    border-radius: 10px;
+                                    -webkit-transition: background 250ms linear;
+                                    transition: background 250ms linear;
+                                }
+
+                                .track3:hover,
+                                .track3.dragging {
+                                    background: #d9d9d9; 
+                                    background: rgba(0, 0, 0, 0.15);
+                                }
+
+                                .handle3 {
+                                    width: 7px;
+                                    right: 0;
+                                    background: #999;
+                                    background: rgba(0, 0, 0, 0.4);
+                                    border-radius: 7px;
+                                    -webkit-transition: width 250ms;
+                                    transition: width 250ms;
+                                }
+
+                                .track3:hover .handle3,
+                                .track3.dragging .handle3 {
+                                    width: 10px;
+                                }
+                            </style>
 
                             <style type="text/css">
                                 #player-stats-info{
@@ -126,7 +170,6 @@
                             </style>
                         </div>
                     </div>
-                <!-- </div> -->
             </div>
     </section>
 
@@ -139,28 +182,45 @@
         }
     </style>
 
-    <section>
+    <section id="player-country" class="container content-section text-center">
+        <div class = "row">
+            <div class="header-wrap ">
+                <div class="title-wrap">
+                    <h2 class="title">
+                        <center>
+                            <span>
+                                <a class="logo">
+                                    <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="{{country.team_logo_url}}">
+                                </a>
+                            </span>
+                        </center>
+                        <span>National Team</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-m-5" style="color:black;">
+                <span class="country-flag"><center><img width="150" height="100" src="{{ country.flag }}" class="img-responsive imageClip thumbnail" alt="Responsive image"></center></span>
+                <span class="country-name">{{country}}</span>
+            </div>
+        </div>
     </section>
 
     <!-- Video Section -->
-    <section id="player-country" class="content-section text-center">
-        <div class="player-country-section">
-            <div class="row">
+    <section id="player-media" class="content-section text-center">
+        <div class="player-media-section">
+            <div class="row-sm-3">
                 <div class="col-sm-3-center">
-                     <div class="row" style="float:center; padding-bottom:15px;">
-                        <center>
-                            <a class="twitter-timeline" href="https://twitter.com/{{twitter_name}}" data-widget-id="486875096263307264" data-screen-name="{{twitter_name}}">Tweets by @{{twitter_name}}</a>
-
-                            <script>
-                                !function(d,s,id)
-                                {
-                                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-                                if(!d.getElementById(id)){js=d.createElement(s);
-                                    js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
-                                (document,"script","twitter-wjs");
-                            </script>
-                        </center>
-                    </div>
+                    <a class="twitter-timeline" href="https://twitter.com/{{twitter_name}}" data-widget-id="486875096263307264" data-screen-name="{{twitter_name}}">Tweets by @{{twitter_name}}</a>
+                    <script>
+                        !function(d,s,id)
+                        {
+                        var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                        if(!d.getElementById(id)){js=d.createElement(s);
+                            js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}
+                        (document,"script","twitter-wjs");
+                    </script>
                 </div>
             </div>
         </div>
@@ -170,7 +230,7 @@
             background-color: rgba(0,0,0,0.3);
             width: 100%;
         }
-        .player-country-section{
+        .player-media-section{
             color: #7e7e7e;
             float: left;
             font-family: 'Open Sans',sans-serif;
@@ -179,18 +239,12 @@
     </style>
 
     <!-- Map Section -->
-    <section id="country-profile" class="container content-section text-center">
+  <!--   <section id="country-profile" class="container content-section text-center">
 
 
         
-    </section>
+    </section> -->
 
-    <style type="text/css">
-        #country-profile{
-            background: url(https://e120c7a329d82deabb254b6d6abcaeb74cd6f833.googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/country_page/unused_pics/grad_final.png) no-repeat;
-            width: 100%;
-        }
-    </style>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="http://startbootstrap.com/templates/grayscale/js/jquery-1.11.0.js"></script>
