@@ -228,6 +228,81 @@
             </div>
         </div>
     </section>
+    <section id="country-match" class="content-section text-center">
+        <div class="test" style = "color:black;">    
+            <div class="tab-pane active" id="panel1">
+                <center><h3><font size = "6">MATCHES PLAYED</h3></center>
+                <br>
+                <table border = "1" align = "center">
+                    <!-- <tr>
+                    <div class="col-md-4"><center><h4><font size = "6">HOME TEAM FLAG</font></h4></center></div>
+                    <div class="col-md-4"><center><h4><font size = "6">MATCH DETAILS</font></h4></center></div>
+                    <div class="col-md-4"><center><h4><font size = "6">AWAY TEAM FLAG</font></h4></center></div>
+                    </tr> -->
+                {% for m in ma %}
+                
+                    <div class="row-fluid">
+                        <tr bgcolor="FFFFFF">
+                            
+                            <!-- <center><h4><font size = "6">HOME TEAM FLAG</font></h4></center>
+                            <center>
+ -->                            
+                            <td>
+                                <a href="/matches/{{m.match_num}}">
+                                <img width="150" height="150" src="{{ m.merge_flag }}"   
+                                class="imageClip thumbnail" alt="Responsive image">
+                            </a>
+                            <!-- </center> -->
+                            </td>
+                            <td>
+                            <!-- <center><h4><font size = "6">MATCH DETAILS</font></h4></center> -->
+                            <center>
+                            <h4><font size = "5">MATCH {{m.match_num}} </font></h4>
+                            </center>
+                            <h4><font size = "5"><a class="white" href="/matches/{{m.match_num}}">{{m.country_A}} vs {{m.country_B}}</a></font></h4>
+                            <center>
+                            <h4><font size = "5">{{m.score}}</font></font></h4> 
+                            </center>
+                            </td>
+                        </tr>
+                    </div>
+                {% endfor %}
+                {% for m in mb %}
+                
+                    <div class="row-fluid">
+                        <tr bgcolor="FFFFFF">
+                            
+                            <!-- <center><h4><font size = "6">HOME TEAM FLAG</font></h4></center>
+                            <center>
+ -->                            
+                            <td>
+                                <a href="/matches/{{m.match_num}}">
+                                <img width="150" height="150" src="{{ m.merge_flag }}"   
+                                class="imageClip thumbnail" alt="Responsive image">
+                            </a>
+                            <!-- </center> -->
+                            </td>
+                            <td>
+                            <!-- <center><h4><font size = "6">MATCH DETAILS</font></h4></center> -->
+                            <center>
+                            <h4><font size = "5">MATCH {{m.match_num}} </font></h4>
+                            </center>
+                            <h4><font size = "5"><a class="white" href="/matches/{{m.match_num}}">{{m.country_A}} vs {{m.country_B}}</a></font></h4>
+                            <center>
+                            <h4><font size = "5">{{m.score}}</font></font></h4> 
+                            </center>
+                            </td>
+                        </tr>
+                    </div>
+                {% endfor %}
+
+            </table>
+            </div>
+            <!-- Address information -->
+            <!-- Tab two -->
+            
+        </div>
+    </section>
     <style type="text/css">
         .div.col-xs-12.table-container{
             background-color: rgba(0,0,0,0.3);

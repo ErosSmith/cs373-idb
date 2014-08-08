@@ -207,34 +207,40 @@ def player(request, p_name):
     # p_name = p_name
     # print(p_name)
     # print(x)
-    try:
-        x = p_name.replace('_',' ')
+    # try:
+    x = p_name.replace('_',' ')
 
-        player = Player.objects.get(full_name = x)
-        country_url = (player.country.country_name).replace(' ', '_')
-        player_dic = {
-            "full_name" : player.full_name,
-            "country" : player.country,
-            "sur_name" : player.sur_name,
-            "clubname" : player.clubname,
-            "position" : player.position,
-            "shirt_number": player.shirt_number,
-            "birth_date" : player.birth_date, 
-            "player_image" : player.player_image,
-            #
-            "international_caps" : player.international_caps,
-            "goals" : player.goals,
-            "height" : player.height,
-            "first_international_appearance" : player.first_international_appearance,
-            "biography" : player.biography,
-            "c_url" : country_url,
+    player = Player.objects.get(full_name = x)
+    country_url = (player.country.country_name).replace(' ', '_')
+    
+    am = Match.objects.all().filter(country_A__country_name = player.country.country_name)
+    bm = Match.objects.all().filter(country_B__country_name = player.country.country_name)
 
-            "twitter_name": player.twitter_name
-        }
 
-        return render_to_response('player.html', player_dic, context)
-    except:
-        return handler404(request)
+    player_dic = {
+        "full_name" : player.full_name,
+        "country" : player.country,
+        "sur_name" : player.sur_name,
+        "clubname" : player.clubname,
+        "position" : player.position,
+        "shirt_number": player.shirt_number,
+        "birth_date" : player.birth_date, 
+        "player_image" : player.player_image,
+        "international_caps" : player.international_caps,
+        "goals" : player.goals,
+        "height" : player.height,
+        "first_international_appearance" : player.first_international_appearance,
+        "biography" : player.biography,
+        "c_url" : country_url,
+
+        "twitter_name": player.twitter_name,
+        "ma" : am,
+        "mb" : bm
+    }
+
+    return render_to_response('player.html', player_dic, context)
+    # except:
+    #     return handler404(request)
 
 
 
