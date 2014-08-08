@@ -123,7 +123,23 @@ def country(request, c_name):
 
         am = Match.objects.all().filter(country_A__country_name = country.country_name)
         bm = Match.objects.all().filter(country_B__country_name = country.country_name)
-        
+        la = []
+        lb = []
+        for mat in am:
+            aa = mat.country_A.country_name.replace(' ', '_')
+            bb = mat.country_B.country_name.replace(' ', '_')
+            t = (aa, bb)
+            la.append(t)
+           
+        for mat in bm:
+            aa = mat.country_A.country_name.replace(' ', '_')
+            bb = mat.country_B.country_name.replace(' ', '_')
+            t = (aa, bb)
+            lb.append(t)
+           
+        za = zip(la, am)
+        zb = zip(lb, bm)
+    
         ordered_players = list(chain(g,d,m,f))
         l = [(x.full_name).replace(' ', '_') for x in ordered_players]
         z = zip(ordered_players, l)
@@ -153,8 +169,8 @@ def country(request, c_name):
             'def_saves': country.def_saves,
             'def_blocks': country.def_blocks,
             'def_total_defense': country.def_total_defense,
-            'ma' : am,
-            'mb' : bm
+            'ma' : za,
+            'mb' : zb   
         }
 
         # print(country_dict['title'])
