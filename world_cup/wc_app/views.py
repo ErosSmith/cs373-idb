@@ -200,7 +200,57 @@ def players(request):
     except:
         return handler404(request)
 
-
+mv_rep =    {
+       "object": [{
+           "id": 1,
+           "language": ["arabic", "cantonese", "greek", "vietnamese", "Chinese", "English"],
+           "activities": []
+       }, {
+           "id": 2,
+           "language": ["punjabi", "hindi", "urdu", "gujarati"],
+           "activities": []
+       }, {
+           "id": 3,
+           "language": ["Russian"],
+           "activities": []
+       }, {
+           "id": 4,
+           "language": ["Thai"],
+           "activities": []
+       }, {
+           "id": 5,
+           "language": ["English"],
+           "activities": []
+       }, {
+           "id": 6,
+           "language": ["Portuguese", "English", "Spanish"],
+           "activities": []
+       }, {
+           "id": 7,
+           "language": ["cantonese", "Chinese", "English"],
+           "activities": []
+       }, {
+           "id": 8,
+           "language": ["Chinese"],
+           "activities": []
+       }, {
+           "id": 9,
+           "language": ["Italian"],
+           "activities": []
+       }, {
+           "id": 10,
+           "language": ["English"],
+           "activities": []
+       }, {
+           "id": 11,
+           "language": ["English", "Spanish"],
+           "activities": []
+       }, {
+           "id": 12,
+           "language": ["English", "Egyptian Arabic"],
+           "activities": []
+       }]
+   }
 
 def player(request, p_name):
     context = RequestContext(request)
@@ -320,7 +370,7 @@ def tourguide(request):
 
     requestActivities = urllib.request.urlopen(urlAPI+"api/activities/")
     response_Activities = requestActivities.read().decode("utf-8")
-    city_languages = json.load(open("wc_app/meta_key.json", "r"))["object"]
+    city_languages = mv_rep["object"]
     format_Activities = json.loads(response_Activities)
         
     
