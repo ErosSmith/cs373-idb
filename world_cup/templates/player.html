@@ -43,137 +43,131 @@
     <section id="player-profile" class="container content-section text-center">
         <div class = "container">
             <div class = "player-profile-section">
-                    <div id="profile">
-                        <div class="header-wrap ">
-                            <div class="title-wrap">
-                                <h2 class="title">
-                                    <span>Profile</span>
-                                </h2>
-                            </div>
+                <div id="profile">
+                    <div class="header-wrap ">
+                        <div class="title-wrap">
+                            <h2 class="title">
+                                <span>Profile</span>
+                            </h2>
                         </div>
                     </div>
-                    <div class="container">
-                        <div class="row row-first">
-                            <section class="col-md-4 article-container" style = "width:25%">
-                                <div class = "player-info">
-                                    <div class="picture-wrap">
-                                        <img src="{{player_image}}" class="player img-responsive">
-                                    </div>
-                                </div>
-                                <!-- <div class = "info">
-                                      <h2>{{full_name}}</h2> -->
-                                      <!-- <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p> -->
-                                <!-- </div> -->
-                            </section>
-                            <div class="col-md-4">
-                                <h2 style="height: 1px;">{{full_name}}</h2>
-
-                                <li id = "player-stats-info" class="role"><span class="data">{{position}}</span>
-                                </li>
-                                <li id = "player-stats-info" class="caps"><span class="data">{{international_caps}} </span><span class="description">International Caps</span>
-                                </li>
-                                <li id = "player-stats-info" class="international-goals"><span class="data">{{goals}} </span><span class="description">International Goals</span>
-                                </li>
-                                <li id = "player-stats-info" class="height"><span class="data">{{height}} </span><span class="description">cm</span>
-                                </li>
-                                <li id = "player-stats-info" class="first-international"><span class="description">First international:</span><span class="data-1">{{first_international_appearance}}</span>
-                                </li>
-                                <li id = "player-stats-info" class="birthdate"><span class="description">Date of Birth:</span><span class="data-1">{{birth_date}}</span>
-                                </li>
-                                <li id = "player-stats-info" class="clubname"><span class="description">Current Club:</span>
-                                    <span class="data-1">{{clubname}}</span>
-                                </li>
-
-                            </div>
-                            <div class="col-md-5">
-                                <div>
-                                    <div class="box">
-                                        <h2 class="media-heading-article">Player Biography:</h2>
-                                        <div id = "scrollbox3" class="media-body" style = "width:100%; height:100%;max-width:450px; max-height:360px; overflow:auto;">
-                                            {{biography}}
-                                        </div>
-                                    </div>
-                                    <script type="text/javascript">
-                                        $('body, #scrollbox3').enscroll({
-                                            showOnHover: false,
-                                            verticalTrackClass: 'track3',
-                                            verticalHandleClass: 'handle3'
-                                        });
-                                    </script>
+                </div>
+                <div class="container">
+                    <div class="row row-first">
+                        <section class="col-md-4 article-container" style = "width:25%">
+                            <div class = "player-info">
+                                <div class="picture-wrap">
+                                    <img src="{{player_image}}" class="player img-responsive">
                                 </div>
                             </div>
+                        </section>
+                        <div class="col-md-4">
+                            <h2 style="height: 1px;">{{full_name}}</h2>
 
-                            <style type="text/css">
-                                #scrollbox3 {
-                                    overflow: auto;
-                                    width: 400px;
-                                    height: 360px;
-                                    padding: 0 5px;
-                                }
+                            <li id = "player-stats-info" class="role"><span class="data">{{position}}</span>
+                            </li>
+                            <li id = "player-stats-info" class="caps"><span class="data">{{international_caps}} </span><span class="description">International Caps</span>
+                            </li>
+                            <li id = "player-stats-info" class="international-goals"><span class="data">{{goals}} </span><span class="description">International Goals</span>
+                            </li>
+                            <li id = "player-stats-info" class="height"><span class="data">{{height}} </span><span class="description">cm</span>
+                            </li>
+                            <li id = "player-stats-info" class="first-international"><span class="description">First international:</span><span class="data-1">{{first_international_appearance}}</span>
+                            </li>
+                            <li id = "player-stats-info" class="birthdate"><span class="description">Date of Birth:</span><span class="data-1">{{birth_date}}</span>
+                            </li>
+                            <li id = "player-stats-info" class="clubname"><span class="description">Current Club:</span>
+                                <span class="data-1">{{clubname}}</span>
+                            </li>
 
-                                .track3 {
-                                    width: 10px;
-                                    background: rgba(0, 0, 0, 0);
-                                    margin-right: 2px;
-                                    border-radius: 10px;
-                                    -webkit-transition: background 250ms linear;
-                                    transition: background 250ms linear;
-                                }
-
-                                .track3:hover,
-                                .track3.dragging {
-                                    background: #d9d9d9; 
-                                    background: rgba(0, 0, 0, 0.15);
-                                }
-
-                                .handle3 {
-                                    width: 7px;
-                                    right: 0;
-                                    background: #999;
-                                    background: rgba(0, 0, 0, 0.4);
-                                    border-radius: 7px;
-                                    -webkit-transition: width 250ms;
-                                    transition: width 250ms;
-                                }
-
-                                .track3:hover .handle3,
-                                .track3.dragging .handle3 {
-                                    width: 10px;
-                                }
-                            </style>
-
-                            <style type="text/css">
-                                #player-stats-info{
-                                    list-style:none;
-                                }
-                                #player-stats-info.role{
-                                    font-size: 19px;
-                                    font-family: 'Open Sans',sans-serif;
-                                    color: #5C5C5C;;
-                                }
-                                span.data{
-                                    font-size: 25px;
-                                    font-family: 'Open Sans',sans-serif;
-                                    color: #5C5C5C;;
-                                }
-                                span.description{
-                                    font-size: 18px;
-                                    font-family: 'Open Sans',sans-serif;
-                                    color: #5C5C5C;;
-                                }
-                                span.data-1{
-                                    font-family: 'Open Sans',sans-serif;
-                                    display:block;
-                                    color: #5C5C5C;;
-
-                                }
-                            </style>
                         </div>
+                        <div class="col-md-5">
+                            <div>
+                                <div class="box">
+                                    <h2 class="media-heading-article">Player Biography:</h2>
+                                    <div id = "scrollbox3" class="media-body" style = "width:100%; height:100%;max-width:450px; max-height:360px; overflow:auto;">
+                                        {{biography}}
+                                    </div>
+                                </div>
+                                <script type="text/javascript">
+                                    $('body, #scrollbox3').enscroll({
+                                        showOnHover: false,
+                                        verticalTrackClass: 'track3',
+                                        verticalHandleClass: 'handle3'
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+                        <style type="text/css">
+                            #scrollbox3 {
+                                overflow: auto;
+                                width: 400px;
+                                height: 360px;
+                                padding: 0 5px;
+                            }
+
+                            .track3 {
+                                width: 10px;
+                                background: rgba(0, 0, 0, 0);
+                                margin-right: 2px;
+                                border-radius: 10px;
+                                -webkit-transition: background 250ms linear;
+                                transition: background 250ms linear;
+                            }
+
+                            .track3:hover,
+                            .track3.dragging {
+                                background: #d9d9d9; 
+                                background: rgba(0, 0, 0, 0.15);
+                            }
+
+                            .handle3 {
+                                width: 7px;
+                                right: 0;
+                                background: #999;
+                                background: rgba(0, 0, 0, 0.4);
+                                border-radius: 7px;
+                                -webkit-transition: width 250ms;
+                                transition: width 250ms;
+                            }
+
+                            .track3:hover .handle3,
+                            .track3.dragging .handle3 {
+                                width: 10px;
+                            }
+                        </style>
+
+                        <style type="text/css">
+                            #player-stats-info{
+                                list-style:none;
+                            }
+                            #player-stats-info.role{
+                                font-size: 19px;
+                                font-family: 'Open Sans',sans-serif;
+                                color: #5C5C5C;;
+                            }
+                            span.data{
+                                font-size: 25px;
+                                font-family: 'Open Sans',sans-serif;
+                                color: #5C5C5C;;
+                            }
+                            span.description{
+                                font-size: 18px;
+                                font-family: 'Open Sans',sans-serif;
+                                color: #5C5C5C;;
+                            }
+                            span.data-1{
+                                font-family: 'Open Sans',sans-serif;
+                                display:block;
+                                color: #5C5C5C;;
+
+                            }
+                        </style>
                     </div>
+                </div>
             </div>
     </section>
-
-
 
     <style type="text/css">
         #player-profile{
@@ -181,7 +175,7 @@
             width: 100%;
         }
     </style>
-
+    <!-- player country -->
     <section id="player-country" class="container content-section text-center">
         <div class = "row">
             <div class="header-wrap ">
@@ -207,7 +201,7 @@
         </div>
     </section>
 
-    <!-- Video Section -->
+    <!-- media Section -->
     <section id="player-media" class="content-section text-center">
         <div class="player-media-section">
             <div class="row-sm-3">
@@ -237,14 +231,6 @@
             color: #5C5C5C;;
         }
     </style>
-
-    <!-- Map Section -->
-  <!--   <section id="country-profile" class="container content-section text-center">
-
-
-        
-    </section> -->
-
 
     <!-- jQuery Version 1.11.0 -->
     <script src="http://startbootstrap.com/templates/grayscale/js/jquery-1.11.0.js"></script>
