@@ -29,8 +29,12 @@
 
 	{% include 'sidebar.html' %}
 	{% load watson %}
-
-
+	<style type="text/css">
+	    a.white:link {color: #fff; text-decoration: underline; }
+	    a.white:active {color: #0000ff; text-decoration: underline; }
+	    a.white:visited {color: #fff; text-decoration: underline; }
+	    a.white:hover {color: #ff0000; text-decoration: none; }
+	</style>
 	<body>
 		<br/>
 		<br/>
@@ -55,7 +59,7 @@
 
 	        			        <tr>
 	        			            <td class="list-td" style="border-top:none">
-	                                    <a class="list-td-a" href="{{ result.url }}"> {{ result.url }} </a>
+	                                    <a class="white list-td-a" href="{{ result.url }}"> {{ result.url }} </a>
 	                                </td>
 	        			        </tr>
 	                            <tr>
