@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-    {% include 'sidebar.html' %}
 <html>
   <head>
 
@@ -10,38 +9,38 @@
 
     <link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" media="all" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/reset.css" />    
-    <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/application.css" />
+    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/reset.css" />   
+    <link rel="stylesheet" media="all" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/dynatable/application.css" />
     <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/share.css" />
     <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/project.css" />
     <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/pygments.css" />
 
     <link href='//fonts.googleapis.com/css?family=Nunito:300' rel='stylesheet' type='text/css'>
     <link href="//fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/dynatable-docs.css" />
+    <link rel="stylesheet" media="all" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/dynatable/dynatable-docs.css" />
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery-1.9.1.min.js'></script>
-    <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.scrollTo.js'></script>
+    <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.sharrre-1.2.0.min.js'></script>
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.toc.min.js'></script>
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/jquery.sharrre-1.2.0.min.js'></script>
     <!-- resources for project demos //-->
-    <link rel="stylesheet" media="all" href="https://s3.amazonaws.com/dynatable-docs-assets/css/jquery.dynatable.css" />
+    <link rel="stylesheet" media="all" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/dynatable/jquery.dynatable.css" />
     <script type='text/javascript' src='https://googledrive.com/host/0B3SI5iw0AIV0RUZvOFpsU3M1Rlk/jquery_players.dynatable.js'></script>
     <script type='text/javascript' src='https://s3.amazonaws.com/dynatable-docs-assets/js/highcharts.js'></script>
 
             <style>
 html
 {
-background-image:url("https://496718ce6213e103920207e0f21439dae2d4a577.googledrive.com/host/0B1WDwjXB6KSvUE00Ync0bERoY2s/players_background.png");
-background-repeat:no-repeat;
+background:url("https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/player_wal.jpg") no-repeat center center fixed !important;
+/*background-repeat:no-repeat;*/
 -webkit-background-size:cover;
 -moz-background-size:cover;
 -o-background-size:cover;
 background-size:cover;
-background-position:center;
+/*background-position:center;*/
 }
 </style>
-
-
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ {% include 'sidebar.html' %}
     <script>
       $.dynatableSetup({features: {pushState: false}});
       function getRandomInt (min, max) {
