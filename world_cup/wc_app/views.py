@@ -200,57 +200,9 @@ def players(request):
     except:
         return handler404(request)
 
-mv_rep =    {
-       "object": [{
-           "id": 1,
-           "language": ["arabic", "cantonese", "greek", "vietnamese", "Chinese", "English"],
-           "activities": []
-       }, {
-           "id": 2,
-           "language": ["punjabi", "hindi", "urdu", "gujarati"],
-           "activities": []
-       }, {
-           "id": 3,
-           "language": ["Russian"],
-           "activities": []
-       }, {
-           "id": 4,
-           "language": ["Thai"],
-           "activities": []
-       }, {
-           "id": 5,
-           "language": ["English"],
-           "activities": []
-       }, {
-           "id": 6,
-           "language": ["Portuguese", "English", "Spanish"],
-           "activities": []
-       }, {
-           "id": 7,
-           "language": ["cantonese", "Chinese", "English"],
-           "activities": []
-       }, {
-           "id": 8,
-           "language": ["Chinese"],
-           "activities": []
-       }, {
-           "id": 9,
-           "language": ["Italian"],
-           "activities": []
-       }, {
-           "id": 10,
-           "language": ["English"],
-           "activities": []
-       }, {
-           "id": 11,
-           "language": ["English", "Spanish"],
-           "activities": []
-       }, {
-           "id": 12,
-           "language": ["English", "Egyptian Arabic"],
-           "activities": []
-       }]
-   }
+
+def return_this_dict():
+    return { "object": [{"id": 1,"language": ["arabic", "cantonese", "greek", "vietnamese", "Chinese", "English"],"activities": []}, {"id": 2,"language": ["punjabi", "hindi", "urdu", "gujarati"],"activities": []}, {"id": 3,"language": ["Russian"],"activities": []}, {"id": 4,"language": ["Thai"],"activities": []}, {"id": 5,"language": ["English"],"activities": []}, {"id": 6,"language": ["Portuguese", "English", "Spanish"],"activities": []}, {"id": 7,"language": ["cantonese", "Chinese", "English"],"activities": []}, {"id": 8,"language": ["Chinese"],"activities": []}, {"id": 9,"language": ["Italian"],"activities": []}, {"id": 10,"language": ["English"],"activities": []}, {"id": 11,"language": ["English", "Spanish"],"activities": []}, {"id": 12,"language": ["English", "Egyptian Arabic"],"activities": []}]}
 
 def player(request, p_name):
     context = RequestContext(request)
@@ -357,6 +309,7 @@ def tourguide(request):
     ^api/languages/$ [name='api']
     ^api/activities/$ [name='api']
     """
+    # print("THis is mr kimchi begin")
 
     #Exercising all their API
     urlAPI = "http://flappybirds.pythonanywhere.com/"
@@ -370,7 +323,7 @@ def tourguide(request):
 
     requestActivities = urllib.request.urlopen(urlAPI+"api/activities/")
     response_Activities = requestActivities.read().decode("utf-8")
-    city_languages = mv_rep["object"]
+    city_languages = return_this_dict()["object"]
     format_Activities = json.loads(response_Activities)
         
     
@@ -395,9 +348,13 @@ def tourguide(request):
 
     combolist = []
     #language and country
-    p = iter(city_languages)
-    for city in format_Cities:
-        combolist += [(city, next(p)),]
+    # p = iter(city_languages)
+    # print("THis is mr kimchi")
+
+    for i in range(0,len(format_Cities)):
+        # x = next(p)
+        # print(city_languages[i])
+        combolist += [(format_Cities[i], city_languages[i]),]
 
     # print(combolist)
     try:

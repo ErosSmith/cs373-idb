@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" media="all" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
 
-    <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/reset.css" />    
+    <link rel="stylesheet" media="all" href="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/reset.css" />    
     <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/application.css" />
     <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/share.css" />
     <link rel="stylesheet" media="all" href="https://bb1a136fb0e11297ef8fee3caa93acfea7d70655.googledrive.com/host/0B1WDwjXB6KSvVGdXRFFQMXJ4RFE/project.css" />
@@ -206,33 +206,67 @@ background-position:center;
     </script>
 
   </head>
-  <body>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://googledrive.com/host/0B3-zO2AfoiQjWXRqUVVUX19mdFk/jquery.fittext.js"></script>
+  <style type="text/css">
+       
+    @media (min-width:200px) {
+        /* rules for mobile horizontal (320 > 480)  */
+        .mycontent-country{
+            font-size:70%!important;
+        }
+    }
 
-    
-    <!-- <h1 id="responsive_headline" style="color:block;">Sample text F.C. Team Possible really got screwed </h1> -->
-    <script>
-     $("#responsive_headline").fitText();
-    </script>
+    @media (min-width:320px) {
+        /* rules for mobile horizontal (320 > 480)  */
+        .mycontent-country{
+            font-size:80%!important;
+        }
+    }
+
+    @media (min-width:480px) {
+        /* rules for mobile horizontal (480 > 768)  */
+        .mycontent-country{
+            font-size:100%!important;
+        }
+    }
+    @media (min-width: 768px) {
+       /* rules for tablet (768 > 992) */
+        .mycontent-country{
+            font-size:100%!important;
+        }
+    }
+    @media (min-width: 992px) {
+       /* rules for desktop (992 > 1200) */
+        .mycontent-country{
+            font-size:100%!important;
+        }
+    }
+    @media (min-width: 1200px) {
+       /* rules for large (> 1200) */
+        .mycontent-country{
+            font-size:100%!important;
+        }
+    }
+
+
+</style>
+
+  <body>
     <br /><br /><br /><br />
-    <div class = "container" id="responsive_headline">
+    <div class = "container">
       <div class="dynatable-demo">
         <table id="example-table" class="table table-bordered">
         	<thead>
             	<tr>
-					<th>Shirt</th>
-					<th>Name</th>
-					<th>Country</th>
-					<th>Position</th>
-				</tr>
+					<th class = "mycontent-country">Shirt</th>
+					<th class = "mycontent-country">Name</th>
+					<th class = "mycontent-country">Country</th>
+					</tr>
 			</thead>
 			{% for x, y, z in wow_urls %}
 			<tr>
-				<td>{{x.shirt_number}}</td>
-				<td align="left"><span class="flagicon"><!-- <img alt="" src="{{ x.symbol_flag }}" width="22" height="13" class="thumbborder" /> -->&#160;</span><a href="/players/{{ y }}" title={{x.full_name}}>{{x.full_name}}</a></td>
-				<td><a href="/countries/{{ z }}" title={{x.country.country_name}}><img alt="" src="{{ x.country.flag }}" width="22" height="13" class="thumbborder" />&#160;</span>{{x.country.country_name}}</a></td>
-				<td><title={{x.position}}>{{x.position}}</title></td>
+				<td class = "mycontent-country">{{x.shirt_number}}</td>
+				<td class = "mycontent-country" align="left"><span class="flagicon"><!-- <img alt="" src="{{ x.symbol_flag }}" width="22" height="13" class="thumbborder" /> -->&#160;</span><a href="/players/{{ y }}" title={{x.full_name}}>{{x.full_name}}</a></td>
+				<td class = "mycontent-country"><a href="/countries/{{ z }}" title={{x.country.country_name}}><img alt="" src="{{ x.country.flag }}" width="22" height="13" class="thumbborder" />&#160;</span>{{x.country.country_name}}</a></td>
 			</tr>
 			{% endfor %}
 		</table>

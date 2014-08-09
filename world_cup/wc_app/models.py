@@ -9,7 +9,10 @@ from django.utils.html import format_html
 
 class Country(models.Model):
     """
-    The model contains a country name, the country code and the rank of the country.
+    The model contains a country name, the country code, the rank, flag, symbol_flag,
+    map_url, team_logo_url, team_video_url, an article, and continent of the country.
+    Country stats like matches_played and goals_scored have been added. The stats are
+    too numberous to list out here.
     The __str__ method is used to return the name of the country as string.
     """
 
@@ -97,8 +100,11 @@ class Country(models.Model):
 class Player(models.Model):
     """
     The model contains a country name (which is foreign key that comes from the country model), player surname, full name,
-    club the player plays for, the position the player plays and his date of birth_date.
+    club the player plays for, the position the player plays and his date of birth_date. Mores fields have been added such
+    as shirt_number, player_image, international_caps, goals, height, first_international_appearance, biography, and 
+    twitter_name.
     The __str__ method is used to return the name of the player.
+    The get_absolute_url method overrides the default url so that watson get the correct url as a link.
     """
 
     country = models.ForeignKey(Country)
@@ -132,7 +138,11 @@ class Match(models.Model):
     """
     The model contains a match number, the two countries that are facing each other (both of the countries are foreign keys), the winner of the match, 
     the score of the match, the location of the match and the date when the match was held.
-    The __str__ method is used to return the two countries facing each other and the score. 
+    
+    Mores fields have been added such as match_date, merge_flag, map_location, and highlight_url.
+
+    The __str__ method is used to return the two countries facing each other and the score.
+    The get_absolute_url method overrides the default url so that watson get the correct url as a link. 
     """
 
     match_num = models.IntegerField(default=0, primary_key=True)
@@ -156,6 +166,11 @@ class Match(models.Model):
 
 
 import watson
+
+"""
+This is where the models are registered. Only the text fields can be registered or else and error will
+occur. 
+"""
 
 watson.register(Country,fields=("country_name","country_code","article", "continent"))
 watson.register(Player,fields=("sur_name","full_name","clubname","position","biography"))
