@@ -204,8 +204,7 @@
         </div>
         <div class = "row">
             <div class = "col-m-5" style="color:black;">
-                <span class="country-flag"><center><img width="150" height="100" src="{{ country.flag }}" class="img-responsive imageClip thumbnail" alt="Responsive image"></center></span>
-                <span class="country-name">{{country}}</span>
+                <a href=""><span class="country-flag"><center><img width="150" height="100" src="{{ country.flag }}" class="img-responsive imageClip thumbnail" alt="Responsive image"></center></span></a>
             </div>
         </div>
     </section>
@@ -228,41 +227,30 @@
             </div>
         </div>
     </section>
-    <section id="country-match" class="content-section text-center">
-        <div class="test" style = "color:black;">    
-            <div class="tab-pane active" id="panel1">
-                <center><h3><font size = "6">MATCHES PLAYED</h3></center>
-                <br>
-                <table border = "1" align = "center">
-                    <!-- <tr>
-                    <div class="col-md-4"><center><h4><font size = "6">HOME TEAM FLAG</font></h4></center></div>
-                    <div class="col-md-4"><center><h4><font size = "6">MATCH DETAILS</font></h4></center></div>
-                    <div class="col-md-4"><center><h4><font size = "6">AWAY TEAM FLAG</font></h4></center></div>
-                    </tr> -->
-                {% for m in ma %}
-                
+    <section id="player-match" class="content-section text-center" style="padding-bottom: 250px;">
+        <div class="player-match-section" style = "color:black;"> 
+            <div class = "row">
+                <div class="header-wrap ">
+                    <div class="title-wrap">
+                        <h2  class="brand-heading" style = "background: rgba(244, 197, 197, 0.11);color:#7e7e7e;" >
+                            <span>Matches</span>
+                        </h2>
+                    </div>
+                </div>
+            </div>   
+            <div class="col-md-4" id="panel1" style="float: none;margin: 0 auto;">
+                <table  style="border-color:whitesmoke">
+                    {% for m in ma %}
                     <div class="row-fluid">
-                        <tr bgcolor="FFFFFF">
-                            
-                            <!-- <center><h4><font size = "6">HOME TEAM FLAG</font></h4></center>
-                            <center>
- -->                            
+                        <tr >
                             <td>
-                                <a href="/matches/{{m.match_num}}">
-                                <img width="150" height="150" src="{{ m.merge_flag }}"   
-                                class="imageClip thumbnail" alt="Responsive image">
-                            </a>
-                            <!-- </center> -->
+                                <img width="150" height="75" src="{{ m.country_A.symbol_flag }}" alt="Responsive image">
                             </td>
                             <td>
-                            <!-- <center><h4><font size = "6">MATCH DETAILS</font></h4></center> -->
-                            <center>
-                            <h4><font size = "5">MATCH {{m.match_num}} </font></h4>
-                            </center>
-                            <h4><font size = "5"><a class="white" href="/matches/{{m.match_num}}">{{m.country_A}} vs {{m.country_B}}</a></font></h4>
-                            <center>
-                            <h4><font size = "5">{{m.score}}</font></font></h4> 
-                            </center>
+                                <h4><font size = "5"><a class="white" href="/matches/{{m.match_num}}"> v </a></font></h4>
+                            </td>
+                            <td>
+                                <img width="150" height="75" src="{{ m.country_B.symbol_flag }}" alt="Responsive image">
                             </td>
                         </tr>
                     </div>
@@ -270,37 +258,21 @@
                 {% for m in mb %}
                 
                     <div class="row-fluid">
-                        <tr bgcolor="FFFFFF">
-                            
-                            <!-- <center><h4><font size = "6">HOME TEAM FLAG</font></h4></center>
-                            <center>
- -->                            
+                        <tr >
                             <td>
-                                <a href="/matches/{{m.match_num}}">
-                                <img width="150" height="150" src="{{ m.merge_flag }}"   
-                                class="imageClip thumbnail" alt="Responsive image">
-                            </a>
-                            <!-- </center> -->
+                                <img width="150" height="75" src="{{ m.country_A.symbol_flag}}" alt="Responsive image">
                             </td>
                             <td>
-                            <!-- <center><h4><font size = "6">MATCH DETAILS</font></h4></center> -->
-                            <center>
-                            <h4><font size = "5">MATCH {{m.match_num}} </font></h4>
-                            </center>
-                            <h4><font size = "5"><a class="white" href="/matches/{{m.match_num}}">{{m.country_A}} vs {{m.country_B}}</a></font></h4>
-                            <center>
-                            <h4><font size = "5">{{m.score}}</font></font></h4> 
-                            </center>
+                                <h4><font size = "5"><a class="white" href="/matches/{{m.match_num}}"> vs </a></font></h4>
+                            </td>
+                            <td>
+                                <img width="150" height="75" src="{{ m.country_B.symbol_flag}}" alt="Responsive image">
                             </td>
                         </tr>
                     </div>
                 {% endfor %}
-
-            </table>
-            </div>
-            <!-- Address information -->
-            <!-- Tab two -->
-            
+                </table>
+            </div>   
         </div>
     </section>
     <style type="text/css">
