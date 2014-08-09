@@ -1,3 +1,637 @@
+commit a6487ed7859d5185b16b8fa9cb11a8687af42876
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 21:51:54 2014 -0500
+
+    updated tests.out
+
+commit 85d634b9775dd9a99577b906bf632762cf0697a8
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Fri Aug 8 21:51:08 2014 -0500
+
+    final
+
+commit 2acce0e7530d94478a386d97f2f19785dc2749e9
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Fri Aug 8 19:42:40 2014 -0700
+
+    About us role added. Added moblie pic for splash page
+
+commit 9e0edfdb2a7683a1b3c4bf6468b1e4ef0e96ead7
+Author: Eros Smith <eros@utexas.edu>
+Date:   Fri Aug 8 21:36:54 2014 -0500
+
+    added final report
+
+commit 21a51841cd83ddc77e3a1fd73dc47e519d3af09d
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Fri Aug 8 19:15:16 2014 -0700
+
+    final match page
+
+commit 552353ccb2c75279fd38e20e43d1737bd0a93dfa
+Author: Kim Yu Ng <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 20:58:40 2014 -0500
+
+    Updated pydoc fixes #114
+
+commit 89ad0a17d4874f47c61e4c4f67c5454ecaf6c490
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 20:24:29 2014 -0500
+
+    changed the color for link in search.html and changed table in countries page to transparent
+
+commit 1de0f3b399e9451286e4ce4de57b6fa1f09d2ad5
+Merge: 122571a 1968491
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 19:56:57 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit 122571a494e83cd4ed323dcc3c56136f98c03361
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 19:56:26 2014 -0500
+
+    changed the table to transparent
+
+commit 19684913cb22881cf39ba1e549cd80da120d667b
+Merge: 20f8bff cfdacf1
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Fri Aug 8 19:53:36 2014 -0500
+
+    changes to html home page
+
+commit 20f8bff1eaff1916ed30bf5db70fa36a0149c028
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Fri Aug 8 19:52:19 2014 -0500
+
+    changed text on home splash page
+
+commit cfdacf1be6a2179a84e904df5a8b49dc3c15e5a3
+Author: Eros Smith <eros@utexas.edu>
+Date:   Fri Aug 8 19:38:28 2014 -0500
+
+    updated pydoc comments
+
+commit eaec6180bf0e9c4869abe8dd503feb6b45283fb3
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Fri Aug 8 18:48:13 2014 -0500
+
+    took of a column, position from players plage
+
+commit 61256b6fd7e9ae8729b07baffbc2c3d1b8c91dcd
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 18:43:39 2014 -0500
+
+    Fix the tourguide.html reload language not found
+
+commit 565e5370a3840a8f2c1f382a939ce1cdc2b4e226
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Fri Aug 8 16:08:45 2014 -0700
+
+    made parallex home page
+
+commit 1340b08825c3e19adc8f541a566cd8aa1d396510
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Fri Aug 8 17:58:09 2014 -0500
+
+    table in country pages are kinda responsive
+
+commit 6a4701695c3938c405e89eb597f6c045f346a984
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 8 17:08:07 2014 -0500
+
+    tourguide nicer look
+
+commit da1cfad6a46aea7fcb24fdab1b4b83fbfed4ba82
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Fri Aug 8 16:36:01 2014 -0500
+
+    changed the font in table to kinda responsive
+
+commit 56658911114b552586d479d10967c3d1f05d7ac3
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Fri Aug 8 15:52:04 2014 -0500
+
+    responsive text box
+
+commit c31dbabd0bccc0f6f302bba03f7b7869ec6ec2f8
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Fri Aug 8 12:08:20 2014 -0500
+
+    fixed conflict between js for navbar and tooltip
+
+commit 319cef77fe96566aa5ed4a75eb3bb9223c7dd7c9
+Merge: 94a12ad f8ec8d4
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Fri Aug 8 00:37:07 2014 -0700
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit 94a12ad575fbfed0a609e8f7064e38c08308e9c2
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Fri Aug 8 00:36:39 2014 -0700
+
+    Added reponsive video for country page and changed picture for match page
+
+commit f8ec8d4e50c64102e851a65369f998af31c3cf38
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 23:51:17 2014 -0500
+
+    views.py json load relative path not working on pythonanywhere
+
+commit 032e1fe359d18e58388761ae321b3de47d01f25d
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Thu Aug 7 23:36:55 2014 -0500
+
+    still testing
+
+commit 09eed1c7e146497d5cc97edc0e4d84a45223f75a
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Thu Aug 7 23:32:21 2014 -0500
+
+    testing
+
+commit f90911c857f3ea47efe0513649a969ddfb059c3b
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Thu Aug 7 23:28:03 2014 -0500
+
+    hello
+
+commit 53efd1afe6077f46d65aecd53163827d189a45c6
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 22:58:05 2014 -0500
+
+    fixed issues with tooltips and removed extra list item in sidebars
+
+commit e78f00212c2ebd0beafed9234174588143f1ec80
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Thu Aug 7 22:47:12 2014 -0500
+
+    added match results on player page, but its not pretty
+
+commit 005302718d031125a7ea7c98c609e5b007698649
+Author: Eros Smith <eros@utexas.edu>
+Date:   Thu Aug 7 22:24:26 2014 -0500
+
+    added new uml.png
+
+commit 8f26c14e341fcbff9def864f744f64fd1c572ac1
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 20:21:58 2014 -0700
+
+    fixed country nav drop down
+
+commit d159d033046aa11f96fdb893f50d24b5e8ab5106
+Merge: bf8a38a d8e9d1b
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 22:03:56 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit bf8a38a03bbcb4d2b44f6266f3e1443197d9e1b0
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 22:01:11 2014 -0500
+
+    unit tests tweak and tests for search added
+
+commit d8e9d1b55e0d780937be9ea3c86ec286699f6960
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 20:00:14 2014 -0700
+
+    fixed player drop nav bar
+
+commit 9084d8ec236252b0d1b6de26efb6a6962fe58d4c
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 18:23:10 2014 -0700
+
+    fixed nav bar on players page
+
+commit 6d252f566792b507430a41efb569fa5dd910f8e4
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 20:03:31 2014 -0500
+
+    players page mods
+
+commit 2181f248d615603550795d3c63e002cb723437f4
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Thu Aug 7 19:59:08 2014 -0500
+
+    added match results on country pages, but its not pretty yet
+
+commit b111947e871e8187482ad1605c7debfe0637ba9c
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 19:34:07 2014 -0500
+
+    ui mods for player/country page
+
+commit 10545019084697c69976a5fc1964fa2f62f68f01
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 18:19:51 2014 -0500
+
+    player page reformat
+
+commit d5acbfca31d45233d42b321acacca21d5efb5fd7
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 16:17:59 2014 -0700
+
+    added new scroll down drop down side bar fixes #111
+
+commit 67114e3ca7c7ef658dab2f4a2b00a9b70cabe638
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 15:15:00 2014 -0700
+
+    darkened background and in progress of fixing fonts fixes #110
+
+commit eb48c7df11b3c82c5a1df266885496882afa9445
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 15:44:31 2014 -0500
+
+    changes
+
+commit 15458cf230133ba24f2c7837db92d85942fb0fd0
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Thu Aug 7 15:33:28 2014 -0500
+
+    changed views.py and country.html for matches in country pages
+
+commit b55608ca0ba73708931004273c9c3c9f8a687402
+Merge: d72f6bb e21980a
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 15:02:26 2014 -0500
+
+    player page changes
+
+commit d72f6bb485d7b59045964ef9b9525cc7e2cd21af
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 14:59:48 2014 -0500
+
+    players html changes
+
+commit e21980a070364cdd77251448b26e4bc78b3e1821
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 14:33:38 2014 -0500
+
+    fix country bio remove backward slah
+
+commit da205b5b5b29e72509b9ac548765d4cb2001d763
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 13:36:04 2014 -0500
+
+    Fix region data on countries.html
+
+commit bc2d4398a4ba289833e2be26e9f06aef1386fa0c
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 12:49:23 2014 -0500
+
+    fix import for tourguide on views.py and add links on sidebar
+
+commit ac00719cbcea8bb92cdfca2e91ed93588d5e415a
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 09:43:57 2014 -0700
+
+    in progress to fix the z index of the drop down nav bar
+
+commit 39f8cb00d1f35ec7eaf9dc6a2924bb835e58f7fd
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 09:08:13 2014 -0700
+
+    fixed padding for match page scroll down
+
+commit 7dbb95c3f3d43ffe56da5c8af1f459dad1e5a832
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 09:06:10 2014 -0500
+
+    player page sidebar
+
+commit 9f4d59242cf45981f17f439fbb2e5ea854998e24
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Thu Aug 7 09:03:46 2014 -0500
+
+    UI changes to country/player .html
+
+commit e1be26f651d50538f59eda195c5078d0ff17b1a0
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Thu Aug 7 01:32:33 2014 -0700
+
+    made the google map responsive on the single match page and focuses on the marker when opened. fixes #108. Almost done with single match page need to fix padding
+
+commit 05cd7eb524f4bd2210e8c728da4edaa9db48c031
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Thu Aug 7 01:11:51 2014 -0500
+
+    closes #91
+
+commit 3599406533c605e131cbb015cb0d195ab5dcd762
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Wed Aug 6 22:55:50 2014 -0700
+
+    made the espn video responsive fixes #107
+
+commit 949d49338731eb7f52a2ae77bbbc58dbed686660
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Thu Aug 7 00:16:07 2014 -0500
+
+    Typo on aboutus page
+
+commit bc9616880541cbb00143213bd56026b70928f9c7
+Merge: a30c182 abc2d52
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 23:38:36 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit a30c1829d447301de3d6ff3be2b28e125ae1ff1a
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 23:38:20 2014 -0500
+
+    add instruction to fix and support search for at least two chars and above resolve #106
+
+commit abc2d5259f61605604c6df0ef8e2462bad070bed
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Wed Aug 6 21:24:47 2014 -0500
+
+    overhaul of country.html interface
+
+commit 47037ee69c2133be1860b7fcdcd6a6c0eb7e7d7b
+Merge: f2b2159 ab2d64e
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 21:08:26 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit f2b2159152a7197152078befa10b88681c60ac72
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 21:08:01 2014 -0500
+
+    Accidentally deleted fields from Country model
+
+commit ab2d64eda94163dfd131d76cab91e1a9144ad6f2
+Author: Eros Smith <eros@utexas.edu>
+Date:   Wed Aug 6 20:41:55 2014 -0500
+
+    change background video to an image fixes #101
+
+commit 5aa88e40dd0879827effa34cafc0fa136142c51e
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 20:19:31 2014 -0500
+
+    Restrict search by excluding weird url resolve #89
+
+commit 38144b5a88b83652e1ef28092db6a993fa50e901
+Merge: 1bb7f88 b9da04c
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 20:14:47 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit 1bb7f88924c789d6e786be093c87e015ef01af68
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Wed Aug 6 20:14:31 2014 -0500
+
+    Exercising Others API fix #105
+
+commit b9da04c5af7f3ce0c8959ed454f10941246afede
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Wed Aug 6 18:12:05 2014 -0700
+
+    adding more stuff to the match page
+
+commit 22fe22744e2f97e17d966d55278523c070d2f4c9
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Wed Aug 6 15:11:27 2014 -0700
+
+    updating match page and in progress of nav drop down
+
+commit 1c787d90d69e739b35df6c7fd0236c93c00d37d1
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Tue Aug 5 21:56:05 2014 -0500
+
+    country mods
+
+commit d131a25212592ff84a319ae0e5068bdd97e2bcb1
+Author: Eros Smith <eros@utexas.edu>
+Date:   Tue Aug 5 21:25:44 2014 -0500
+
+    backgrounds for countries players matches updated fixes #102
+
+commit 3435acff051f8dd48e702d0b783d0e149380f059
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Tue Aug 5 18:37:38 2014 -0500
+
+    changed some stuff
+
+commit 885414098b658e0ff2ee6f9adecbfcc9de2f57bd
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Tue Aug 5 16:05:39 2014 -0700
+
+    Fixed country not found for the article data fixes #99
+
+commit cc20fb0beade4b0b36a7f609e5f3f9185228cd45
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Tue Aug 5 14:48:09 2014 -0700
+
+    added country articles and continents also added player twitter name to model and made scripts to upload all the data to the model fixes
+
+commit 69339e2c887bf6d057e45443656345219a09d043
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Tue Aug 5 14:36:09 2014 -0500
+
+    making country page more responsive, changed template
+
+commit 7e191042a58e1f2b9363468abfc65c78c6541dab
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Tue Aug 5 11:38:53 2014 -0500
+
+    added hover tooltip, formatted lineup
+
+commit bc91044d93d73bcbf1d0d7b42a1c143d450aa167
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Mon Aug 4 22:52:58 2014 -0500
+
+    vertical scroll nav, YT url changed in country insert script
+
+commit 0408fbf2ecc774bc0389ef552e0659ad9cb10778
+Merge: 5b60473 a7b319b
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Mon Aug 4 17:43:11 2014 -0700
+
+    added stats to the model and made scripts to load the data. Also added twitter to the model fixes #92 and fixes #90
+
+commit 5b60473e771684ab3fd65e386778bb3d6e67dd1f
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Mon Aug 4 17:31:20 2014 -0700
+
+    added stats to the model and made scripts to load the data. Also added twitter to the model fixes #92 and fixes #90
+
+commit a7b319bc1a748cfc64d83a43679031496782022a
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Mon Aug 4 17:42:03 2014 -0500
+
+    Search is elegant on sidebar and added to home fix #77
+
+commit 2a761d25785eeaf3e6c1d31291d7895f53178119
+Author: Eros Smith <eros@utexas.edu>
+Date:   Mon Aug 4 12:14:40 2014 -0500
+
+    updated matches css
+
+commit 524401b605a061144aed79c40b81b539f71ffa30
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Sun Aug 3 20:25:17 2014 -0500
+
+    Adding more country stats. An updated version of the last one. Closes #85.
+
+commit 3ab90a795899283ccb3a49d48000456c0efa01a9
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sun Aug 3 20:11:51 2014 -0500
+
+    video background not longers covers changing content fixed #87
+
+commit 29f16dfff90b814f6b1e042a59d4ccc4f6acf883
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sun Aug 3 16:39:23 2014 -0500
+
+    added video background to matches.page fixes #86
+
+commit a4457e497ff2480b5421523e7c1c36581067fb33
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sun Aug 3 16:37:13 2014 -0500
+
+    added video background to matches.page
+
+commit b1ed45a63eb459b00c99b5ce03854a7d6ac22044
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sun Aug 3 02:17:43 2014 -0500
+
+    added responsive background to countries page
+
+commit d5d578de88c471dff69da2bfb8cbeea560cb6eb2
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sat Aug 2 14:38:47 2014 -0500
+
+    added bootstrap to search.html and change font color fixes #76
+
+commit 10009e863cdfdb31c7ca621ac84265727c91f6cc
+Author: Eros Smith <eros@utexas.edu>
+Date:   Sat Aug 2 14:27:46 2014 -0500
+
+    added bootstrap to search.html
+
+commit 2955131976c1c19f09da9c576bd573c5a49710a4
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 1 22:41:54 2014 -0500
+
+    continent data
+
+commit 1f40e599c5778a4aa3f86e42b716619ea0e1686f
+Merge: eafe148 f50696d
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 1 17:34:53 2014 -0500
+
+    Merge branch 'master' of https://github.com/ErosSmith/cs373-idb
+
+commit eafe148a4864a83b398f069a81becad551bf4dae
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 1 17:34:23 2014 -0500
+
+    fix \\x0a latin char with space by updating player script 7
+
+commit f50696db9c3efaaccec80fe3b8a69e779a8c26e6
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Fri Aug 1 02:07:43 2014 -0500
+
+    adding country stats, taken from fifa country pages. Stats are attacking, defending, and passing. Order of info is in comment.
+
+commit 013d25e4df17c1e373e2aff90449f60254d3970e
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Aug 1 00:34:51 2014 -0500
+
+    New player_insert_script7.py to update biography for every player resolve #72
+
+commit e4df4542dd4cc4a03a590367ed6262b061520264
+Author: Eros Smith <eros@utexas.edu>
+Date:   Wed Jul 30 17:39:35 2014 -0500
+
+    added search form to sidebar fixes #71
+
+commit e44e11343687987f29594af7d65b0dc9e4ba5034
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Wed Jul 30 15:08:12 2014 -0700
+
+    removed underline link from matches page
+
+commit 306b9cf4e2b3fd958cb07ea233592dfbc693ae24
+Author: Eros Smith <eros@utexas.edu>
+Date:   Wed Jul 30 16:48:26 2014 -0500
+
+    added search capability fixed #69
+
+commit ba3d43e9bfde0e448930ad1ae5baa57eb3ca3a63
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Wed Jul 30 13:58:42 2014 -0700
+
+    modified the matches page. Looks better, added a hightlights tab.
+
+commit a11b30672be5c9893508752ff1a6a43ec055e40e
+Author: Eros Smith <eros@utexas.edu>
+Date:   Wed Jul 30 15:23:27 2014 -0500
+
+    Transferring blueprint from apiary.io
+
+commit b61d548efc67e85a6f11c48bb175d48a89e2523f
+Author: Eros Smith <eros@utexas.edu>
+Date:   Wed Jul 30 15:21:44 2014 -0500
+
+    Transferring blueprint from apiary.io
+
+commit de1bf4b6f01a110568fdf62ecd96cfe1738df5f6
+Author: aseal134 <aseal134@hotmail.com>
+Date:   Wed Jul 30 12:02:55 2014 -0700
+
+    Adding captions to slider
+
+commit 2e0a955324f623d8b64fc578435d98a7174dad27
+Author: Jeremiah Martinez <jeremiah@cs.utexas.edu>
+Date:   Tue Jul 29 17:56:54 2014 -0500
+
+    adding twitter Names (already in world_cup) and Instagram Widget URLs. Instagram widget URLs are to be used at this site, http://snapwidget.com/
+
+commit 338bbeaa8bf3a742d0365b97f71f5c79b2f6650a
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Tue Jul 29 17:26:36 2014 -0500
+
+    changed symbol flags to regular flag for countries and players page
+
+commit 7174efb0a8cd95e61b2e0ef686abfd3837e55a68
+Author: Prithvi Shahi <shahi.prithvi@gmail.com>
+Date:   Tue Jul 29 10:01:43 2014 -0500
+
+    added dynamic tables to countries and players pages
+
+commit 2d450dcaaa0196b135f9c8e0bd2e9330577744ec
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Mon Jul 28 19:44:01 2014 -0500
+
+    Update playerInstagramNames.json
+
+commit 37c94f5b751893edee3dbd44eea6913e4df3eadf
+Author: Jeremiah- <Jeremiah.H.Martinez@utexas.edu>
+Date:   Mon Jul 28 17:08:25 2014 -0500
+
+    adding player Instagram usernames. Not all garunteed to be correct. Much fewer have Instagram compared to twitter.
+
+commit dfa228ec17374d4925b7f7bb561b3173b129f580
+Author: Jungmo Ku <suhojm@utexas.edu>
+Date:   Mon Jul 28 13:19:38 2014 -0700
+
+    testing and testing2 for dynatable
+
+commit 4783c7e161d6739bd6713143e444e687061b07c5
+Author: unknown <kimyu92@cs.utexas.edu>
+Date:   Fri Jul 25 21:27:48 2014 -0500
+
+    update IDB.log
+
 commit 5f71985b47e719eff688aaea4632829e7c92e0fc
 Author: unknown <kimyu92@cs.utexas.edu>
 Date:   Fri Jul 25 21:26:48 2014 -0500
